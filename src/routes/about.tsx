@@ -32,7 +32,7 @@ function AboutPage() {
     <section className="bg-navy px-5 py-20 text-navy-foreground md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
       <SectionHeading number="03" label="Governance" title="The Board" light />
       <div className="mt-14 grid gap-px bg-navy-foreground/15 sm:grid-cols-2 lg:grid-cols-4">
-        {board.map((m, i) => <figure key={m.name} className="bg-navy p-5"><img src={photos[i]} alt={m.name} loading="lazy" className="aspect-[4/5] w-full object-cover grayscale transition hover:grayscale-0" /><figcaption className="mt-4"><p className="font-medium">{m.name}</p><p className="technical-label mt-1 text-navy-muted">{m.role}</p></figcaption></figure>)}
+        {board.map((m, i) => <figure key={m.name} className="bg-navy p-5"><img src={photos[i]?.url} alt={m.name} loading="lazy" className="aspect-[4/5] w-full object-cover grayscale transition hover:grayscale-0" /><figcaption className="mt-4"><p className="font-medium">{m.name}</p><p className="technical-label mt-1 text-navy-muted">{m.role}</p></figcaption></figure>)}
       </div>
     </div></section>
     <section className="px-5 py-20 md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
