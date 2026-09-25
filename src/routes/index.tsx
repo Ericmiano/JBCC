@@ -27,7 +27,7 @@ function HomePage() {
   const [activeWork, setActiveWork] = useState(0);
   return <main>
     <section className="relative min-h-[92vh] overflow-hidden bg-navy text-navy-foreground">
-      <img src={heroImage} alt="Construction professionals reviewing a building project" className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-25 md:w-[55%]" />
+      <img src={heroImage.url} alt="Construction professionals reviewing a building project" className="absolute inset-y-0 right-0 h-full w-full object-cover opacity-25 md:w-[55%]" />
       <div className="technical-grid absolute inset-0" />
       <div className="absolute bottom-0 left-[8%] top-0 w-px bg-navy-foreground/15" /><div className="absolute bottom-0 left-[64%] top-0 w-px bg-navy-foreground/15" />
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-5 pb-16 pt-36 md:px-8 md:pb-20">
@@ -51,7 +51,7 @@ function HomePage() {
 
     <section className="bg-navy px-5 py-20 text-navy-foreground md:px-8 md:py-32"><div className="mx-auto max-w-7xl"><SectionHeading number="03" label="What we do" title="Standards, systems and professional practice." light /><div className="mt-16 grid gap-12 lg:grid-cols-[1.3fr_1fr]">
       <div>{workAreas.map((item, index) => <button key={item.no} onMouseEnter={() => setActiveWork(index)} onFocus={() => setActiveWork(index)} className={`grid w-full grid-cols-[48px_1fr_auto] items-center border-b border-navy-foreground/20 py-6 text-left transition-colors ${activeWork === index ? "text-signal" : "text-navy-foreground"}`}><span className="technical-label">{item.no}</span><span className="text-xl font-medium uppercase md:text-2xl">{item.title}</span><ArrowRight className="size-5" /></button>)}</div>
-      <div className="relative min-h-72 overflow-hidden border border-navy-foreground/20 p-8"><div className="technical-grid absolute inset-0 opacity-40" /><p className="technical-label relative text-signal">Focus / {workAreas[activeWork].no}</p><p className="relative mt-24 text-xl leading-8 text-navy-muted">{workAreas[activeWork].text}</p></div>
+      <div className="relative min-h-72 overflow-hidden border border-navy-foreground/20 p-8"><div className="technical-grid absolute inset-0 opacity-40" /><p className="technical-label relative text-signal">Focus / {workAreas[activeWork]?.no}</p><p className="relative mt-24 text-xl leading-8 text-navy-muted">{workAreas[activeWork]?.text}</p></div>
     </div></div></section>
 
     <section className="bg-background px-5 py-20 md:px-8 md:py-32"><div className="mx-auto max-w-7xl"><SectionHeading number="04" label="Resource centre" title="Technical information, ready for use." intro="Access verified JBCC price indices and professional reference documents directly from the Council’s archive." /><div className="mt-14"><ResourceList items={resources.slice(0, 4)} /></div><div className="mt-8 text-right"><Button asChild className="rounded-none"><Link to="/resources">View all resources <ArrowRight /></Link></Button></div></div></section>

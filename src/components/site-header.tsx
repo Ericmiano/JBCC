@@ -26,7 +26,7 @@ export function SiteHeader() {
       <header className={`fixed inset-x-0 top-0 z-50 border-b transition-colors ${scrolled || menuOpen ? "border-border bg-background text-foreground" : "border-navy-foreground/20 bg-navy/80 text-navy-foreground"}`}>
         <div className="mx-auto flex h-20 max-w-7xl items-center px-5 md:px-8">
           <Link to="/" className="mr-auto flex items-center gap-3" aria-label="JBCC home">
-            <span className="grid h-12 w-20 place-items-center bg-background"><img src={logo} alt="Joint Building and Construction Council" className="h-10 w-auto" /></span>
+            <span className="grid h-12 w-20 place-items-center bg-background"><img src={logo.url} alt="Joint Building and Construction Council" className="h-10 w-auto" /></span>
           </Link>
           <nav className="hidden h-full items-center lg:flex" aria-label="Primary navigation">
             {siteLinks.map((item) => <Link key={item.to} to={item.to} activeOptions={{ exact: item.to === "/" }} className="flex h-full items-center border-l border-current/15 px-4 text-xs font-medium uppercase data-[status=active]:text-signal">{item.label}</Link>)}
