@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contact")({
   head: () => ({ meta: [
     { title: "Contact the JBCC Secretariat" },
-    { name: "description", content: "Reach the JBCC Secretariat at Blue Violets Plaza, Kamburu Drive, Nairobi — mail@jbcc.or.ke, +254 20 2420 806." },
+    { name: "description", content: "Reach the JBCC Secretariat at Blue Violets Plaza, Kamburu Drive, Nairobi — mail@jbcc.or.ke, +254 20 2420 806 or 582." },
     { property: "og:title", content: "Contact JBCC" },
     { property: "og:description", content: "Secretariat address, phone, email and enquiry form." },
     { property: "og:type", content: "website" },
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/contact")({
     children: JSON.stringify({
       "@context": "https://schema.org", "@type": "Organization",
       name: "Joint Building & Construction Council", alternateName: "JBCC", url: "https://jbcc.or.ke",
-      email: "mail@jbcc.or.ke", telephone: "+254202420806",
+      email: "mail@jbcc.or.ke", telephone: ["+254202420806", "+254202420582"],
       address: { "@type": "PostalAddress", streetAddress: "Suite 605, Blue Violets Plaza, Kamburu Drive, off Ngong Road", addressLocality: "Nairobi", postalCode: "00100", addressCountry: "KE" },
     }),
   }] }),
@@ -76,7 +76,7 @@ function ContactPage() {
       <address className="space-y-8 not-italic">
         <div><p className="technical-label text-signal">Office</p><p className="mt-3 leading-7">Suite 605, Blue Violets Plaza<br />Kamburu Drive, off Ngong Road<br />P.O. Box 44258, Nairobi 00100</p><a href="https://www.google.com/maps/search/?api=1&query=Blue+Violets+Plaza+Kamburu+Drive+Nairobi" target="_blank" rel="noreferrer" className="mt-3 inline-block border-b border-signal text-sm font-medium uppercase">Open map →</a></div>
         <div><p className="technical-label text-signal">Email</p><a href="mailto:mail@jbcc.or.ke" className="mt-3 block hover:text-signal">mail@jbcc.or.ke</a></div>
-        <div><p className="technical-label text-signal">Phone</p><a href="tel:+254202420806" className="mt-3 block hover:text-signal">+254 20 2420 806</a></div>
+        <div><p className="technical-label text-signal">Phone</p><a href="tel:+254202420806" className="mt-3 block min-h-11 py-2 hover:text-signal">+254 20 2420 806</a><a href="tel:+254202420582" className="block min-h-11 py-2 hover:text-signal">+254 20 2420 582</a></div>
       </address>
        <form onSubmit={submit} noValidate className="grid gap-6 border-t border-border pt-8" aria-describedby="form-guidance">
          <p id="form-guidance" className="text-sm text-muted-foreground">All fields marked with an asterisk are required.</p>
