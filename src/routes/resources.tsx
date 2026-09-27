@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { ResourceList } from "@/components/resource-list";
 import { resources } from "@/lib/jbcc-data";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({ meta: [
@@ -10,11 +11,30 @@ export const Route = createFileRoute("/resources")({
     { name: "description", content: "View and download JBCC price indices, price lists and industry guidance documents." },
     { property: "og:title", content: "JBCC Resource Centre" },
     { property: "og:description", content: "Price indices, price lists and guidelines for Kenya’s construction industry." },
-  ] }),
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "/resources" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ], links: [{ rel: "canonical", href: "/resources" }], scripts: [{
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "JBCC Resource Centre",
+      description: "Price indices, price lists and construction industry guidance published by JBCC.",
+      url: "/resources",
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: resources.map((resource, index) => ({
+          "@type": "ListItem", position: index + 1,
+          item: { "@type": "DigitalDocument", name: resource.title, url: resource.url, encodingFormat: "application/pdf", datePublished: resource.year },
+        })),
+      },
+    }),
+  }] }),
   component: ResourcesPage,
 });
 
-const chip = (on: boolean) => `border px-4 py-2 text-xs font-medium uppercase ${on ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground"}`;
+const chip = (on: boolean) => `min-h-11 rounded-none px-4 text-xs uppercase ${on ? "border-foreground bg-foreground text-background hover:bg-foreground/90" : "border-border bg-background text-foreground hover:border-foreground hover:bg-background"}`;
 
 function ResourcesPage() {
   const [type, setType] = useState("All");
@@ -25,11 +45,11 @@ function ResourcesPage() {
   const items = useMemo(() => resources.filter((r) => (type === "All" || r.type === type) && (year === "All" || r.year === year) && r.title.toLowerCase().includes(q.toLowerCase())), [type, year, q]);
   return <main>
     <PageIntro index="03" eyebrow="Resource centre" title="Technical information, ready for use." description="Verified JBCC price indices and reference documents from the Council’s archive." />
-    <section className="px-5 py-16 md:px-8 md:py-24"><div className="mx-auto max-w-7xl">
+    <section className="px-5 py-12 sm:py-16 md:px-8 md:py-24"><div className="mx-auto max-w-7xl">
       <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search documents…" aria-label="Search documents" className="h-14 w-full border-b border-border bg-transparent text-lg outline-none focus:border-signal" />
-      <div className="mt-6 flex flex-wrap gap-2"><span className="technical-label mr-2 self-center text-muted-foreground">Category</span>{types.map((t) => <button key={t} className={chip(type === t)} onClick={() => setType(t)}>{t}</button>)}</div>
-      <div className="mt-3 flex flex-wrap gap-2"><span className="technical-label mr-2 self-center text-muted-foreground">Year</span>{years.map((y) => <button key={y} className={chip(year === y)} onClick={() => setYear(y)}>{y}</button>)}</div>
-      <p className="technical-label mt-10 text-muted-foreground">{items.length} document{items.length === 1 ? "" : "s"}</p>
+      <fieldset className="mt-6"><legend className="technical-label mb-3 text-muted-foreground">Category</legend><div className="flex flex-wrap gap-2">{types.map((t) => <Button key={t} type="button" variant="outline" className={chip(type === t)} onClick={() => setType(t)} aria-pressed={type === t}>{t}</Button>)}</div></fieldset>
+      <fieldset className="mt-5"><legend className="technical-label mb-3 text-muted-foreground">Year</legend><div className="flex flex-wrap gap-2">{years.map((y) => <Button key={y} type="button" variant="outline" className={chip(year === y)} onClick={() => setYear(y)} aria-pressed={year === y}>{y}</Button>)}</div></fieldset>
+      <p className="technical-label mt-8 text-muted-foreground" aria-live="polite">{items.length} document{items.length === 1 ? "" : "s"}</p>
       <div className="mt-4">{items.length ? <ResourceList items={items} /> : <p className="border-t border-border py-10 text-muted-foreground">No documents match these filters.</p>}</div>
     </div></section>
   </main>;
