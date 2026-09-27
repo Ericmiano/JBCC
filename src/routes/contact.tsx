@@ -43,7 +43,7 @@ function ContactPage() {
     e.preventDefault();
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
-    if (String(data.website ?? "").trim() || Date.now() - startedAt.current < 1500) {
+    if (String(data["website"] ?? "").trim() || Date.now() - startedAt.current < 1500) {
       setStatus({ kind: "error", message: "We could not prepare this enquiry. Please wait a moment and try again." });
       return;
     }
