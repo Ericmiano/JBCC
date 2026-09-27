@@ -1,27 +1,28 @@
-# Mobile, metadata, and contact improvements
+# First version: accessible mobile foundations
 
-## Outcome
-Polish all six JBCC pages for phone use, add complete page-specific search and social metadata with appropriate structured data, and make the contact form clearer, safer, and accessible.
+## Scope
+Deliver the shared mobile foundation first. This version covers the header and menu, search overlay, footer, page introductions, section headings, resource rows, and the Contact form. Page-specific visual refinements beyond these shared patterns remain a follow-up.
 
-## Mobile layouts
-- Refine shared navigation, search, footer, headings, and content spacing for narrow screens.
-- Improve the homepage’s quick access, work-area controls, resources, event panel, and partner grid.
-- Make About board/member rows, What We Do entries, resource rows and filters, Events content, and Contact details/forms easier to scan and tap.
-- Preserve the existing square-edged navy, white, red, and Poppins visual system.
+## Priorities
+1. Keyboard navigation and predictable focus behavior.
+2. Screen-reader announcements and clear form errors.
+3. Stable phone layouts with 44px minimum primary tap targets and no horizontal overflow.
+4. Complete page metadata and source-aligned structured data.
 
-## Metadata and structured data
-- Give every route a unique title, description, Open Graph title/description/type, Twitter card, canonical URL, and self-referencing Open Graph URL.
-- Add verified Organization structured data to the homepage and Contact page.
-- Add CollectionPage/DigitalDocument structured data for the resource library and EventSeries structured data for the events page without inventing event dates.
-- Keep structured data aligned with the visible, source-verified JBCC content.
+## Implementation
+- Make the mobile menu scroll safely, expose its open state, close with Escape, and clearly identify the active page.
+- Make search keyboard-dismissible, prevent background scrolling, label its input, and announce changing results.
+- Tighten shared spacing and typography for narrow screens without changing JBCC’s visual identity.
+- Reflow resource rows so titles, metadata, and actions remain readable and tappable.
+- Add associated field errors, focus the first invalid field, announce validation and submission states, and add a honeypot plus minimum-completion-time spam check.
+- Add unique canonical, Open Graph, and Twitter metadata to all six pages; add Organization, resource-library, and event-series structured data without invented facts.
 
-## Contact form
-- Keep the email-client submission approach and add required fields, field-level descriptions, error styling, and focus on the first invalid field.
-- Add an accessible status announcement for validation and successful preparation of the enquiry.
-- Add lightweight spam protection with a hidden honeypot and minimum-completion-time check.
-- Provide a visible fallback error if an email client cannot be opened, without storing visitor data.
-
-## Verification
-- Test all six pages at mobile and desktop widths for overflow, navigation, filters, readable layouts, and metadata.
-- Test invalid, spam-like, and valid contact submissions, plus keyboard and announcement behavior.
-- Confirm the preview builds cleanly with no runtime errors.
+## Acceptance criteria
+- At 390px width, all six pages have no horizontal scrolling and shared content remains readable.
+- Every menu, search, filter, resource action, and form control is reachable and operable by keyboard; Escape closes overlays and menus.
+- Icon-only controls have accessible names; primary mobile controls are at least 44×44px.
+- Invalid Contact submission announces a summary, marks each invalid field, links errors to inputs, and focuses the first error.
+- Valid Contact submission announces that the email draft is ready; suspected spam receives a clear error and opens no email client.
+- Every content route outputs a unique title, description, Open Graph title/description/type/URL, Twitter card, and canonical URL.
+- Structured data matches visible, verified JBCC information and contains no fabricated event dates.
+- Mobile and desktop checks complete without build or runtime errors.
