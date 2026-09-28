@@ -8,6 +8,11 @@ const viewports = [
   { name: "tablet landscape", width: 1024, height: 768 },
 ];
 
+async function openHydratedPage(page: Page, route: string) {
+  await page.goto(route);
+  await page.waitForLoadState("networkidle");
+}
+
 async function expectNoHorizontalOverflow(page: Page) {
   const dimensions = await page.evaluate(() => ({ clientWidth: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth }));
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
@@ -19,14 +24,14 @@ for (const viewport of viewports) {
 
     for (const route of routes) {
       test(`${route} renders without horizontal overflow`, async ({ page }) => {
-        await page.goto(route);
+        await openHydratedPage(page, route);
         await expect(page.locator("main")).toBeVisible();
         await expectNoHorizontalOverflow(page);
       });
     }
 
     test("mobile navigation closes with Escape and restores trigger focus", async ({ page }) => {
-      await page.goto("/");
+      await openHydratedPage(page, "/");
       const trigger = page.getByRole("button", { name: "Open menu" });
       if (viewport.width >= 1024) {
         await expect(trigger).toBeHidden();
@@ -44,7 +49,7 @@ for (const viewport of viewports) {
 test("reduced motion disables mobile menu animation", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await openHydratedPage(page, "/");
   await page.getByRole("button", { name: "Open menu" }).click();
   const animationName = await page.getByRole("navigation", { name: "Mobile navigation" }).evaluate((element) => getComputedStyle(element).animationName);
   expect(animationName).toBe("none");
@@ -52,7 +57,7 @@ test("reduced motion disables mobile menu animation", async ({ page }) => {
 
 test("every page exposes complete sharing metadata", async ({ page }) => {
   for (const route of routes) {
-    await page.goto(route);
+    await openHydratedPage(page, route);
     for (const selector of [
       'meta[name="description"]',
       'meta[property="og:title"]',
@@ -66,4 +71,20 @@ test("every page exposes complete sharing metadata", async ({ page }) => {
       await expect(page.locator(selector)).toHaveAttribute("content", /.+/);
     }
   }
+});
+
+test("contact success state gives clear next steps", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await openHydratedPage(page, "/contact");
+  await page.getByLabel("Name (required)").fill("Test Visitor");
+  await page.getByLabel("Email (required)").fill("visitor@example.com");
+  await page.getByLabel("Subject (required)").fill("Document enquiry");
+  await page.getByLabel("Message (required)").fill("Please share more information about this document.");
+  await page.waitForTimeout(1600);
+  await page.getByRole("button", { name: "Send enquiry" }).click();
+  await expect(page.getByRole("heading", { name: "Your enquiry is ready, Test Visitor." })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Open email again" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Copy email address" })).toBeVisible();
+  await page.getByRole("button", { name: "Start another enquiry" }).click();
+  await expect(page.getByLabel("Name (required)")).toBeFocused();
 });
