@@ -10,18 +10,25 @@ import ramesh from "@/assets/ramesh-vishram.jpg.asset.json";
 import josephat from "@/assets/josephat-munyoki.jpg.asset.json";
 import siphila from "@/assets/siphila-wanjiku.jpg.asset.json";
 import nyagah from "@/assets/nyagah-boore.jpg.asset.json";
+import titleShareImage from "@/assets/jbcc-title-share.jpg.asset.json";
+import { getRequestOrigin } from "@/lib/origin.functions";
 
 const photos = [muchiri, peter, kenneth, nathaniel, ramesh, josephat, siphila, nyagah];
 
 export const Route = createFileRoute("/about")({
-  head: () => ({ meta: [
+  loader: () => getRequestOrigin(),
+  head: ({ loaderData }) => ({ meta: [
     { title: "About JBCC — History, Governance & Constituent Bodies" },
     { name: "description", content: "Founded in 1980, the Joint Building & Construction Council brings together Kenya’s built-environment professional bodies." },
     { property: "og:title", content: "About the Joint Building & Construction Council" },
     { property: "og:description", content: "History since 1980, board governance and the eight constituent bodies of JBCC." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "/about" },
+    { property: "og:image", content: `${loaderData}${titleShareImage.url}` },
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "About the Joint Building & Construction Council" },
+    { name: "twitter:description", content: "History since 1980, board governance and the eight constituent bodies of JBCC." },
+    { name: "twitter:image", content: `${loaderData}${titleShareImage.url}` },
   ], links: [{ rel: "canonical", href: "/about" }] }),
   component: AboutPage,
 });
@@ -35,7 +42,7 @@ function AboutPage() {
     <section className="bg-navy px-5 py-16 text-navy-foreground md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
       <SectionHeading number="03" label="Governance" title="The Board" light />
       <div className="mt-10 grid gap-px bg-navy-foreground/15 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
-        {board.map((m, i) => <figure key={m.name} className="bg-navy p-5"><img src={photos[i]?.url} alt={m.name} loading="lazy" className="aspect-[4/5] w-full object-cover grayscale transition hover:grayscale-0" /><figcaption className="mt-4"><p className="font-medium">{m.name}</p><p className="technical-label mt-1 text-navy-muted">{m.role}</p></figcaption></figure>)}
+        {board.map((m, i) => <figure key={m.name} className="bg-navy p-5"><img src={photos[i]?.url} alt={m.name} width="400" height="400" loading="lazy" decoding="async" className="aspect-[4/5] w-full object-cover grayscale motion-safe:transition motion-reduce:transition-none hover:grayscale-0" /><figcaption className="mt-4"><p className="font-medium">{m.name}</p><p className="technical-label mt-1 text-navy-muted">{m.role}</p></figcaption></figure>)}
       </div>
     </div></section>
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
