@@ -76,15 +76,15 @@ test("every page exposes complete sharing metadata", async ({ page }) => {
 test("contact success state gives clear next steps", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await openHydratedPage(page, "/contact");
-  await page.getByLabel("Name (required)").fill("Test Visitor");
-  await page.getByLabel("Email (required)").fill("visitor@example.com");
-  await page.getByLabel("Subject (required)").fill("Document enquiry");
-  await page.getByLabel("Message (required)").fill("Please share more information about this document.");
+  await page.locator("#name").fill("Test Visitor");
+  await page.locator("#email").fill("visitor@example.com");
+  await page.locator("#subject").fill("Document enquiry");
+  await page.locator("#message").fill("Please share more information about this document.");
   await page.waitForTimeout(1600);
   await page.getByRole("button", { name: "Send enquiry" }).click();
   await expect(page.getByRole("heading", { name: "Your enquiry is ready, Test Visitor." })).toBeVisible();
   await expect(page.getByRole("link", { name: "Open email again" })).toBeVisible();
   await expect(page.getByRole("button", { name: "Copy email address" })).toBeVisible();
   await page.getByRole("button", { name: "Start another enquiry" }).click();
-  await expect(page.getByLabel("Name (required)")).toBeFocused();
+  await expect(page.locator("#name")).toBeFocused();
 });
