@@ -10,7 +10,7 @@ import ramesh from "@/assets/ramesh-vishram.jpg.asset.json";
 import josephat from "@/assets/josephat-munyoki.jpg.asset.json";
 import siphila from "@/assets/siphila-wanjiku.jpg.asset.json";
 import nyagah from "@/assets/nyagah-boore.jpg.asset.json";
-import titleBackground from "@/assets/jbcc-title-bg.jpg.asset.json";
+import titleShareImage from "@/assets/jbcc-title-share.jpg.asset.json";
 import { getRequestOrigin } from "@/lib/origin.functions";
 
 const photos = [muchiri, peter, kenneth, nathaniel, ramesh, josephat, siphila, nyagah];
@@ -24,11 +24,11 @@ export const Route = createFileRoute("/about")({
     { property: "og:description", content: "History since 1980, board governance and the eight constituent bodies of JBCC." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "/about" },
-    { property: "og:image", content: `${loaderData}${titleBackground.url}` },
+    { property: "og:image", content: `${loaderData}${titleShareImage.url}` },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "About the Joint Building & Construction Council" },
     { name: "twitter:description", content: "History since 1980, board governance and the eight constituent bodies of JBCC." },
-    { name: "twitter:image", content: `${loaderData}${titleBackground.url}` },
+    { name: "twitter:image", content: `${loaderData}${titleShareImage.url}` },
   ], links: [{ rel: "canonical", href: "/about" }] }),
   component: AboutPage,
 });

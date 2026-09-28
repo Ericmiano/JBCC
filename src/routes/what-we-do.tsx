@@ -1,16 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { workAreas } from "@/lib/jbcc-data";
+import titleShareImage from "@/assets/jbcc-title-share.jpg.asset.json";
+import { getRequestOrigin } from "@/lib/origin.functions";
 
 export const Route = createFileRoute("/what-we-do")({
-  head: () => ({ meta: [
+  loader: () => getRequestOrigin(),
+  head: ({ loaderData }) => ({ meta: [
     { title: "What We Do — JBCC Objectives & Activities" },
     { name: "description", content: "Contract documentation, industry development, dispute resolution, publications and professional engagement for Kenya’s construction sector." },
     { property: "og:title", content: "What JBCC does for Kenya’s built environment" },
     { property: "og:description", content: "The Council’s five areas of work, from equitable contracts to arbitration and industry information." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "/what-we-do" },
+    { property: "og:image", content: `${loaderData}${titleShareImage.url}` },
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "What JBCC does for Kenya’s built environment" },
+    { name: "twitter:description", content: "The Council’s five areas of work, from equitable contracts to arbitration and industry information." },
+    { name: "twitter:image", content: `${loaderData}${titleShareImage.url}` },
   ], links: [{ rel: "canonical", href: "/what-we-do" }] }),
   component: WhatWeDoPage,
 });

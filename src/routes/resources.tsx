@@ -4,16 +4,23 @@ import { PageIntro } from "@/components/page-intro";
 import { ResourceList } from "@/components/resource-list";
 import { resources } from "@/lib/jbcc-data";
 import { Button } from "@/components/ui/button";
+import titleShareImage from "@/assets/jbcc-title-share.jpg.asset.json";
+import { getRequestOrigin } from "@/lib/origin.functions";
 
 export const Route = createFileRoute("/resources")({
-  head: () => ({ meta: [
+  loader: () => getRequestOrigin(),
+  head: ({ loaderData }) => ({ meta: [
     { title: "Resources — JBCC Price Indices & Documents" },
     { name: "description", content: "View and download JBCC price indices, price lists and industry guidance documents." },
     { property: "og:title", content: "JBCC Resource Centre" },
     { property: "og:description", content: "Price indices, price lists and guidelines for Kenya’s construction industry." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "/resources" },
+    { property: "og:image", content: `${loaderData}${titleShareImage.url}` },
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "JBCC Resource Centre" },
+    { name: "twitter:description", content: "Price indices, price lists and guidelines for Kenya’s construction industry." },
+    { name: "twitter:image", content: `${loaderData}${titleShareImage.url}` },
   ], links: [{ rel: "canonical", href: "/resources" }], scripts: [{
     type: "application/ld+json",
     children: JSON.stringify({

@@ -1,18 +1,26 @@
 import { useRef, useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Check, Clipboard, Mail, RotateCcw } from "lucide-react";
 import { z } from "zod";
 import { PageIntro } from "@/components/page-intro";
 import { Button } from "@/components/ui/button";
+import titleShareImage from "@/assets/jbcc-title-share.jpg.asset.json";
+import { getRequestOrigin } from "@/lib/origin.functions";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: [
+  loader: () => getRequestOrigin(),
+  head: ({ loaderData }) => ({ meta: [
     { title: "Contact the JBCC Secretariat" },
     { name: "description", content: "Reach the JBCC Secretariat at Blue Violets Plaza, Kamburu Drive, Nairobi — mail@jbcc.or.ke, +254 20 2420 806 or 582." },
     { property: "og:title", content: "Contact JBCC" },
     { property: "og:description", content: "Secretariat address, phone, email and enquiry form." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "/contact" },
+    { property: "og:image", content: `${loaderData}${titleShareImage.url}` },
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Contact JBCC" },
+    { name: "twitter:description", content: "Secretariat address, phone, email and enquiry form." },
+    { name: "twitter:image", content: `${loaderData}${titleShareImage.url}` },
   ], links: [{ rel: "canonical", href: "/contact" }], scripts: [{
     type: "application/ld+json",
     children: JSON.stringify({
@@ -34,10 +42,13 @@ const schema = z.object({
 
 const field = "mt-2 w-full border border-border bg-background px-4 py-3 outline-none focus:border-signal";
 type FieldName = "name" | "email" | "subject" | "message";
+type PreparedEnquiry = { mailto: string; name: string };
 
 function ContactPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<{ kind: "idle" | "success" | "error"; message: string }>({ kind: "idle", message: "" });
+  const [preparedEnquiry, setPreparedEnquiry] = useState<PreparedEnquiry | null>(null);
+  const [copied, setCopied] = useState(false);
   const startedAt = useRef(Date.now());
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,11 +69,30 @@ function ContactPage() {
     }
     setErrors({});
     const body = `${r.data.message}\n\n— ${r.data.name} (${r.data.email})`;
+    const mailto = `mailto:mail@jbcc.or.ke?subject=${encodeURIComponent(r.data.subject)}&body=${encodeURIComponent(body)}`;
     try {
-      setStatus({ kind: "success", message: "Your email app is opening with the enquiry ready to send." });
-      window.location.assign(`mailto:mail@jbcc.or.ke?subject=${encodeURIComponent(r.data.subject)}&body=${encodeURIComponent(body)}`);
+      setPreparedEnquiry({ mailto, name: r.data.name });
+      setStatus({ kind: "success", message: "Your enquiry is prepared. Send it from your email app to complete the process." });
+      window.location.assign(mailto);
     } catch {
       setStatus({ kind: "error", message: "Your email app could not be opened. Please email mail@jbcc.or.ke directly." });
+    }
+  };
+  const resetForm = () => {
+    setPreparedEnquiry(null);
+    setCopied(false);
+    setErrors({});
+    setStatus({ kind: "idle", message: "" });
+    startedAt.current = Date.now();
+    window.requestAnimationFrame(() => document.querySelector<HTMLInputElement>('#name')?.focus());
+  };
+  const copyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText("mail@jbcc.or.ke");
+      setCopied(true);
+      setStatus({ kind: "success", message: "The JBCC email address was copied. Paste it into your email app to send your enquiry." });
+    } catch {
+      setStatus({ kind: "error", message: "Copying was not available. Use mail@jbcc.or.ke in your email app." });
     }
   };
   const F = ({ name, label, area }: { name: FieldName; label: string; area?: boolean }) => {
@@ -78,7 +108,19 @@ function ContactPage() {
         <div><p className="technical-label text-signal">Email</p><a href="mailto:mail@jbcc.or.ke" className="mt-3 block hover:text-signal">mail@jbcc.or.ke</a></div>
         <div><p className="technical-label text-signal">Phone</p><a href="tel:+254202420806" className="mt-3 block min-h-11 py-2 hover:text-signal">+254 20 2420 806</a><a href="tel:+254202420582" className="block min-h-11 py-2 hover:text-signal">+254 20 2420 582</a></div>
       </address>
-       <form onSubmit={submit} noValidate className="grid gap-6 border-t border-border pt-8" aria-describedby="form-guidance">
+       {preparedEnquiry ? <section className="border-t border-border pt-8" aria-labelledby="enquiry-ready-title">
+         <div className="border-l-2 border-signal bg-muted p-5 sm:p-6" role="status" aria-live="polite" aria-atomic="true">
+           <Check className="size-6 text-signal" aria-hidden="true" />
+           <h2 id="enquiry-ready-title" className="mt-4 text-2xl font-semibold">Your enquiry is ready, {preparedEnquiry.name}.</h2>
+           <p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Your email app should have opened with the message prepared. Review it and select Send there to complete your enquiry.</p>
+         </div>
+         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+           <Button asChild className="min-h-11 rounded-none"><a href={preparedEnquiry.mailto}><Mail /> Open email again</a></Button>
+           <Button type="button" variant="outline" className="min-h-11 rounded-none" onClick={copyAddress}><Clipboard /> {copied ? "Email copied" : "Copy email address"}</Button>
+           <Button type="button" variant="ghost" className="min-h-11 rounded-none" onClick={resetForm}><RotateCcw /> Start another enquiry</Button>
+         </div>
+         <div className="mt-4" role="status" aria-live="polite" aria-atomic="true"><p className={status.kind === "error" ? "text-sm font-medium text-signal" : "text-sm text-muted-foreground"}>{status.message}</p></div>
+       </section> : <form onSubmit={submit} noValidate className="grid gap-6 border-t border-border pt-8" aria-describedby="form-guidance">
          <p id="form-guidance" className="text-sm text-muted-foreground">All fields marked with an asterisk are required.</p>
          <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true"><label htmlFor="website">Website</label><input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" /></div>
         <div className="grid gap-6 md:grid-cols-2">{F({ name: "name", label: "Name" })}{F({ name: "email", label: "Email" })}</div>
@@ -86,7 +128,7 @@ function ContactPage() {
          <div role="status" aria-live="polite" aria-atomic="true">{status.message ? <p className={`border-l-2 px-4 py-3 text-sm ${status.kind === "success" ? "border-foreground bg-muted text-foreground" : "border-signal bg-muted text-foreground"}`}>{status.message}</p> : null}</div>
          <Button type="submit" className="min-h-12 w-full justify-self-start rounded-none bg-navy px-8 text-sm uppercase text-navy-foreground hover:bg-signal sm:w-auto">Send enquiry</Button>
         <p className="text-xs text-muted-foreground">Opens your email app with the message ready to send.</p>
-      </form>
+       </form>}
     </div></section>
   </main>;
 }

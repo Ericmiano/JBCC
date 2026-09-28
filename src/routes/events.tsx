@@ -1,15 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
+import titleShareImage from "@/assets/jbcc-title-share.jpg.asset.json";
+import { getRequestOrigin } from "@/lib/origin.functions";
 
 export const Route = createFileRoute("/events")({
-  head: () => ({ meta: [
+  loader: () => getRequestOrigin(),
+  head: ({ loaderData }) => ({ meta: [
     { title: "Events — JBCC Seminars & CPD" },
     { name: "description", content: "JBCC seminars, CPD sessions and Council announcements for built-environment professionals in Kenya." },
     { property: "og:title", content: "JBCC Events & Seminars" },
     { property: "og:description", content: "Seminar schedules, CPD information and registration enquiries." },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "/events" },
+    { property: "og:image", content: `${loaderData}${titleShareImage.url}` },
     { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "JBCC Events & Seminars" },
+    { name: "twitter:description", content: "Seminar schedules, CPD information and registration enquiries." },
+    { name: "twitter:image", content: `${loaderData}${titleShareImage.url}` },
   ], links: [{ rel: "canonical", href: "/events" }], scripts: [{
     type: "application/ld+json",
     children: JSON.stringify({

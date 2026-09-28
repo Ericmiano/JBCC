@@ -1,4 +1,4 @@
-import titleBackground from "@/assets/jbcc-title-bg.jpg.asset.json";
+import titleBackground from "@/assets/jbcc-title-bg.webp.asset.json";
 
 export function PageIntro({ index, eyebrow, title, description }: { index: string; eyebrow: string; title: string; description: string }) {
   return (

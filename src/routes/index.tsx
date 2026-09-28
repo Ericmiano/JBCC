@@ -2,7 +2,8 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, CalendarDays, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/jbcc-hero.jpg.asset.json";
+import heroImage from "@/assets/jbcc-hero.webp.asset.json";
+import heroShareImage from "@/assets/jbcc-hero-share.jpg.asset.json";
 import { partners, resources, workAreas } from "@/lib/jbcc-data";
 import { ResourceList } from "@/components/resource-list";
 import { SectionHeading } from "@/components/section-heading";
@@ -16,11 +17,11 @@ export const Route = createFileRoute("/")({
     { property: "og:title", content: "JBCC — The framework behind better construction" },
     { property: "og:description", content: "Contract administration, price indices and professional resources for Kenya’s built environment." },
     { property: "og:type", content: "website" }, { property: "og:url", content: "/" },
-    { property: "og:image", content: `${loaderData}${heroImage.url}` },
+    { property: "og:image", content: `${loaderData}${heroShareImage.url}` },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "JBCC — The framework behind better construction" },
     { name: "twitter:description", content: "Contract administration, price indices and professional resources for Kenya’s built environment." },
-    { name: "twitter:image", content: `${loaderData}${heroImage.url}` },
+    { name: "twitter:image", content: `${loaderData}${heroShareImage.url}` },
   ], links: [{ rel: "canonical", href: "/" }], scripts: [{
     type: "application/ld+json",
     children: JSON.stringify({
