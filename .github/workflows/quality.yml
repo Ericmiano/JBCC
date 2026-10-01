@@ -1,0 +1,15 @@
+name: Quality checks
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bunx playwright install --with-deps chromium
+      - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
+      - run: bun run test:e2e
+      # Baseline thresholds: accessibility >= 94, mobile performance >= 30 (raise as scores improve)
+      - run: bun run test:lighthouse
+        env: { LH_MIN_A11Y: "0.94", LH_MIN_PERF: "0.3" }
