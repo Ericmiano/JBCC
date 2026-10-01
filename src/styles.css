@@ -154,7 +154,8 @@
     text-rendering: optimizeLegibility;
   }
   a, button, input, textarea, select { outline-offset: 3px; }
-  :focus-visible { outline: 2px solid var(--color-signal); }
+  :focus-visible { outline: 3px solid var(--color-signal); outline-offset: 3px; box-shadow: 0 0 0 6px var(--color-background); }
+  header :focus-visible { outline: 3px solid var(--color-signal) !important; outline-offset: -3px; box-shadow: none; }
   ::selection { background: var(--color-signal); color: var(--color-navy-foreground); }
 }
 
