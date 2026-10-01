@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "test:e2e": "playwright test",
-    "test:lighthouse": "bun scripts/lighthouse.mjs",
+    "test:lighthouse": "bun ./scripts/lighthouse.mjs",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
