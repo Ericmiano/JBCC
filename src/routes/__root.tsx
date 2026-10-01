@@ -120,8 +120,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a href="#main-content" className="sr-only z-[80] bg-background px-4 py-3 text-sm font-medium text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
       <SiteHeader />
-      <Outlet />
+      <div id="main-content" tabIndex={-1} className="outline-none"><Outlet /></div>
       <SiteFooter />
     </QueryClientProvider>
   );
