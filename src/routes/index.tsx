@@ -8,6 +8,7 @@ import { partners, resources, workAreas } from "@/lib/jbcc-data";
 import { ResourceList } from "@/components/resource-list";
 import { SectionHeading } from "@/components/section-heading";
 import { getRequestOrigin } from "@/lib/origin.functions";
+import { EditorialReveal } from "@/components/editorial-reveal";
 
 export const Route = createFileRoute("/")({
   loader: () => getRequestOrigin(),
@@ -52,17 +53,17 @@ function HomePage() {
       <div className="technical-grid absolute inset-0" />
       <div className="absolute bottom-0 left-[8%] top-0 w-px bg-navy-foreground/15" /><div className="absolute bottom-0 left-[64%] top-0 w-px bg-navy-foreground/15" />
       <div className="relative mx-auto flex min-h-[92dvh] max-w-7xl flex-col justify-end px-5 pb-12 pt-32 sm:pb-16 sm:pt-36 md:px-8 md:pb-20">
-        <p className="technical-label text-navy-muted"><span className="text-signal">JBCC</span> / Joint Building & Construction Council</p>
-        <h1 className="mt-6 max-w-5xl text-4xl font-semibold leading-[.98] sm:mt-8 sm:text-5xl md:text-8xl xl:text-9xl">The framework behind better construction.</h1>
-        <div className="mt-8 flex flex-col gap-5 border-t border-navy-foreground/20 pt-5 sm:mt-10 sm:gap-8 sm:pt-6 md:flex-row md:items-end md:justify-between">
+        <EditorialReveal><p className="technical-label text-navy-muted"><span className="text-signal">JBCC</span> / Joint Building & Construction Council</p></EditorialReveal>
+        <EditorialReveal delay={1} className="mt-6 sm:mt-8"><h1 className="max-w-5xl text-4xl font-semibold leading-[.98] sm:text-5xl md:text-8xl xl:text-9xl">The framework behind better construction.</h1></EditorialReveal>
+        <EditorialReveal delay={2} className="mt-8 sm:mt-10"><div className="flex flex-col gap-5 border-t border-navy-foreground/20 pt-5 sm:gap-8 sm:pt-6 md:flex-row md:items-end md:justify-between">
           <p className="max-w-lg text-sm leading-6 text-navy-muted sm:text-base sm:leading-7">Monitoring industry development and publishing contract documents, forms and guidance for Kenya’s built environment since 1980.</p>
           <a href="#quick-access" className="flex min-h-11 items-center gap-3 text-sm font-medium uppercase hover:text-signal">Explore JBCC <ArrowDown className="size-4" /></a>
-        </div>
+        </div></EditorialReveal>
       </div>
     </section>
 
     <section id="quick-access" className="bg-background px-5 py-14 md:px-8 md:py-20">
-      <div className="mx-auto max-w-7xl"><p className="technical-label text-muted-foreground"><span className="text-signal">Quick access</span> / Need something?</p><h2 className="mt-5 text-3xl font-semibold md:text-5xl">Search the JBCC website</h2>
+      <div className="mx-auto max-w-7xl"><EditorialReveal><p className="technical-label text-muted-foreground"><span className="text-signal">Quick access</span> / Need something?</p><h2 className="mt-5 text-3xl font-semibold md:text-5xl">Search the JBCC website</h2></EditorialReveal>
         <Link to="/resources" className="mt-8 grid min-h-16 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 border-y border-border py-3 text-sm text-muted-foreground hover:text-foreground"><Search className="size-5 text-signal" /><span>Search documents and price indices</span><span className="technical-label hidden sm:block">Open library</span></Link>
         <div className="mt-8 grid grid-cols-2 border-l border-t border-border sm:grid-cols-2 lg:grid-cols-6">{quickLinks.map(([label, to], i) => <Link key={label} to={to} className="group min-h-24 border-b border-r border-border p-4 sm:min-h-28"><span className="technical-label text-muted-foreground">{String(i + 1).padStart(2, "0")}</span><span className="mt-6 flex items-center justify-between gap-2 text-xs font-semibold uppercase sm:mt-8">{label}<ArrowRight className="size-4 shrink-0 text-signal motion-safe:transition-transform motion-reduce:transition-none group-hover:translate-x-1 motion-reduce:group-hover:translate-x-0" /></span></Link>)}</div>
       </div>
