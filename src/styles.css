@@ -185,8 +185,30 @@
   &:hover { background: var(--color-signal); border-color: var(--color-signal); color: var(--color-navy-foreground); }
 }
 
+.editorial-reveal {
+  --reveal-delay: 0ms;
+}
+
+.editorial-reveal[data-reveal-delay="1"] { --reveal-delay: 90ms; }
+.editorial-reveal[data-reveal-delay="2"] { --reveal-delay: 180ms; }
+.editorial-reveal[data-reveal-delay="3"] { --reveal-delay: 270ms; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .editorial-reveal[data-editorial-reveal="waiting"] {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  .editorial-reveal[data-editorial-reveal="visible"] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay), transform 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+  }
+}
+
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .editorial-reveal { opacity: 1 !important; transform: none !important; }
 }

@@ -55,6 +55,20 @@ test("reduced motion disables mobile menu animation", async ({ page }) => {
   expect(animationName).toBe("none");
 });
 
+test("editorial reveals remain visible without motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await openHydratedPage(page, "/");
+  const headingReveal = page.getByRole("heading", { name: "The framework behind better construction." }).locator("..");
+  await expect(headingReveal).toBeVisible();
+  const presentation = await headingReveal.evaluate((element) => {
+    const style = getComputedStyle(element);
+    return { opacity: style.opacity, transform: style.transform };
+  });
+  expect(presentation.opacity).toBe("1");
+  expect(presentation.transform).toBe("none");
+});
+
 test("every page exposes complete sharing metadata", async ({ page }) => {
   for (const route of routes) {
     await openHydratedPage(page, route);
