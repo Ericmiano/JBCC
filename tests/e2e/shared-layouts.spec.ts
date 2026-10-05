@@ -69,18 +69,60 @@ test("editorial reveals remain visible without motion", async ({ page }) => {
   expect(presentation.transform).toBe("none");
 });
 
-test("architectural lines draw and masked images bypass reduced motion", async ({ page }) => {
+test("offscreen SVG drawings trigger once and remain settled after return scrolling", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await openHydratedPage(page, "/");
-  const lineLayer = page.locator('[data-line-drawing]').first();
+  const lineLayer = page.locator('[data-line-drawing]').nth(1);
+  await expect(lineLayer).toHaveAttribute("data-line-drawing", "waiting");
+  await lineLayer.scrollIntoViewIfNeeded();
   await expect(lineLayer).toHaveAttribute("data-line-drawing", "visible");
+  await expect.poll(() => lineLayer.locator("path").first().evaluate((path) => getComputedStyle(path).strokeDashoffset)).toBe("0px");
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await lineLayer.scrollIntoViewIfNeeded();
+  await expect(lineLayer).toHaveAttribute("data-line-drawing", "visible");
+  expect(await lineLayer.locator("path").first().evaluate((path) => getComputedStyle(path).transitionDuration)).toBe("0.9s");
+});
 
+test("Board image masks trigger once, stagger consistently, and remain settled", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await openHydratedPage(page, "/about");
+  const portraits = page.locator('[data-image-reveal]');
+  const firstPortrait = portraits.nth(1);
+  await expect(firstPortrait).toHaveAttribute("data-image-reveal", "waiting");
+  await firstPortrait.scrollIntoViewIfNeeded();
+  await expect(firstPortrait).toHaveAttribute("data-image-reveal", "visible");
+  await expect(portraits.nth(4)).toHaveAttribute("data-image-reveal", "visible");
+  const timings = await portraits.nth(4).evaluate((element) => ({
+    delay: getComputedStyle(element).transitionDelay,
+    maskDuration: getComputedStyle(element).transitionDuration,
+    imageDuration: getComputedStyle(element.querySelector("img") as Element).transitionDuration,
+  }));
+  expect(timings).toEqual({ delay: "0.24s", maskDuration: "0.72s", imageDuration: "0.9s" });
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await firstPortrait.scrollIntoViewIfNeeded();
+  await expect(firstPortrait).toHaveAttribute("data-image-reveal", "visible");
+  await expect.poll(() => firstPortrait.evaluate((element) => getComputedStyle(element).clipPath)).toBe("inset(0px)");
+});
+
+test("reduced motion bypasses drawings and image masks on hero, introductions, and portraits", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.reload({ waitUntil: "networkidle" });
-  const image = page.locator('[data-image-reveal]').first();
-  const presentation = await image.evaluate((element) => ({ clipPath: getComputedStyle(element).clipPath, transform: getComputedStyle(element.querySelector("img") as Element).transform }));
-  expect(presentation.clipPath).toBe("none");
-  expect(presentation.transform).toBe("none");
+  await page.setViewportSize({ width: 390, height: 844 });
+  await openHydratedPage(page, "/about");
+  const presentations = await page.locator('[data-line-drawing], [data-image-reveal]').evaluateAll((elements) => elements.map((element) => {
+    const image = element.querySelector("img");
+    const path = element.querySelector("path");
+    return {
+      clipPath: getComputedStyle(element).clipPath,
+      imageTransform: image ? getComputedStyle(image).transform : "none",
+      dashOffset: path ? getComputedStyle(path).strokeDashoffset : "0px",
+    };
+  }));
+  expect(presentations.length).toBeGreaterThan(2);
+  for (const presentation of presentations) {
+    expect(presentation.clipPath).toBe("none");
+    expect(presentation.imageTransform).toBe("none");
+    expect(presentation.dashOffset).toBe("0px");
+  }
 });
 
 test("every page exposes complete sharing metadata", async ({ page }) => {

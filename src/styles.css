@@ -189,9 +189,9 @@
   --reveal-delay: 0ms;
 }
 
-.editorial-reveal[data-reveal-delay="1"] { --reveal-delay: 90ms; }
-.editorial-reveal[data-reveal-delay="2"] { --reveal-delay: 180ms; }
-.editorial-reveal[data-reveal-delay="3"] { --reveal-delay: 270ms; }
+.editorial-reveal[data-reveal-delay="1"] { --reveal-delay: 80ms; }
+.editorial-reveal[data-reveal-delay="2"] { --reveal-delay: 160ms; }
+.editorial-reveal[data-reveal-delay="3"] { --reveal-delay: 240ms; }
 
 .architectural-lines path {
   fill: none;
@@ -201,9 +201,9 @@
 }
 
 .image-reveal { --reveal-delay: 0ms; }
-.image-reveal[data-reveal-delay="1"] { --reveal-delay: 90ms; }
-.image-reveal[data-reveal-delay="2"] { --reveal-delay: 180ms; }
-.image-reveal[data-reveal-delay="3"] { --reveal-delay: 270ms; }
+.image-reveal[data-reveal-delay="1"] { --reveal-delay: 80ms; }
+.image-reveal[data-reveal-delay="2"] { --reveal-delay: 160ms; }
+.image-reveal[data-reveal-delay="3"] { --reveal-delay: 240ms; }
 
 @media (prefers-reduced-motion: no-preference) {
   .editorial-reveal[data-editorial-reveal="waiting"] {
@@ -225,11 +225,11 @@
   .architectural-lines[data-line-drawing="visible"] path {
     stroke-dasharray: 1;
     stroke-dashoffset: 0;
-    transition: stroke-dashoffset 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: stroke-dashoffset 900ms cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .architectural-lines[data-line-drawing="visible"] path:nth-child(2) { transition-delay: 140ms; }
-  .architectural-lines[data-line-drawing="visible"] path:nth-child(3) { transition-delay: 280ms; }
+  .architectural-lines[data-line-drawing="visible"] path:nth-child(2) { transition-delay: 90ms; }
+  .architectural-lines[data-line-drawing="visible"] path:nth-child(3) { transition-delay: 180ms; }
 
   .image-reveal[data-image-reveal="waiting"] {
     clip-path: inset(0 100% 0 0);
@@ -239,12 +239,12 @@
 
   .image-reveal[data-image-reveal="visible"] {
     clip-path: inset(0 0 0 0);
-    transition: clip-path 820ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+    transition: clip-path 720ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
   }
 
   .image-reveal[data-image-reveal="visible"] > img {
     transform: scale(1);
-    transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+    transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
   }
 }
 

@@ -17,3 +17,5 @@
 - [x] Automated Lighthouse mobile checks for all six pages
 - [x] Add restrained editorial reveals across all six pages with reduced-motion support
 - [x] Add progressive architectural line drawing and selective masked image reveals
+- [x] Test scroll-triggered drawings, masked image reveals, reduced-motion bypass, and settled return scrolling
+- [x] Align drawing, image reveal, and Board portrait timing without overlapping reveal effects
