@@ -16,3 +16,4 @@
 - [x] Visible focus, skip link, and logical Tab order in header and mobile menu
 - [x] Automated Lighthouse mobile checks for all six pages
 - [x] Add restrained editorial reveals across all six pages with reduced-motion support
+- [x] Add progressive architectural line drawing and selective masked image reveals

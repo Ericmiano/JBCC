@@ -193,6 +193,18 @@
 .editorial-reveal[data-reveal-delay="2"] { --reveal-delay: 180ms; }
 .editorial-reveal[data-reveal-delay="3"] { --reveal-delay: 270ms; }
 
+.architectural-lines path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.16;
+  vector-effect: non-scaling-stroke;
+}
+
+.image-reveal { --reveal-delay: 0ms; }
+.image-reveal[data-reveal-delay="1"] { --reveal-delay: 90ms; }
+.image-reveal[data-reveal-delay="2"] { --reveal-delay: 180ms; }
+.image-reveal[data-reveal-delay="3"] { --reveal-delay: 270ms; }
+
 @media (prefers-reduced-motion: no-preference) {
   .editorial-reveal[data-editorial-reveal="waiting"] {
     opacity: 0;
@@ -204,6 +216,36 @@
     transform: translateY(0);
     transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay), transform 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
   }
+
+  .architectural-lines[data-line-drawing="waiting"] path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+  }
+
+  .architectural-lines[data-line-drawing="visible"] path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .architectural-lines[data-line-drawing="visible"] path:nth-child(2) { transition-delay: 140ms; }
+  .architectural-lines[data-line-drawing="visible"] path:nth-child(3) { transition-delay: 280ms; }
+
+  .image-reveal[data-image-reveal="waiting"] {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  .image-reveal[data-image-reveal="waiting"] > img { transform: scale(1.035); }
+
+  .image-reveal[data-image-reveal="visible"] {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 820ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+  }
+
+  .image-reveal[data-image-reveal="visible"] > img {
+    transform: scale(1);
+    transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+  }
 }
 
 html { scroll-behavior: smooth; }
@@ -211,4 +253,7 @@ html { scroll-behavior: smooth; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .editorial-reveal { opacity: 1 !important; transform: none !important; }
+  .architectural-lines path { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
+  .image-reveal { clip-path: none !important; }
+  .image-reveal > img { transform: none !important; }
 }

@@ -69,6 +69,20 @@ test("editorial reveals remain visible without motion", async ({ page }) => {
   expect(presentation.transform).toBe("none");
 });
 
+test("architectural lines draw and masked images bypass reduced motion", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await openHydratedPage(page, "/");
+  const lineLayer = page.locator('[data-line-drawing]').first();
+  await expect(lineLayer).toHaveAttribute("data-line-drawing", "visible");
+
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.reload({ waitUntil: "networkidle" });
+  const image = page.locator('[data-image-reveal]').first();
+  const presentation = await image.evaluate((element) => ({ clipPath: getComputedStyle(element).clipPath, transform: getComputedStyle(element.querySelector("img") as Element).transform }));
+  expect(presentation.clipPath).toBe("none");
+  expect(presentation.transform).toBe("none");
+});
+
 test("every page exposes complete sharing metadata", async ({ page }) => {
   for (const route of routes) {
     await openHydratedPage(page, route);
