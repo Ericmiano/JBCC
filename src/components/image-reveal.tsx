@@ -15,7 +15,7 @@ export function ImageReveal({ children, className, delay = 0 }: { children: Reac
       if (!entry?.isIntersecting) return;
       setState("visible");
       observer.disconnect();
-    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+    }, { rootMargin: "20% 0px 20%", threshold: 0.01 });
 
     observer.observe(element);
     return () => observer.disconnect();
