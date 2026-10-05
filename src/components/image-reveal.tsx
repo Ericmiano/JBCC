@@ -21,5 +21,5 @@ export function ImageReveal({ children, className, delay = 0 }: { children: Reac
     return () => observer.disconnect();
   }, []);
 
-  return <div ref={elementRef} data-image-reveal={state} data-reveal-delay={delay} className={cn("image-reveal overflow-hidden", className)}>{children}</div>;
+  return <div ref={elementRef} className={cn("image-reveal-trigger", className)}><div data-image-reveal={state} data-reveal-delay={delay} className="image-reveal h-full w-full overflow-hidden">{children}</div></div>;
 }
