@@ -89,7 +89,8 @@ test("Board image masks trigger once, stagger consistently, and remain settled",
   const portraits = page.locator('[data-image-reveal]');
   const firstPortrait = portraits.nth(1);
   await expect(firstPortrait).toHaveAttribute("data-image-reveal", "waiting");
-  await firstPortrait.locator("..").evaluate((element) => element.scrollIntoView({ block: "center" }));
+  const portraitTop = await firstPortrait.locator("..").evaluate((element) => element.getBoundingClientRect().top + window.scrollY);
+  await page.evaluate((top) => window.scrollTo({ top: top - 250, behavior: "instant" }), portraitTop);
   await expect(firstPortrait).toHaveAttribute("data-image-reveal", "visible");
   await expect(portraits.nth(4)).toHaveAttribute("data-image-reveal", "visible");
   const timings = await portraits.nth(4).evaluate((element) => ({
@@ -98,8 +99,8 @@ test("Board image masks trigger once, stagger consistently, and remain settled",
     imageDuration: getComputedStyle(element.querySelector("img") as Element).transitionDuration,
   }));
   expect(timings).toEqual({ delay: "0.24s", maskDuration: "0.72s", imageDuration: "0.9s" });
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await firstPortrait.locator("..").evaluate((element) => element.scrollIntoView({ block: "center" }));
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+  await page.evaluate((top) => window.scrollTo({ top: top - 250, behavior: "instant" }), portraitTop);
   await expect(firstPortrait).toHaveAttribute("data-image-reveal", "visible");
   await expect.poll(() => firstPortrait.evaluate((element) => getComputedStyle(element).clipPath)).toBe("inset(0px)");
 });
