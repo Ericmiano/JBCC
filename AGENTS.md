@@ -11,3 +11,4 @@
 
 - Run `bun run test:e2e` after shared navigation, responsive layout, contact-flow, or metadata changes because these behaviors are covered across phone and tablet widths.
 - Use the shared editorial reveal wrapper for scroll-based text motion so accessibility and reduced-motion behavior stay consistent.
+- Use shared line-drawing and image-reveal wrappers for decorative motion so selective rollout and reduced-motion bypass remain consistent.

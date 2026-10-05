@@ -1,0 +1,31 @@
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
+
+export function ArchitecturalLines({ className }: { className?: string }) {
+  const elementRef = useRef<SVGSVGElement>(null);
+  const [state, setState] = useState<"ready" | "waiting" | "visible">("ready");
+
+  useEffect(() => {
+    const element = elementRef.current;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!element || reduceMotion || !("IntersectionObserver" in window)) return;
+
+    setState("waiting");
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      setState("visible");
+      observer.disconnect();
+    }, { rootMargin: "0px 0px -10%", threshold: 0.08 });
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <svg ref={elementRef} data-line-drawing={state} className={cn("architectural-lines pointer-events-none absolute inset-0 h-full w-full", className)} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <path pathLength="1" d="M8 0V100M64 0V100M0 18H100M0 82H100" />
+      <path pathLength="1" d="M8 18L64 82M64 18L92 46V82" />
+      <path pathLength="1" d="M4 76H12M8 72V80M60 18H68M64 14V22" />
+    </svg>
+  );
+}
