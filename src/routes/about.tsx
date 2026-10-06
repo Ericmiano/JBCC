@@ -42,8 +42,8 @@ function AboutPage() {
     </div></section>
     <section className="bg-navy px-5 py-16 text-navy-foreground md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
       <SectionHeading number="03" label="Governance" title="The Board" light />
-      <div className="mt-10 grid gap-px bg-navy-foreground/15 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
-        {board.map((m, i) => <figure key={m.name} className="bg-navy p-5"><ImageReveal delay={(i % 4) as 0 | 1 | 2 | 3}><img src={photos[i]?.url} alt={m.name} width="400" height="400" loading="lazy" decoding="async" className="aspect-[4/5] w-full object-cover grayscale motion-safe:transition motion-reduce:transition-none hover:grayscale-0" /></ImageReveal><figcaption className="mt-4"><p className="font-medium">{m.name}</p><p className="technical-label mt-1 text-navy-muted">{m.role}</p></figcaption></figure>)}
+      <div className="mt-10 grid gap-x-px gap-y-10 bg-navy-foreground/15 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
+        {board.map((m, i) => <figure key={m.name} className="bg-navy"><ImageReveal delay={(i % 4) as 0 | 1 | 2 | 3}><img src={photos[i]?.url} alt={m.name} width="400" height="400" loading="lazy" decoding="async" className="aspect-[4/5] w-full object-cover grayscale motion-safe:transition motion-reduce:transition-none hover:grayscale-0" /></ImageReveal><figcaption className="grid grid-cols-[36px_1fr] border-t border-navy-foreground/20 pt-4"><p className="technical-label text-signal">{String(i + 1).padStart(2, "0")}</p><div><p className="font-medium">{m.name}</p><p className="technical-label mt-1 text-navy-muted">{m.role}</p></div></figcaption></figure>)}
       </div>
     </div></section>
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto max-w-7xl">

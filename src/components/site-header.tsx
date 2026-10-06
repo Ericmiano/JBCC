@@ -30,8 +30,8 @@ export function SiteHeader() {
   return (
     <>
       <header className={`fixed inset-x-0 top-0 z-50 border-b motion-safe:transition-colors motion-reduce:transition-none ${scrolled || menuOpen ? "border-border bg-background text-foreground" : "border-navy-foreground/20 bg-navy/80 text-navy-foreground"}`}>
-        <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center px-5 md:px-8 lg:flex">
-          <Link to="/" className="mr-auto flex items-center gap-3" aria-label="JBCC home">
+        <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center border-x border-current/10 px-5 md:px-8 lg:flex lg:px-0">
+          <Link to="/" className="mr-auto flex h-full items-center gap-3 lg:px-5" aria-label="JBCC home">
             <span className="grid h-12 w-20 place-items-center bg-background"><img src={logo.url} alt="Joint Building and Construction Council" width="200" height="100" decoding="async" className="h-10 w-auto" /></span>
           </Link>
           <nav className="hidden h-full items-center lg:flex" aria-label="Primary navigation">

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 export function ImageReveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: 0 | 1 | 2 | 3 }) {
   const elementRef = useRef<HTMLDivElement>(null);
+  const revealedRef = useRef(false);
   const [state, setState] = useState<"ready" | "waiting" | "visible">("ready");
 
   useEffect(() => {
@@ -12,7 +13,8 @@ export function ImageReveal({ children, className, delay = 0 }: { children: Reac
 
     setState("waiting");
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry?.isIntersecting) return;
+      if (!entry?.isIntersecting || revealedRef.current) return;
+      revealedRef.current = true;
       setState("visible");
       observer.disconnect();
     }, { rootMargin: "20% 0px 20%", threshold: 0.01 });
