@@ -126,6 +126,46 @@ test("reduced motion bypasses drawings and image masks on hero, introductions, a
   }
 });
 
+test("narrow viewport drawings and masks survive rapid scrolling and remain settled", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 });
+  await openHydratedPage(page, "/about");
+  const line = page.locator('[data-line-drawing]').first();
+  const portraits = page.locator('[data-image-reveal]');
+  const firstPortrait = portraits.nth(1);
+  const portraitTop = await firstPortrait.locator("..").evaluate((element) => element.getBoundingClientRect().top + window.scrollY);
+
+  await page.evaluate((top) => {
+    for (const y of [0, top - 700, top - 200, 0, top - 100, document.body.scrollHeight]) window.scrollTo(0, y);
+  }, portraitTop);
+  await expect(line).toHaveAttribute("data-line-drawing", "visible");
+  await expect(firstPortrait).toHaveAttribute("data-image-reveal", "visible");
+  await page.waitForTimeout(1000);
+  await expect.poll(() => firstPortrait.evaluate((element) => getComputedStyle(element).clipPath)).toBe("inset(0px)");
+  await page.evaluate((top) => window.scrollTo(0, top - 100), portraitTop);
+  await expect(firstPortrait).toHaveAttribute("data-image-reveal", "visible");
+  await expectNoHorizontalOverflow(page);
+});
+
+test("active narrow viewport reveals remain stable through resizing", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 640 });
+  await openHydratedPage(page, "/about");
+  const portrait = page.locator('[data-image-reveal]').nth(1);
+  const top = await portrait.locator("..").evaluate((element) => element.getBoundingClientRect().top + window.scrollY);
+  await page.evaluate((y) => window.scrollTo(0, y - 100), top);
+  await expect(portrait).toHaveAttribute("data-image-reveal", "visible");
+
+  for (const viewport of [{ width: 320, height: 568 }, { width: 430, height: 932 }, { width: 375, height: 667 }]) {
+    await page.setViewportSize(viewport);
+    await expect(portrait).toHaveAttribute("data-image-reveal", "visible");
+    await expectNoHorizontalOverflow(page);
+  }
+  const presentation = await portrait.evaluate((element) => ({
+    clipPath: getComputedStyle(element).clipPath,
+    transitionDuration: getComputedStyle(element).transitionDuration,
+  }));
+  expect(presentation).toEqual({ clipPath: "inset(0px)", transitionDuration: "0.72s" });
+});
+
 test("every page exposes complete sharing metadata", async ({ page }) => {
   for (const route of routes) {
     await openHydratedPage(page, route);
