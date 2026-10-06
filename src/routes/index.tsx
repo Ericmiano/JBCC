@@ -47,6 +47,12 @@ const quickLinks = [
   ["Publications", "/resources"], ["Events", "/events"], ["Contact", "/contact"],
 ] as const;
 
+const facts = [
+  { value: "1980", label: "Established" },
+  { value: "8", label: "Constituent bodies" },
+  { value: "40+", label: "Years supporting industry" },
+] as const;
+
 function HomePage() {
   const [activeWork, setActiveWork] = useState(0);
   return <main>
@@ -75,7 +81,7 @@ function HomePage() {
       </div>
     </section>
 
-    <section className="bg-background px-5 py-20 md:px-8 md:py-32"><div className="mx-auto max-w-7xl"><SectionHeading number="02" label="Who we are" title="A joint council for a shared industry." intro="JBCC was founded in 1980 by the Architectural Association of Kenya and the Kenya Association of Building and Civil Engineering Contractors." /><div className="mt-16 border-y border-border">{[["1980","Established"],["8","Constituent bodies"],["40+","Years supporting industry"]].map(([value,label], index) => <Fact key={label} value={value} label={label} index={index + 1} />)}</div><div className="mt-8 text-right"><Button asChild variant="outline" className="rounded-none"><Link to="/about">Read our history <ArrowRight /></Link></Button></div></div></section>
+    <section className="bg-background px-5 py-20 md:px-8 md:py-32"><div className="mx-auto max-w-7xl"><SectionHeading number="02" label="Who we are" title="A joint council for a shared industry." intro="JBCC was founded in 1980 by the Architectural Association of Kenya and the Kenya Association of Building and Civil Engineering Contractors." /><div className="mt-16 border-y border-border">{facts.map((fact, index) => <Fact key={fact.label} value={fact.value} label={fact.label} index={index + 1} />)}</div><div className="mt-8 text-right"><Button asChild variant="outline" className="rounded-none"><Link to="/about">Read our history <ArrowRight /></Link></Button></div></div></section>
 
     <section className="bg-navy px-5 py-20 text-navy-foreground md:px-8 md:py-32"><div className="mx-auto max-w-7xl"><SectionHeading number="03" label="What we do" title="Standards, systems and professional practice." light /><div className="mt-16 grid gap-12 lg:grid-cols-[1.3fr_1fr]">
       <div>{workAreas.map((item, index) => <Button type="button" variant="ghost" key={item.no} onMouseEnter={() => setActiveWork(index)} onFocus={() => setActiveWork(index)} onClick={() => setActiveWork(index)} aria-pressed={activeWork === index} className={`grid min-h-16 h-auto w-full grid-cols-[36px_minmax(0,1fr)_auto] rounded-none border-b border-navy-foreground/20 px-0 py-4 text-left motion-safe:transition-colors motion-reduce:transition-none sm:grid-cols-[48px_minmax(0,1fr)_auto] sm:py-6 ${activeWork === index ? "text-signal" : "text-navy-foreground"}`}><span className="technical-label">{item.no}</span><span className="whitespace-normal text-base font-medium uppercase sm:text-xl md:text-2xl">{item.title}</span><ArrowRight className="size-5" /></Button>)}</div>
