@@ -19,7 +19,7 @@
 - [x] Add progressive architectural line drawing and selective masked image reveals
 - [x] Test scroll-triggered drawings, masked image reveals, reduced-motion bypass, and settled return scrolling
 - [x] Align drawing, image reveal, and Board portrait timing without overlapping reveal effects
-- [ ] Redesign all six pages with the selected architectural institutional editorial direction
-- [ ] Add narrow-viewport SVG and image-reveal tests for rapid scrolling and resizing
-- [ ] Profile and optimize mobile scroll-triggered animation work without changing visual timing
-- [ ] Run final browser, accessibility, responsive, and build verification
+- [x] Redesign all six pages with the selected architectural institutional editorial direction
+- [x] Add narrow-viewport SVG and image-reveal tests for rapid scrolling and resizing
+- [x] Profile and optimize mobile scroll-triggered animation work without changing visual timing
+- [x] Run final browser, accessibility, responsive, and build verification
