@@ -200,6 +200,16 @@
   vector-effect: non-scaling-stroke;
 }
 
+.architectural-lines,
+.image-reveal-trigger {
+  contain: layout paint style;
+}
+
+.image-reveal {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 .image-reveal { --reveal-delay: 0ms; }
 .image-reveal[data-reveal-delay="1"] { --reveal-delay: 80ms; }
 .image-reveal[data-reveal-delay="2"] { --reveal-delay: 160ms; }
@@ -220,6 +230,7 @@
   .architectural-lines[data-line-drawing="waiting"] path {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
+    will-change: stroke-dashoffset;
   }
 
   .architectural-lines[data-line-drawing="visible"] path {
@@ -233,9 +244,10 @@
 
   .image-reveal[data-image-reveal="waiting"] {
     clip-path: inset(0 100% 0 0);
+    will-change: clip-path;
   }
 
-  .image-reveal[data-image-reveal="waiting"] > img { transform: scale(1.035); }
+  .image-reveal[data-image-reveal="waiting"] > img { transform: scale(1.035); will-change: transform; }
 
   .image-reveal[data-image-reveal="visible"] {
     clip-path: inset(0 0 0 0);

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 export function ArchitecturalLines({ className }: { className?: string }) {
   const elementRef = useRef<SVGSVGElement>(null);
+  const revealedRef = useRef(false);
   const [state, setState] = useState<"ready" | "waiting" | "visible">("ready");
 
   useEffect(() => {
@@ -12,7 +13,8 @@ export function ArchitecturalLines({ className }: { className?: string }) {
 
     setState("waiting");
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry?.isIntersecting) return;
+      if (!entry?.isIntersecting || revealedRef.current) return;
+      revealedRef.current = true;
       setState("visible");
       observer.disconnect();
     }, { rootMargin: "0px 0px -10%", threshold: 0.08 });
