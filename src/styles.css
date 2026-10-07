@@ -104,6 +104,8 @@
   --navy-foreground: oklch(0.99 0 0);
   --navy-muted: oklch(0.76 0.02 255);
   --signal: oklch(0.61 0.24 26);
+  --focus-ink: var(--navy);
+  --focus-paper: var(--navy-foreground);
 }
 
 .dark {
@@ -154,9 +156,28 @@
     text-rendering: optimizeLegibility;
   }
   a, button, input, textarea, select { outline-offset: 3px; }
-  :focus-visible { outline: 3px solid var(--color-signal); outline-offset: 3px; box-shadow: 0 0 0 6px var(--color-background); }
-  header :focus-visible { outline: 3px solid var(--color-signal) !important; outline-offset: -3px; box-shadow: none; }
   ::selection { background: var(--color-signal); color: var(--color-navy-foreground); }
+}
+
+/* Two contrasting strokes stay legible on paper, navy, and drafting imagery.
+   Outside the base layer so control utilities cannot suppress keyboard focus. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus-ink) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 5px var(--focus-paper) !important;
+}
+
+/* Inset strokes remain intact at fixed navigation and overlay boundaries. */
+header :where(a, button):focus-visible {
+  outline-offset: -3px !important;
+  box-shadow: inset 0 0 0 6px var(--focus-paper) !important;
+}
+
+@media (forced-colors: active) {
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline-color: Highlight !important;
+    box-shadow: none !important;
+  }
 }
 
 @utility technical-label {
@@ -263,9 +284,13 @@
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-  .editorial-reveal { opacity: 1 !important; transform: none !important; }
-  .architectural-lines path { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
-  .image-reveal { clip-path: none !important; }
-  .image-reveal > img { transform: none !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .editorial-reveal { opacity: 1 !important; transform: none !important; will-change: auto !important; }
+  .architectural-lines path { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; will-change: auto !important; }
+  .image-reveal { clip-path: none !important; transform: none !important; will-change: auto !important; }
+  .image-reveal > img { transform: none !important; will-change: auto !important; }
 }

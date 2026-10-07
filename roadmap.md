@@ -23,3 +23,5 @@
 - [x] Add narrow-viewport SVG and image-reveal tests for rapid scrolling and resizing
 - [x] Profile and optimize mobile scroll-triggered animation work without changing visual timing
 - [x] Run final browser, accessibility, responsive, and build verification
+- [ ] Preserve settled editorial compositions when reduced motion is enabled, including preference changes during a visit
+- [ ] Strengthen keyboard focus on all six pages and verify navigation and controls
