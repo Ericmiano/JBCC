@@ -159,6 +159,7 @@ test("active narrow viewport reveals remain stable through resizing", async ({ p
     await expect(portrait).toHaveAttribute("data-image-reveal", "visible");
     await expectNoHorizontalOverflow(page);
   }
+  await expect.poll(() => portrait.evaluate((element) => getComputedStyle(element).clipPath)).toBe("inset(0px)");
   const presentation = await portrait.evaluate((element) => ({
     clipPath: getComputedStyle(element).clipPath,
     transitionDuration: getComputedStyle(element).transitionDuration,

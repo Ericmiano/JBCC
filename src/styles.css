@@ -201,7 +201,7 @@ header :where(a, button):focus-visible {
   justify-content: center;
   border: 1px solid var(--color-border);
   color: var(--color-foreground);
-  transition: 180ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
   & svg { width: 1rem; height: 1rem; }
   &:hover { background: var(--color-signal); border-color: var(--color-signal); color: var(--color-navy-foreground); }
 }
