@@ -159,6 +159,7 @@ test("active narrow viewport reveals remain stable through resizing", async ({ p
     await expect(portrait).toHaveAttribute("data-image-reveal", "visible");
     await expectNoHorizontalOverflow(page);
   }
+  await expect.poll(() => portrait.evaluate((element) => getComputedStyle(element).clipPath)).toBe("inset(0px)");
   const presentation = await portrait.evaluate((element) => ({
     clipPath: getComputedStyle(element).clipPath,
     transitionDuration: getComputedStyle(element).transitionDuration,
@@ -198,4 +199,72 @@ test("contact success state gives clear next steps", async ({ page }) => {
   await expect(page.getByRole("button", { name: "Copy email address" })).toBeVisible();
   await page.getByRole("button", { name: "Start another enquiry" }).click();
   await expect(page.locator("#name")).toBeFocused();
+});
+
+test("all six pages preserve still editorial compositions under reduced motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of routes) {
+    await openHydratedPage(page, route);
+    const presentations = await page.locator('.editorial-reveal, .image-reveal, .image-reveal > img, .architectural-lines path').evaluateAll((elements) => elements.map((element) => {
+      const style = getComputedStyle(element);
+      return { opacity: style.opacity, transform: style.transform, clipPath: style.clipPath, animation: style.animationName, duration: style.transitionDuration, delay: style.transitionDelay, willChange: style.willChange };
+    }));
+    expect(presentations.length).toBeGreaterThan(0);
+    for (const presentation of presentations) {
+      expect(presentation).toMatchObject({ transform: "none", clipPath: "none", animation: "none", duration: "0s", delay: "0s", willChange: "auto" });
+    }
+    expect(await page.locator('.editorial-reveal').evaluateAll((elements) => elements.every((element) => getComputedStyle(element).opacity === "1"))).toBe(true);
+    await page.getByRole("button", { name: "Open menu" }).click();
+    expect(await page.getByRole("navigation", { name: "Mobile navigation" }).evaluate((element) => getComputedStyle(element).animationName)).toBe("none");
+    await page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link", { name: "About", exact: true }).click();
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  }
+});
+
+test("changing motion preference settles waiting reveals without restarting them", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await openHydratedPage(page, "/about");
+  const portrait = page.locator('[data-image-reveal]').nth(1);
+  await expect(portrait).toHaveAttribute("data-image-reveal", "waiting");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(portrait).toHaveAttribute("data-image-reveal", "visible");
+  expect(await page.locator('[data-editorial-reveal="waiting"], [data-image-reveal="waiting"], [data-line-drawing="waiting"]').count()).toBe(0);
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await portrait.scrollIntoViewIfNeeded();
+  await expect(portrait).toHaveAttribute("data-image-reveal", "visible");
+  expect(await portrait.evaluate((element) => getComputedStyle(element).clipPath)).toBe("inset(0px)");
+});
+
+test("keyboard focus stays distinct on links, filters, fields, and menus across all six pages", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of routes) {
+    await openHydratedPage(page, route);
+    await page.keyboard.press("Tab");
+    const controls = page.locator('a[href]:visible, button:visible, input:not([type="hidden"]):visible, textarea:visible, select:visible');
+    let checked = 0;
+    for (const control of await controls.all()) {
+      if (await control.getAttribute("tabindex") === "-1" || await control.isDisabled()) continue;
+      await control.focus();
+      const focus = await control.evaluate((element) => {
+        const style = getComputedStyle(element);
+        return { visible: element.matches(":focus-visible"), width: style.outlineWidth, outline: style.outlineStyle, shadow: style.boxShadow };
+      });
+      expect(focus.visible).toBe(true);
+      expect(focus.width).toBe("3px");
+      expect(focus.outline).toBe("solid");
+      expect(focus.shadow).not.toBe("none");
+      checked++;
+    }
+    expect(checked).toBeGreaterThan(10);
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+    const trigger = page.getByRole("button", { name: "Open menu" });
+    await trigger.focus();
+    await page.keyboard.press("Enter");
+    await page.keyboard.press("Tab");
+    await expect(page.getByRole("navigation", { name: "Mobile navigation" }).getByRole("link").first()).toBeFocused();
+    await page.keyboard.press("Escape");
+    await expect(trigger).toBeFocused();
+  }
 });

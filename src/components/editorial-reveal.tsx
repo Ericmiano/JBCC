@@ -10,8 +10,9 @@ export function EditorialReveal({ children, className, delay = 0 }: { children: 
 
   useEffect(() => {
     const element = elementRef.current;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!element || reduceMotion || !("IntersectionObserver" in window)) return;
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!element || !("IntersectionObserver" in window)) return;
+    if (motionPreference.matches) { revealedRef.current = true; return; }
 
     setState("waiting");
     const observer = new IntersectionObserver(([entry]) => {
@@ -22,7 +23,17 @@ export function EditorialReveal({ children, className, delay = 0 }: { children: 
     }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
 
     observer.observe(element);
-    return () => observer.disconnect();
+    const settleWithoutMotion = () => {
+      if (!motionPreference.matches) return;
+      revealedRef.current = true;
+      setState("visible");
+      observer.disconnect();
+    };
+    motionPreference.addEventListener("change", settleWithoutMotion);
+    return () => {
+      observer.disconnect();
+      motionPreference.removeEventListener("change", settleWithoutMotion);
+    };
   }, []);
 
   return <div ref={elementRef} data-editorial-reveal={state} data-reveal-delay={delay} className={cn("editorial-reveal", className)}>{children}</div>;
