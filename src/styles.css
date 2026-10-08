@@ -292,3 +292,15 @@ html { scroll-behavior: smooth; }
 
 /* Small red labels on navy surfaces use a lighter red so they meet WCAG AA (4.5:1). */
 :where(html) .bg-navy .text-signal, :where(html) .bg-navy.text-signal { color: oklch(0.72 0.17 24) !important; }
+
+/* Windows high contrast: keep control boundaries, active state, and drafting lines visible with system colours. */
+@media (forced-colors: active) {
+  button, input, textarea, select, [role="button"] { border: 1px solid ButtonText !important; }
+  [aria-pressed="true"], [data-status="active"] { outline: 2px solid Highlight !important; outline-offset: -2px !important; }
+  .architectural-lines path { stroke: CanvasText !important; }
+  .architectural-lines { opacity: 0.6 !important; forced-color-adjust: none; }
+  .bg-navy, .bg-muted { border: 1px solid CanvasText; }
+  [aria-invalid="true"] { border: 2px solid Mark !important; }
+  .resource-icon { border-color: ButtonText; }
+  .resource-icon:hover { background: Highlight; color: HighlightText; }
+}
