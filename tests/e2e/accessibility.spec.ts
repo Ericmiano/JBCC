@@ -120,8 +120,8 @@ test.describe("reduced motion across interactions", () => {
       await page.goto(path, { waitUntil: "networkidle" });
       for (const b of (await page.locator("main button:visible").all()).slice(0, 3)) await b.hover();
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-      const moving = await page.evaluate(() => document.getAnimations().filter((a) => a.playState === "running").length);
-      expect(moving).toBe(0);
+      const moving = await page.evaluate(() => document.getAnimations().filter((a) => a.playState === "running").map((a) => `${(a as CSSAnimation).animationName ?? (a as CSSTransition).transitionProperty} ${(a.effect as KeyframeEffect)?.target?.tagName} ${String((a.effect as KeyframeEffect)?.target?.className).slice(0, 50)}`));
+      expect(moving).toEqual([]);
       const timed = await page.$$eval("*", (els) => els.filter((e) => { const s = getComputedStyle(e); return s.transitionDuration.split(",").some((d) => parseFloat(d) > 0) || s.animationName !== "none"; }).length);
       expect(timed).toBe(0);
       await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Contact" }).click();
