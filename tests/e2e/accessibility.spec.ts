@@ -116,6 +116,7 @@ test.describe("reduced motion across interactions", () => {
   test.use({ reducedMotion: "reduce" });
   for (const path of pages) {
     test(`no running animations or transitions on ${path} after interaction and navigation`, async ({ page }) => {
+      await page.emulateMedia({ reducedMotion: "reduce" });
       await page.setViewportSize({ width: 1280, height: 900 });
       await page.goto(path, { waitUntil: "networkidle" });
       for (const b of (await page.locator("main button:visible").all()).slice(0, 3)) await b.hover();
