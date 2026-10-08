@@ -58,7 +58,7 @@ function HomePage() {
   return <main>
     <section className="relative min-h-[92dvh] overflow-hidden bg-navy text-navy-foreground">
       <ImageReveal className="absolute inset-y-0 right-0 w-full md:w-[42%]"><img src={heroImage.url} alt="Construction professionals reviewing a building project" width="800" height="673" loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover opacity-40 grayscale" /></ImageReveal>
-      <div className="technical-grid absolute inset-0" />
+      
       <ArchitecturalLines className="text-navy-foreground opacity-30" />
       <div className="absolute bottom-0 left-[8%] top-0 w-px bg-navy-foreground/10" /><div className="absolute bottom-0 left-[58%] top-0 w-px bg-navy-foreground/15" />
       <div className="relative mx-auto grid min-h-[92dvh] max-w-7xl content-end px-5 pb-10 pt-32 md:grid-cols-12 md:px-8 md:pb-0">
@@ -85,7 +85,7 @@ function HomePage() {
 
     <section className="bg-navy px-5 py-20 text-navy-foreground md:px-8 md:py-32"><div className="mx-auto max-w-7xl"><SectionHeading number="03" label="What we do" title="Standards, systems and professional practice." light /><div className="mt-16 grid gap-12 lg:grid-cols-[1.3fr_1fr]">
       <div>{workAreas.map((item, index) => <Button type="button" variant="ghost" key={item.no} onMouseEnter={() => setActiveWork(index)} onFocus={() => setActiveWork(index)} onClick={() => setActiveWork(index)} aria-pressed={activeWork === index} className={`grid min-h-16 h-auto w-full grid-cols-[36px_minmax(0,1fr)_auto] rounded-none border-b border-navy-foreground/20 px-0 py-4 text-left motion-safe:transition-colors motion-reduce:transition-none sm:grid-cols-[48px_minmax(0,1fr)_auto] sm:py-6 ${activeWork === index ? "text-signal" : "text-navy-foreground"}`}><span className="technical-label">{item.no}</span><span className="whitespace-normal text-base font-medium uppercase sm:text-xl md:text-2xl">{item.title}</span><ArrowRight className="size-5" /></Button>)}</div>
-      <div className="relative min-h-64 overflow-hidden border border-navy-foreground/20 p-6 sm:min-h-72 sm:p-8"><div className="technical-grid absolute inset-0 opacity-40" /><ArchitecturalLines className="text-navy-foreground opacity-30" /><p className="technical-label relative text-signal">Focus / {workAreas[activeWork]?.no}</p><p className="relative mt-16 text-lg leading-8 text-navy-muted sm:mt-24 sm:text-xl">{workAreas[activeWork]?.text}</p></div>
+      <div className="relative min-h-64 overflow-hidden border border-navy-foreground/20 p-6 sm:min-h-72 sm:p-8"><ArchitecturalLines className="text-navy-foreground opacity-30" /><p className="technical-label relative text-signal">Focus / {workAreas[activeWork]?.no}</p><p className="relative mt-16 text-lg leading-8 text-navy-muted sm:mt-24 sm:text-xl">{workAreas[activeWork]?.text}</p></div>
     </div></div></section>
 
     <section className="bg-background px-5 py-20 md:px-8 md:py-32"><div className="mx-auto max-w-7xl"><SectionHeading number="04" label="Resource centre" title="Technical information, ready for use." intro="Access verified JBCC price indices and professional reference documents directly from the Council’s archive." /><div className="mt-14"><ResourceList items={resources.slice(0, 4)} /></div><div className="mt-8 text-right"><Button asChild className="rounded-none"><Link to="/resources">View all resources <ArrowRight /></Link></Button></div></div></section>

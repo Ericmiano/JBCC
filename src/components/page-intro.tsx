@@ -7,7 +7,7 @@ export function PageIntro({ index, eyebrow, title, description }: { index: strin
   return (
     <section className="relative min-h-[58dvh] overflow-hidden bg-navy pt-28 text-navy-foreground sm:pt-36 md:min-h-[66dvh] md:pt-44">
       <ImageReveal className="absolute inset-y-0 right-0 w-[42%] max-md:w-full"><img src={titleBackground.url} alt="Construction site structure" width="1920" height="550" loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover opacity-25" /></ImageReveal>
-      <div className="technical-grid absolute inset-0 opacity-25" />
+      
       <ArchitecturalLines className="text-navy-foreground opacity-25" />
       <div className="relative mx-auto grid max-w-7xl grid-cols-[48px_minmax(0,1fr)] px-5 pb-12 sm:grid-cols-[72px_minmax(0,1fr)] sm:pb-16 md:grid-cols-[1fr_2fr] md:px-8 md:pb-20">
         <EditorialReveal><p className="technical-label border-t border-navy-foreground/25 pt-4 text-signal">{index}</p></EditorialReveal>

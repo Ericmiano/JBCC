@@ -4,11 +4,12 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -121,10 +122,27 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <a href="#main-content" className="sr-only z-[80] bg-background px-4 py-3 text-sm font-medium text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
+      <a href="#main-content" className="sr-only z-[80] focus:inline-flex focus:min-h-11 focus:items-center bg-background px-4 py-3 text-sm font-medium text-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
       <SiteHeader />
       <div id="main-content" tabIndex={-1} className="outline-none"><Outlet /></div>
       <SiteFooter />
+      <RouteAnnouncer />
     </QueryClientProvider>
   );
+}
+
+/** Announces the new page title to screen readers and moves focus to the main content after client-side navigation. */
+function RouteAnnouncer() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const first = useRef(true);
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    if (first.current) { first.current = false; return; }
+    const id = window.setTimeout(() => {
+      setMessage(`${document.title} page loaded`);
+      document.getElementById("main-content")?.focus({ preventScroll: true });
+    }, 120);
+    return () => window.clearTimeout(id);
+  }, [pathname]);
+  return <div id="route-announcer" className="sr-only" role="status" aria-live="polite" aria-atomic="true">{message}</div>;
 }
