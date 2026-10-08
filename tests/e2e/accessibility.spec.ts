@@ -96,3 +96,38 @@ test("resource filters expose pressed state", async ({ page }) => {
   await chip.click();
   await expect(chip).toHaveAttribute("aria-pressed", "true");
 });
+
+for (const width of [280, 320]) {
+  for (const path of pages) {
+    test(`reflow at ${width}px on ${path}: no horizontal overflow or clipped content`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 720 });
+      await page.goto(path, { waitUntil: "networkidle" });
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0);
+      const offenders = await page.$$eval("main *, header *, footer *", (els) => els.filter((e) => {
+        const r = e.getBoundingClientRect();
+        return r.width > 0 && r.right > document.documentElement.clientWidth + 1 && !e.closest(".sr-only, [aria-hidden=true], .image-reveal-trigger, .architectural-lines");
+      }).map((e) => `${e.tagName}.${String(e.className).slice(0, 40)}`).slice(0, 5));
+      expect(offenders).toEqual([]);
+    });
+  }
+}
+
+test.describe("reduced motion across interactions", () => {
+  test.use({ reducedMotion: "reduce" });
+  for (const path of pages) {
+    test(`no running animations or transitions on ${path} after interaction and navigation`, async ({ page }) => {
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.goto(path, { waitUntil: "networkidle" });
+      for (const b of (await page.locator("main button:visible").all()).slice(0, 3)) await b.hover();
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      const moving = await page.evaluate(() => document.getAnimations().filter((a) => a.playState === "running").map((a) => `${(a as CSSAnimation).animationName ?? (a as CSSTransition).transitionProperty} ${(a.effect as KeyframeEffect)?.target?.tagName} ${String((a.effect as KeyframeEffect)?.target?.className).slice(0, 50)}`));
+      expect(moving).toEqual([]);
+      const timed = await page.$$eval("*", (els) => els.filter((e) => { const s = getComputedStyle(e); return s.transitionDuration.split(",").some((d) => parseFloat(d) > 0) || s.animationName !== "none"; }).length);
+      expect(timed).toBe(0);
+      await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: path === "/contact" ? "About" : "Contact" }).click();
+      await expect(page.locator("#route-announcer")).toContainText("page loaded");
+      expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
+    });
+  }
+});
