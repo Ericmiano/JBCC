@@ -34,3 +34,7 @@
 - [x] Automated a11y regression tests (landmarks, headings, focus, contrast, 200% zoom)
 - [x] Forced-colors (Windows high contrast) styling
 - [ ] Push to GitHub (user-side: requires GitHub connection)
+- [x] PR accessibility workflow (.github/workflows/accessibility.yml)
+- [x] Reduced-motion tests for interactions and page changes
+- [x] Narrow-screen reflow tests (280px, 320px)
+- [ ] Workflow first run — waits on GitHub Git sync being connected (user action)
