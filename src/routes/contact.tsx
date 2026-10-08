@@ -43,6 +43,8 @@ const schema = z.object({
 
 const field = "mt-2 w-full border border-border bg-background px-4 py-3 outline-none focus:border-signal";
 type FieldName = "name" | "email" | "subject" | "message";
+const labels: Record<FieldName, string> = { name: "Name", email: "Email", subject: "Subject", message: "Message" };
+const hints: Record<FieldName, string> = { name: "Your full name, at least 2 characters.", email: "For example, name@company.co.ke.", subject: "A short summary, at least 2 characters.", message: "Between 10 and 2,000 characters." };
 type PreparedEnquiry = { mailto: string; name: string };
 
 function ContactPage() {
@@ -98,8 +100,9 @@ function ContactPage() {
   };
   const F = ({ name, label, area }: { name: FieldName; label: string; area?: boolean }) => {
     const errorId = `${name}-error`;
-    const common = { id: name, name, required: true, "aria-invalid": Boolean(errors[name]), "aria-describedby": errors[name] ? errorId : undefined, className: `${field} ${errors[name] ? "border-signal" : ""}` };
-    return <div><label htmlFor={name} className="block text-sm font-medium">{label} <span className="text-signal" aria-hidden="true">*</span><span className="sr-only"> (required)</span></label>{area ? <textarea {...common} rows={6} maxLength={2000} /> : <input {...common} type={name === "email" ? "email" : "text"} maxLength={name === "email" ? 255 : name === "subject" ? 150 : 100} />}{errors[name] ? <p id={errorId} className="mt-2 text-sm font-medium text-signal">{errors[name]}</p> : null}</div>;
+    const hintId = `${name}-hint`;
+    const common = { id: name, name, required: true, "aria-invalid": Boolean(errors[name]), "aria-required": true, "aria-describedby": errors[name] ? `${errorId} ${hintId}` : hintId, className: `${field} ${errors[name] ? "border-signal" : ""}` };
+    return <div><label htmlFor={name} className="block text-sm font-medium">{label} <span className="text-signal" aria-hidden="true">*</span><span className="sr-only"> (required)</span></label><p id={hintId} className="mt-1 text-xs text-muted-foreground">{hints[name]}</p>{area ? <textarea {...common} rows={6} maxLength={2000} /> : <input {...common} type={name === "email" ? "email" : "text"} maxLength={name === "email" ? 255 : name === "subject" ? 150 : 100} />}{errors[name] ? <p id={errorId} className="mt-2 text-sm font-medium text-signal"><span className="sr-only">Error: </span>{errors[name]}</p> : null}</div>;
   };
   return <main>
     <PageIntro index="05" eyebrow="Contact" title="The JBCC Secretariat." description="Enquiries about documents, price indices, seminars and Council business." />
@@ -126,7 +129,7 @@ function ContactPage() {
          <div className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true"><label htmlFor="website">Website</label><input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" /></div>
         <div className="grid gap-6 md:grid-cols-2">{F({ name: "name", label: "Name" })}{F({ name: "email", label: "Email" })}</div>
         {F({ name: "subject", label: "Subject" })}{F({ name: "message", label: "Message", area: true })}
-         <div role="status" aria-live="polite" aria-atomic="true">{status.message ? <p className={`border-l-2 px-4 py-3 text-sm ${status.kind === "success" ? "border-foreground bg-muted text-foreground" : "border-signal bg-muted text-foreground"}`}>{status.message}</p> : null}</div>
+         <div role="status" aria-live="polite" aria-atomic="true">{status.message ? <div className={`border-l-2 px-4 py-3 text-sm ${status.kind === "success" ? "border-foreground bg-muted text-foreground" : "border-signal bg-muted text-foreground"}`}><p className="font-medium">{status.message}</p>{Object.keys(errors).length ? <ul id="error-summary" className="mt-2 space-y-1" aria-label="Fields to correct">{(Object.entries(errors) as [FieldName, string][]).map(([k, v]) => <li key={k}><a href={`#${k}`} className="inline-flex min-h-11 items-center underline underline-offset-4" onClick={(ev) => { ev.preventDefault(); document.getElementById(k)?.focus(); }}>{labels[k]}: {v}</a></li>)}</ul> : null}</div> : null}</div>
          <Button type="submit" className="min-h-12 w-full justify-self-start rounded-none bg-navy px-8 text-sm uppercase text-navy-foreground hover:bg-signal sm:w-auto">Send enquiry</Button>
         <p className="text-xs text-muted-foreground">Opens your email app with the message ready to send.</p>
        </form>}
