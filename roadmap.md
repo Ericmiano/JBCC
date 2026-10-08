@@ -27,10 +27,10 @@
 - [x] Strengthen keyboard focus on all six pages and verify navigation and controls
 
 ## Accessibility round 3
-- [ ] Screen-reader review: navigation, announcements, dynamic content, page transitions
-- [ ] Accessible form errors (summary, associations, focus first invalid)
-- [ ] Target sizes ≥44px across six pages
-- [ ] Remove grid-line background patterns
-- [ ] Automated a11y regression tests (landmarks, headings, focus, contrast, 200% zoom)
-- [ ] Forced-colors (Windows high contrast) styling
+- [x] Screen-reader review: navigation, announcements, dynamic content, page transitions
+- [x] Accessible form errors (summary, associations, focus first invalid)
+- [x] Target sizes ≥44px across six pages
+- [x] Remove grid-line background patterns
+- [x] Automated a11y regression tests (landmarks, headings, focus, contrast, 200% zoom)
+- [x] Forced-colors (Windows high contrast) styling
 - [ ] Push to GitHub (user-side: requires GitHub connection)
