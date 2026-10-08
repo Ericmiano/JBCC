@@ -188,11 +188,6 @@ header :where(a, button):focus-visible {
   text-transform: uppercase;
 }
 
-@utility technical-grid {
-  background-image: linear-gradient(to right, color-mix(in oklab, var(--color-navy-foreground) 8%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklab, var(--color-navy-foreground) 8%, transparent) 1px, transparent 1px);
-  background-size: 64px 64px;
-}
-
 @utility resource-icon {
   display: inline-flex;
   height: 2.5rem;

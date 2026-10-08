@@ -105,8 +105,8 @@ function ContactPage() {
     <PageIntro index="05" eyebrow="Contact" title="The JBCC Secretariat." description="Enquiries about documents, price indices, seminars and Council business." />
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto grid max-w-7xl gap-12 border-t border-border pt-8 lg:grid-cols-[1fr_1.6fr] lg:gap-0">
       <EditorialReveal className="lg:pr-12"><address className="space-y-8 not-italic">
-        <div><p className="technical-label text-signal">Office</p><p className="mt-3 leading-7">Suite 605, Blue Violets Plaza<br />Kamburu Drive, off Ngong Road<br />P.O. Box 44258, Nairobi 00100</p><a href="https://www.google.com/maps/search/?api=1&query=Blue+Violets+Plaza+Kamburu+Drive+Nairobi" target="_blank" rel="noreferrer" className="mt-3 inline-block border-b border-signal text-sm font-medium uppercase">Open map →</a></div>
-        <div><p className="technical-label text-signal">Email</p><a href="mailto:mail@jbcc.or.ke" className="mt-3 block hover:text-signal">mail@jbcc.or.ke</a></div>
+        <div><p className="technical-label text-signal">Office</p><p className="mt-3 leading-7">Suite 605, Blue Violets Plaza<br />Kamburu Drive, off Ngong Road<br />P.O. Box 44258, Nairobi 00100</p><a href="https://www.google.com/maps/search/?api=1&query=Blue+Violets+Plaza+Kamburu+Drive+Nairobi" target="_blank" rel="noreferrer" className="mt-3 inline-flex min-h-11 items-center border-b border-signal text-sm font-medium uppercase">Open map →</a></div>
+        <div><p className="technical-label text-signal">Email</p><a href="mailto:mail@jbcc.or.ke" className="mt-3 flex min-h-11 items-center hover:text-signal">mail@jbcc.or.ke</a></div>
         <div><p className="technical-label text-signal">Phone</p><a href="tel:+254202420806" className="mt-3 block min-h-11 py-2 hover:text-signal">+254 20 2420 806</a><a href="tel:+254202420582" className="block min-h-11 py-2 hover:text-signal">+254 20 2420 582</a></div>
       </address></EditorialReveal>
        {preparedEnquiry ? <section className="border-t border-border pt-8 lg:border-l lg:border-t-0 lg:pl-12" aria-labelledby="enquiry-ready-title">
