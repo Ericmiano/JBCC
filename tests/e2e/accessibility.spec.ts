@@ -125,7 +125,7 @@ test.describe("reduced motion across interactions", () => {
       expect(moving).toEqual([]);
       const timed = await page.$$eval("*", (els) => els.filter((e) => { const s = getComputedStyle(e); return s.transitionDuration.split(",").some((d) => parseFloat(d) > 0) || s.animationName !== "none"; }).length);
       expect(timed).toBe(0);
-      await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: "Contact" }).click();
+      await page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", { name: path === "/contact" ? "About" : "Contact" }).click();
       await expect(page.locator("#route-announcer")).toContainText("page loaded");
       expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
     });
