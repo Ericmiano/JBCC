@@ -12,9 +12,9 @@ import {
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { CookieNotice } from "@/components/cookie-notice";
 
 function NotFoundComponent() {
   return (
@@ -41,9 +41,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -91,9 +88,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" },
+      { rel: "preload", href: "/fonts/poppins-latin-400.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: "/fonts/poppins-latin-600.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
@@ -119,6 +115,8 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  // Signals that React has hydrated and dev-mode styles are applied; end-to-end tests wait for it.
+  useEffect(() => { document.documentElement.dataset["hydrated"] = "true"; }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -126,6 +124,7 @@ function RootComponent() {
       <SiteHeader />
       <div id="main-content" tabIndex={-1} className="outline-none"><Outlet /></div>
       <SiteFooter />
+      <CookieNotice />
       <RouteAnnouncer />
     </QueryClientProvider>
   );

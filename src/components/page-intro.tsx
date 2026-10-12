@@ -1,22 +1,35 @@
-import titleBackground from "@/assets/jbcc-title-bg.webp.asset.json";
 import { EditorialReveal } from "@/components/editorial-reveal";
-import { ArchitecturalLines } from "@/components/architectural-lines";
 import { ImageReveal } from "@/components/image-reveal";
 
-export function PageIntro({ index, eyebrow, title, description }: { index: string; eyebrow: string; title: string; description: string }) {
+type PageIntroProps = {
+  /** Kept for call-site compatibility; intros are no longer visibly numbered. */
+  index?: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  image: { src: string; alt: string; width: number; height: number; position?: string };
+  recordLabel: string;
+  recordValue: string;
+  recordNote: string;
+};
+
+/** Split introduction: text on a solid navy panel, photograph shown at full colour beside it. */
+export function PageIntro({ eyebrow, title, description, image, recordLabel, recordValue, recordNote }: PageIntroProps) {
   return (
-    <section className="relative min-h-[58dvh] overflow-hidden bg-navy pt-28 text-navy-foreground sm:pt-36 md:min-h-[66dvh] md:pt-44">
-      <ImageReveal className="absolute inset-y-0 right-0 w-[42%] max-md:w-full"><img src={titleBackground.url} alt="Construction site structure" width="1920" height="550" loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover opacity-25" /></ImageReveal>
-      
-      <ArchitecturalLines className="text-navy-foreground opacity-25" />
-      <div className="relative mx-auto grid max-w-7xl grid-cols-[48px_minmax(0,1fr)] px-5 pb-12 sm:grid-cols-[72px_minmax(0,1fr)] sm:pb-16 md:grid-cols-[1fr_2fr] md:px-8 md:pb-20">
-        <EditorialReveal><p className="technical-label border-t border-navy-foreground/25 pt-4 text-signal">{index}</p></EditorialReveal>
-        <div className="border-t border-navy-foreground/25 pt-4 md:pl-8">
-          <EditorialReveal><p className="technical-label text-navy-muted">{eyebrow} / JBCC</p></EditorialReveal>
-          <EditorialReveal delay={1} className="mt-8"><h1 className="max-w-4xl text-4xl font-semibold leading-[1.02] sm:text-5xl md:text-7xl">{title}</h1></EditorialReveal>
-          <EditorialReveal delay={2} className="mt-8 md:ml-[33%]"><p className="max-w-xl border-l-2 border-signal pl-5 text-sm leading-6 text-navy-muted sm:text-base sm:leading-7">{description}</p></EditorialReveal>
-        </div>
+    <section className="grid bg-navy pt-20 text-navy-foreground lg:min-h-[70dvh] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <div className="flex min-w-0 flex-col justify-center px-5 py-10 sm:py-14 md:px-8 lg:py-16 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-12">
+        <EditorialReveal><p className="flex items-center gap-3 text-sm font-semibold text-navy-muted"><span className="h-0.5 w-6 bg-signal" aria-hidden="true" />{eyebrow}</p></EditorialReveal>
+        <EditorialReveal delay={1} className="mt-6"><h1 className="max-w-3xl break-words hyphens-auto text-[2rem] font-semibold sm:text-5xl leading-[1.04] xl:text-6xl">{title}</h1></EditorialReveal>
+        <EditorialReveal delay={2} className="mt-6"><p className="max-w-xl text-base leading-7 text-navy-foreground/85 sm:text-lg">{description}</p></EditorialReveal>
+        <EditorialReveal delay={2} className="mt-10 border-l-2 border-signal pl-5">
+          <p className="text-xs font-semibold uppercase text-navy-muted">{recordLabel}</p>
+          <p className="mt-3 text-3xl font-semibold leading-none sm:text-4xl">{recordValue}</p>
+          <p className="mt-3 max-w-sm text-sm leading-6 text-navy-muted">{recordNote}</p>
+        </EditorialReveal>
       </div>
+      <ImageReveal className="order-first aspect-[4/3] sm:aspect-[16/9] lg:order-none lg:aspect-auto lg:h-full" delay={1}>
+        <img src={image.src} alt={image.alt} width={image.width} height={image.height} decoding="async" fetchPriority="high" className="h-full w-full object-cover" style={{ objectPosition: image.position ?? "center" }} />
+      </ImageReveal>
     </section>
   );
 }

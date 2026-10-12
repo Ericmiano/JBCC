@@ -1,0 +1,2700 @@
+{
+  "retrieved_at": "2026-10-08T13:25:38+03:00",
+  "source": "https://jbcc.or.ke",
+  "wp_media_api_total": 359,
+  "anonymous_api_records": 276,
+  "media": [
+    {
+      "id": 7,
+      "title": "woocommerce-placeholder",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/woocommerce-placeholder.png",
+      "local_path": ".\\site-source-archive\\uploads\\woocommerce-placeholder.png",
+      "bytes": 102644,
+      "status": "downloaded"
+    },
+    {
+      "id": 13,
+      "title": "One Click Demo Import &#8211; log_file_2022-06-12__17-36-05",
+      "mime_type": "text/plain",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/log_file_2022-06-12__17-36-05.txt",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\log_file_2022-06-12__17-36-05.txt",
+      "bytes": 1409,
+      "status": "downloaded"
+    },
+    {
+      "id": 7456,
+      "title": "logo-dark@2x",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/04/logo-dark@2x.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\04\\logo-dark@2x.png",
+      "bytes": 5467,
+      "status": "downloaded"
+    },
+    {
+      "id": 7457,
+      "title": "logo-white@2x",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/04/logo-white@2x.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\04\\logo-white@2x.png",
+      "bytes": 5476,
+      "status": "downloaded"
+    },
+    {
+      "id": 7461,
+      "title": "woocommerce-placeholder",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/04/woocommerce-placeholder.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\04\\woocommerce-placeholder.png",
+      "bytes": 102644,
+      "status": "downloaded"
+    },
+    {
+      "id": 7465,
+      "title": "title-bg5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/title-bg5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\title-bg5.jpg",
+      "bytes": 154914,
+      "status": "downloaded"
+    },
+    {
+      "id": 7471,
+      "title": "blog1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog1.jpg",
+      "bytes": 78633,
+      "status": "downloaded"
+    },
+    {
+      "id": 7477,
+      "title": "banner",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/banner.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\banner.jpg",
+      "bytes": 37688,
+      "status": "downloaded"
+    },
+    {
+      "id": 7484,
+      "title": "slider-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1.jpg",
+      "bytes": 171180,
+      "status": "downloaded"
+    },
+    {
+      "id": 7551,
+      "title": "service1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service1.jpg",
+      "bytes": 60721,
+      "status": "downloaded"
+    },
+    {
+      "id": 7557,
+      "title": "service1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service1-1.jpg",
+      "bytes": 55958,
+      "status": "downloaded"
+    },
+    {
+      "id": 7571,
+      "title": "section-img",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-img.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-img.jpg",
+      "bytes": 92435,
+      "status": "downloaded"
+    },
+    {
+      "id": 7636,
+      "title": "iconbox-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg3.jpg",
+      "bytes": 6331,
+      "status": "downloaded"
+    },
+    {
+      "id": 7643,
+      "title": "iconbox-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg1.jpg",
+      "bytes": 6084,
+      "status": "downloaded"
+    },
+    {
+      "id": 7644,
+      "title": "iconbox-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg2.jpg",
+      "bytes": 10202,
+      "status": "downloaded"
+    },
+    {
+      "id": 7645,
+      "title": "iconbox-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg4.jpg",
+      "bytes": 7148,
+      "status": "downloaded"
+    },
+    {
+      "id": 7650,
+      "title": "actionbox-bg",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/actionbox-bg.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\actionbox-bg.png",
+      "bytes": 11634,
+      "status": "downloaded"
+    },
+    {
+      "id": 7663,
+      "title": "testimonial1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial1.jpg",
+      "bytes": 4443,
+      "status": "downloaded"
+    },
+    {
+      "id": 7665,
+      "title": "section-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg4.jpg",
+      "bytes": 94980,
+      "status": "downloaded"
+    },
+    {
+      "id": 7669,
+      "title": "logo1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/logo1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\logo1.png",
+      "bytes": 1550,
+      "status": "downloaded"
+    },
+    {
+      "id": 7670,
+      "title": "logo2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/logo2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\logo2.png",
+      "bytes": 1946,
+      "status": "downloaded"
+    },
+    {
+      "id": 7671,
+      "title": "logo3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/logo3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\logo3.png",
+      "bytes": 1796,
+      "status": "downloaded"
+    },
+    {
+      "id": 7682,
+      "title": "quote",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/quote.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\quote.png",
+      "bytes": 1194,
+      "status": "downloaded"
+    },
+    {
+      "id": 7693,
+      "title": "testimonial1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial1-1.jpg",
+      "bytes": 4582,
+      "status": "downloaded"
+    },
+    {
+      "id": 7807,
+      "title": "slider-bg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg.jpg",
+      "bytes": 118494,
+      "status": "downloaded"
+    },
+    {
+      "id": 7835,
+      "title": "section-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2.jpg",
+      "bytes": 63546,
+      "status": "downloaded"
+    },
+    {
+      "id": 7857,
+      "title": "carousel-img1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/carousel-img1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\carousel-img1.jpg",
+      "bytes": 113145,
+      "status": "downloaded"
+    },
+    {
+      "id": 7858,
+      "title": "carousel-img2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/carousel-img2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\carousel-img2.jpg",
+      "bytes": 115202,
+      "status": "downloaded"
+    },
+    {
+      "id": 7859,
+      "title": "carousel-img3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/carousel-img3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\carousel-img3.jpg",
+      "bytes": 94643,
+      "status": "downloaded"
+    },
+    {
+      "id": 7875,
+      "title": "section-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg4-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg4-1.jpg",
+      "bytes": 144177,
+      "status": "downloaded"
+    },
+    {
+      "id": 7887,
+      "title": "section-bg5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg5.jpg",
+      "bytes": 94945,
+      "status": "downloaded"
+    },
+    {
+      "id": 7906,
+      "title": "section-bg1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg1.png",
+      "bytes": 83115,
+      "status": "downloaded"
+    },
+    {
+      "id": 7911,
+      "title": "service2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service2.jpg",
+      "bytes": 65980,
+      "status": "downloaded"
+    },
+    {
+      "id": 7912,
+      "title": "service3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service3.jpg",
+      "bytes": 72627,
+      "status": "downloaded"
+    },
+    {
+      "id": 7930,
+      "title": "section-bg2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2.png",
+      "bytes": 140939,
+      "status": "downloaded"
+    },
+    {
+      "id": 7964,
+      "title": "slider-bg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg-1.jpg",
+      "bytes": 131541,
+      "status": "downloaded"
+    },
+    {
+      "id": 7973,
+      "title": "service1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service1-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service1-2.jpg",
+      "bytes": 69971,
+      "status": "downloaded"
+    },
+    {
+      "id": 7974,
+      "title": "service2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service2-1.jpg",
+      "bytes": 40918,
+      "status": "downloaded"
+    },
+    {
+      "id": 7975,
+      "title": "service3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service3-1.jpg",
+      "bytes": 49212,
+      "status": "downloaded"
+    },
+    {
+      "id": 7977,
+      "title": "section-bg1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg1-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg1-1.png",
+      "bytes": 15423,
+      "status": "downloaded"
+    },
+    {
+      "id": 7979,
+      "title": "section-bg2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2-1.png",
+      "bytes": 16863,
+      "status": "downloaded"
+    },
+    {
+      "id": 7981,
+      "title": "img1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/img1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\img1.jpg",
+      "bytes": 81184,
+      "status": "downloaded"
+    },
+    {
+      "id": 7985,
+      "title": "counters-bg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/counters-bg.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\counters-bg.jpg",
+      "bytes": 22286,
+      "status": "downloaded"
+    },
+    {
+      "id": 7994,
+      "title": "section-bg4",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg4.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg4.png",
+      "bytes": 15165,
+      "status": "downloaded"
+    },
+    {
+      "id": 8002,
+      "title": "section-bg5",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg5.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg5.png",
+      "bytes": 14837,
+      "status": "downloaded"
+    },
+    {
+      "id": 8005,
+      "title": "img2-transparent",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/img2-transparent.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\img2-transparent.png",
+      "bytes": 296010,
+      "status": "downloaded"
+    },
+    {
+      "id": 8013,
+      "title": "slider-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-1.jpg",
+      "bytes": 203244,
+      "status": "downloaded"
+    },
+    {
+      "id": 8019,
+      "title": "iconbox-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg2-1.jpg",
+      "bytes": 8358,
+      "status": "downloaded"
+    },
+    {
+      "id": 8033,
+      "title": "carousel-img1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/carousel-img1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\carousel-img1-1.jpg",
+      "bytes": 84237,
+      "status": "downloaded"
+    },
+    {
+      "id": 8034,
+      "title": "carousel-img2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/carousel-img2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\carousel-img2-1.jpg",
+      "bytes": 60665,
+      "status": "downloaded"
+    },
+    {
+      "id": 8035,
+      "title": "carousel-img3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/carousel-img3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\carousel-img3-1.jpg",
+      "bytes": 75714,
+      "status": "downloaded"
+    },
+    {
+      "id": 8043,
+      "title": "section-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg4-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg4-2.jpg",
+      "bytes": 87384,
+      "status": "downloaded"
+    },
+    {
+      "id": 8046,
+      "title": "section-about",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-about.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-about.png",
+      "bytes": 22053,
+      "status": "downloaded"
+    },
+    {
+      "id": 8056,
+      "title": "transparent-img",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/transparent-img.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\transparent-img.png",
+      "bytes": 400305,
+      "status": "downloaded"
+    },
+    {
+      "id": 8060,
+      "title": "iconbox-small-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-small-bg1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-small-bg1.jpg",
+      "bytes": 9441,
+      "status": "downloaded"
+    },
+    {
+      "id": 8061,
+      "title": "iconbox-small-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-small-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-small-bg2.jpg",
+      "bytes": 10425,
+      "status": "downloaded"
+    },
+    {
+      "id": 8062,
+      "title": "iconbox-small-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-small-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-small-bg3.jpg",
+      "bytes": 8732,
+      "status": "downloaded"
+    },
+    {
+      "id": 8072,
+      "title": "section-bg1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg1-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg1-2.png",
+      "bytes": 12299,
+      "status": "downloaded"
+    },
+    {
+      "id": 8073,
+      "title": "section-bg2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2-2.png",
+      "bytes": 239426,
+      "status": "downloaded"
+    },
+    {
+      "id": 8085,
+      "title": "testimonial1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial1-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial1-2.jpg",
+      "bytes": 4582,
+      "status": "downloaded"
+    },
+    {
+      "id": 8093,
+      "title": "testimonial2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial2.jpg",
+      "bytes": 4740,
+      "status": "downloaded"
+    },
+    {
+      "id": 8095,
+      "title": "testimonial3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial3.jpg",
+      "bytes": 4699,
+      "status": "downloaded"
+    },
+    {
+      "id": 8098,
+      "title": "section-bg6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg6.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg6.jpg",
+      "bytes": 121091,
+      "status": "downloaded"
+    },
+    {
+      "id": 8107,
+      "title": "section-bg7",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg7.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg7.jpg",
+      "bytes": 49998,
+      "status": "downloaded"
+    },
+    {
+      "id": 8111,
+      "title": "client1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/client1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\client1.png",
+      "bytes": 4193,
+      "status": "downloaded"
+    },
+    {
+      "id": 8112,
+      "title": "client2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/client2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\client2.png",
+      "bytes": 4102,
+      "status": "downloaded"
+    },
+    {
+      "id": 8113,
+      "title": "client3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/client3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\client3.png",
+      "bytes": 4411,
+      "status": "downloaded"
+    },
+    {
+      "id": 8114,
+      "title": "client4",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/client4.png",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\client4.png",
+      "bytes": 4579,
+      "status": "downloaded"
+    },
+    {
+      "id": 8115,
+      "title": "client5",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/client5.png",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\client5.png",
+      "bytes": 5673,
+      "status": "downloaded"
+    },
+    {
+      "id": 8116,
+      "title": "client6",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/client6.png",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\client6.png",
+      "bytes": 3720,
+      "status": "downloaded"
+    },
+    {
+      "id": 8122,
+      "title": "section-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2-1.jpg",
+      "bytes": 80529,
+      "status": "downloaded"
+    },
+    {
+      "id": 8134,
+      "title": "iconbox-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg1-1.jpg",
+      "bytes": 6764,
+      "status": "downloaded"
+    },
+    {
+      "id": 8136,
+      "title": "iconbox-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg2-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg2-2.jpg",
+      "bytes": 9843,
+      "status": "downloaded"
+    },
+    {
+      "id": 8137,
+      "title": "iconbox-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg3-1.jpg",
+      "bytes": 8507,
+      "status": "downloaded"
+    },
+    {
+      "id": 8138,
+      "title": "iconbox-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg4-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg4-1.jpg",
+      "bytes": 5619,
+      "status": "downloaded"
+    },
+    {
+      "id": 8146,
+      "title": "bg-cog",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/bg-cog.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\bg-cog.png",
+      "bytes": 5027,
+      "status": "downloaded"
+    },
+    {
+      "id": 8149,
+      "title": "logo1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/logo1-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\logo1-1.png",
+      "bytes": 10387,
+      "status": "downloaded"
+    },
+    {
+      "id": 8150,
+      "title": "logo2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/logo2-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\logo2-1.png",
+      "bytes": 9030,
+      "status": "downloaded"
+    },
+    {
+      "id": 8151,
+      "title": "logo3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/logo3-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\logo3-1.png",
+      "bytes": 6677,
+      "status": "downloaded"
+    },
+    {
+      "id": 8199,
+      "title": "img1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/img1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\img1-1.jpg",
+      "bytes": 101153,
+      "status": "downloaded"
+    },
+    {
+      "id": 8207,
+      "title": "iconbox-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg1-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg1-2.jpg",
+      "bytes": 10680,
+      "status": "downloaded"
+    },
+    {
+      "id": 8216,
+      "title": "iconbox-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg2-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg2-3.jpg",
+      "bytes": 10415,
+      "status": "downloaded"
+    },
+    {
+      "id": 8217,
+      "title": "iconbox-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg3-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg3-2.jpg",
+      "bytes": 10575,
+      "status": "downloaded"
+    },
+    {
+      "id": 8218,
+      "title": "iconbox-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg4-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg4-2.jpg",
+      "bytes": 12703,
+      "status": "downloaded"
+    },
+    {
+      "id": 8219,
+      "title": "iconbox-bg5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg5.jpg",
+      "bytes": 10856,
+      "status": "downloaded"
+    },
+    {
+      "id": 8220,
+      "title": "iconbox-bg6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/iconbox-bg6.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\iconbox-bg6.jpg",
+      "bytes": 12694,
+      "status": "downloaded"
+    },
+    {
+      "id": 8224,
+      "title": "history-img1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/history-img1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\history-img1.jpg",
+      "bytes": 29509,
+      "status": "downloaded"
+    },
+    {
+      "id": 8226,
+      "title": "history-img2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/history-img2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\history-img2.jpg",
+      "bytes": 15876,
+      "status": "downloaded"
+    },
+    {
+      "id": 8227,
+      "title": "history-img3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/history-img3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\history-img3.jpg",
+      "bytes": 24292,
+      "status": "downloaded"
+    },
+    {
+      "id": 8243,
+      "title": "history-img4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/history-img4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\history-img4.jpg",
+      "bytes": 31336,
+      "status": "downloaded"
+    },
+    {
+      "id": 8244,
+      "title": "history-img5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/history-img5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\history-img5.jpg",
+      "bytes": 20459,
+      "status": "downloaded"
+    },
+    {
+      "id": 8274,
+      "title": "slider-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-2.jpg",
+      "bytes": 164633,
+      "status": "downloaded"
+    },
+    {
+      "id": 8282,
+      "title": "section-bg6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg6-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg6-1.jpg",
+      "bytes": 51290,
+      "status": "downloaded"
+    },
+    {
+      "id": 8287,
+      "title": "client1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/03/client1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\03\\client1.png",
+      "bytes": 8635,
+      "status": "downloaded"
+    },
+    {
+      "id": 8288,
+      "title": "client2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/03/client2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\03\\client2.png",
+      "bytes": 8510,
+      "status": "downloaded"
+    },
+    {
+      "id": 8289,
+      "title": "client3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/03/client3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\03\\client3.png",
+      "bytes": 10919,
+      "status": "downloaded"
+    },
+    {
+      "id": 8368,
+      "title": "service2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service2-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service2-2.jpg",
+      "bytes": 56411,
+      "status": "downloaded"
+    },
+    {
+      "id": 8369,
+      "title": "service3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service3-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service3-2.jpg",
+      "bytes": 51502,
+      "status": "downloaded"
+    },
+    {
+      "id": 8370,
+      "title": "service4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service4.jpg",
+      "bytes": 44552,
+      "status": "downloaded"
+    },
+    {
+      "id": 8371,
+      "title": "service5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service5.jpg",
+      "bytes": 40481,
+      "status": "downloaded"
+    },
+    {
+      "id": 8372,
+      "title": "service6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service6.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service6.jpg",
+      "bytes": 59775,
+      "status": "downloaded"
+    },
+    {
+      "id": 8384,
+      "title": "worker-png",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/worker-png.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\worker-png.png",
+      "bytes": 325547,
+      "status": "downloaded"
+    },
+    {
+      "id": 8390,
+      "title": "section-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg3.jpg",
+      "bytes": 62090,
+      "status": "downloaded"
+    },
+    {
+      "id": 8406,
+      "title": "testimonial2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial2-1.jpg",
+      "bytes": 3944,
+      "status": "downloaded"
+    },
+    {
+      "id": 8407,
+      "title": "testimonial3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial3-1.jpg",
+      "bytes": 4259,
+      "status": "downloaded"
+    },
+    {
+      "id": 8408,
+      "title": "testimonial4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial4.jpg",
+      "bytes": 4451,
+      "status": "downloaded"
+    },
+    {
+      "id": 8409,
+      "title": "testimonial5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/testimonial5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\testimonial5.jpg",
+      "bytes": 4033,
+      "status": "downloaded"
+    },
+    {
+      "id": 8443,
+      "title": "section-img",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-img.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-img.png",
+      "bytes": 5647,
+      "status": "downloaded"
+    },
+    {
+      "id": 8448,
+      "title": "slider-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-3.jpg",
+      "bytes": 166732,
+      "status": "downloaded"
+    },
+    {
+      "id": 8450,
+      "title": "service1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service1-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service1-3.jpg",
+      "bytes": 22198,
+      "status": "downloaded"
+    },
+    {
+      "id": 8451,
+      "title": "service2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service2-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service2-3.jpg",
+      "bytes": 22414,
+      "status": "downloaded"
+    },
+    {
+      "id": 8452,
+      "title": "service3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service3-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service3-3.jpg",
+      "bytes": 42140,
+      "status": "downloaded"
+    },
+    {
+      "id": 8470,
+      "title": "service1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service1-4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service1-4.jpg",
+      "bytes": 55816,
+      "status": "downloaded"
+    },
+    {
+      "id": 8471,
+      "title": "service2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service2-4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service2-4.jpg",
+      "bytes": 48011,
+      "status": "downloaded"
+    },
+    {
+      "id": 8472,
+      "title": "service3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/service3-4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\service3-4.jpg",
+      "bytes": 66570,
+      "status": "downloaded"
+    },
+    {
+      "id": 8478,
+      "title": "factory-img1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/factory-img1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\factory-img1.jpg",
+      "bytes": 80236,
+      "status": "downloaded"
+    },
+    {
+      "id": 8482,
+      "title": "section-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2-2.jpg",
+      "bytes": 135654,
+      "status": "downloaded"
+    },
+    {
+      "id": 8483,
+      "title": "section-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg4-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg4-3.jpg",
+      "bytes": 83879,
+      "status": "downloaded"
+    },
+    {
+      "id": 8485,
+      "title": "factory-img2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/factory-img2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\factory-img2.jpg",
+      "bytes": 159382,
+      "status": "downloaded"
+    },
+    {
+      "id": 8487,
+      "title": "section-bg6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg6-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg6-2.jpg",
+      "bytes": 85766,
+      "status": "downloaded"
+    },
+    {
+      "id": 8529,
+      "title": "section-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2-3.jpg",
+      "bytes": 49709,
+      "status": "downloaded"
+    },
+    {
+      "id": 8555,
+      "title": "video-img",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/video-img.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\video-img.jpg",
+      "bytes": 28228,
+      "status": "downloaded"
+    },
+    {
+      "id": 8572,
+      "title": "product6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/product6.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\product6.jpg",
+      "bytes": 51426,
+      "status": "downloaded"
+    },
+    {
+      "id": 8573,
+      "title": "product5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/product5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\product5.jpg",
+      "bytes": 31861,
+      "status": "downloaded"
+    },
+    {
+      "id": 8575,
+      "title": "product1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/product1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\product1.jpg",
+      "bytes": 58497,
+      "status": "downloaded"
+    },
+    {
+      "id": 8576,
+      "title": "product2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/product2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\product2.jpg",
+      "bytes": 52948,
+      "status": "downloaded"
+    },
+    {
+      "id": 8577,
+      "title": "product3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/product3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\product3.jpg",
+      "bytes": 54315,
+      "status": "downloaded"
+    },
+    {
+      "id": 8578,
+      "title": "product4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/product4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\product4.jpg",
+      "bytes": 34106,
+      "status": "downloaded"
+    },
+    {
+      "id": 8581,
+      "title": "blog1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/blog1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\blog1.jpg",
+      "bytes": 45422,
+      "status": "downloaded"
+    },
+    {
+      "id": 8582,
+      "title": "blog2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/blog2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\blog2-1.jpg",
+      "bytes": 50710,
+      "status": "downloaded"
+    },
+    {
+      "id": 8583,
+      "title": "blog3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2017/10/blog3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2017\\10\\blog3-1.jpg",
+      "bytes": 39563,
+      "status": "downloaded"
+    },
+    {
+      "id": 8585,
+      "title": "blog1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/blog1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\blog1.jpg",
+      "bytes": 31654,
+      "status": "downloaded"
+    },
+    {
+      "id": 8586,
+      "title": "blog2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/blog2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\blog2.jpg",
+      "bytes": 43565,
+      "status": "downloaded"
+    },
+    {
+      "id": 8587,
+      "title": "blog3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/blog3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\blog3.jpg",
+      "bytes": 65418,
+      "status": "downloaded"
+    },
+    {
+      "id": 8588,
+      "title": "blog1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/blog1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\blog1-1.jpg",
+      "bytes": 70643,
+      "status": "downloaded"
+    },
+    {
+      "id": 8589,
+      "title": "blog2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/blog2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\blog2-1.jpg",
+      "bytes": 43127,
+      "status": "downloaded"
+    },
+    {
+      "id": 8590,
+      "title": "blog3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/01/blog3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\01\\blog3-1.jpg",
+      "bytes": 46446,
+      "status": "downloaded"
+    },
+    {
+      "id": 8591,
+      "title": "blog1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog1-1.jpg",
+      "bytes": 36854,
+      "status": "downloaded"
+    },
+    {
+      "id": 8592,
+      "title": "blog2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog2.jpg",
+      "bytes": 36381,
+      "status": "downloaded"
+    },
+    {
+      "id": 8593,
+      "title": "blog3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog3.jpg",
+      "bytes": 31186,
+      "status": "downloaded"
+    },
+    {
+      "id": 8603,
+      "title": "blog1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog1-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog1-2.jpg",
+      "bytes": 78633,
+      "status": "downloaded"
+    },
+    {
+      "id": 8604,
+      "title": "blog2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog2-1.jpg",
+      "bytes": 55119,
+      "status": "downloaded"
+    },
+    {
+      "id": 8605,
+      "title": "blog3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog3-1.jpg",
+      "bytes": 90371,
+      "status": "downloaded"
+    },
+    {
+      "id": 8606,
+      "title": "blog4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog4.jpg",
+      "bytes": 65139,
+      "status": "downloaded"
+    },
+    {
+      "id": 8607,
+      "title": "blog5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog5.jpg",
+      "bytes": 61239,
+      "status": "downloaded"
+    },
+    {
+      "id": 8608,
+      "title": "blog6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog6.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog6.jpg",
+      "bytes": 54092,
+      "status": "downloaded"
+    },
+    {
+      "id": 8609,
+      "title": "blog7",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog7.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog7.jpg",
+      "bytes": 127605,
+      "status": "downloaded"
+    },
+    {
+      "id": 8610,
+      "title": "blog8",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog8.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog8.jpg",
+      "bytes": 95316,
+      "status": "downloaded"
+    },
+    {
+      "id": 8611,
+      "title": "blog9",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog9.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog9.jpg",
+      "bytes": 102490,
+      "status": "downloaded"
+    },
+    {
+      "id": 8612,
+      "title": "blog10",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog10.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog10.jpg",
+      "bytes": 57275,
+      "status": "downloaded"
+    },
+    {
+      "id": 8613,
+      "title": "blog11",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog11.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog11.jpg",
+      "bytes": 90271,
+      "status": "downloaded"
+    },
+    {
+      "id": 8614,
+      "title": "blog12",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog12.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog12.jpg",
+      "bytes": 136940,
+      "status": "downloaded"
+    },
+    {
+      "id": 8615,
+      "title": "blog13",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog13.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog13.jpg",
+      "bytes": 100071,
+      "status": "downloaded"
+    },
+    {
+      "id": 8616,
+      "title": "blog14",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog14.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog14.jpg",
+      "bytes": 88908,
+      "status": "downloaded"
+    },
+    {
+      "id": 8617,
+      "title": "blog15",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog15.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog15.jpg",
+      "bytes": 59494,
+      "status": "downloaded"
+    },
+    {
+      "id": 8629,
+      "title": "single-blog",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/single-blog.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\single-blog.jpg",
+      "bytes": 107727,
+      "status": "downloaded"
+    },
+    {
+      "id": 8638,
+      "title": "section-bg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg.jpg",
+      "bytes": 89261,
+      "status": "downloaded"
+    },
+    {
+      "id": 8734,
+      "title": "slider-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-4.jpg",
+      "bytes": 137465,
+      "status": "downloaded"
+    },
+    {
+      "id": 8740,
+      "title": "slider-bg.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg-2.jpg",
+      "bytes": 118494,
+      "status": "downloaded"
+    },
+    {
+      "id": 8746,
+      "title": "slider-bg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg-2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg-2-1.jpg",
+      "bytes": 135719,
+      "status": "downloaded"
+    },
+    {
+      "id": 8747,
+      "title": "slider-line",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-line.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-line.png",
+      "bytes": 2593,
+      "status": "downloaded"
+    },
+    {
+      "id": 8750,
+      "title": "slider-line",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-line-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-line-1.png",
+      "bytes": 1971,
+      "status": "downloaded"
+    },
+    {
+      "id": 8753,
+      "title": "slider-bg1-4.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-4-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-4-1.jpg",
+      "bytes": 137465,
+      "status": "downloaded"
+    },
+    {
+      "id": 8754,
+      "title": "slider-bg-1.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg-1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg-1-1.jpg",
+      "bytes": 131541,
+      "status": "downloaded"
+    },
+    {
+      "id": 8755,
+      "title": "slider-bg1-1.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-1-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-1-1.jpg",
+      "bytes": 203244,
+      "status": "downloaded"
+    },
+    {
+      "id": 8756,
+      "title": "slider-bg-2.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg-2-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg-2-2.jpg",
+      "bytes": 135719,
+      "status": "downloaded"
+    },
+    {
+      "id": 8757,
+      "title": "slider-line.png",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-line-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-line-2.png",
+      "bytes": 2593,
+      "status": "downloaded"
+    },
+    {
+      "id": 8758,
+      "title": "slider-bg1-2.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-2-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-2-1.jpg",
+      "bytes": 164633,
+      "status": "downloaded"
+    },
+    {
+      "id": 8759,
+      "title": "slider-line-1.png",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-line-1-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-line-1-1.png",
+      "bytes": 1971,
+      "status": "downloaded"
+    },
+    {
+      "id": 8760,
+      "title": "slider-bg1.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-5.jpg",
+      "bytes": 171180,
+      "status": "downloaded"
+    },
+    {
+      "id": 8761,
+      "title": "slider-bg1-3.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg1-3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg1-3-1.jpg",
+      "bytes": 166732,
+      "status": "downloaded"
+    },
+    {
+      "id": 8762,
+      "title": "slider-bg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/slider-bg-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\slider-bg-3.jpg",
+      "bytes": 170703,
+      "status": "downloaded"
+    },
+    {
+      "id": 8851,
+      "title": "title-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/title-bg1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\title-bg1.jpg",
+      "bytes": 73694,
+      "status": "downloaded"
+    },
+    {
+      "id": 8855,
+      "title": "about-main",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/about-main-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\about-main-1.png",
+      "bytes": 527420,
+      "status": "downloaded"
+    },
+    {
+      "id": 8860,
+      "title": "main-bg-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/main-bg-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\main-bg-1.png",
+      "bytes": 17427,
+      "status": "downloaded"
+    },
+    {
+      "id": 8865,
+      "title": "main-bg-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/main-bg-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\main-bg-2.png",
+      "bytes": 16153,
+      "status": "downloaded"
+    },
+    {
+      "id": 8868,
+      "title": "main-bg-3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/main-bg-3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\main-bg-3.png",
+      "bytes": 17359,
+      "status": "downloaded"
+    },
+    {
+      "id": 8878,
+      "title": "footer-bg-full",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/footer-bg-full.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\footer-bg-full.jpg",
+      "bytes": 109337,
+      "status": "downloaded"
+    },
+    {
+      "id": 8885,
+      "title": "archi-bg-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/archi-bg-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\archi-bg-2.png",
+      "bytes": 17770,
+      "status": "downloaded"
+    },
+    {
+      "id": 8887,
+      "title": "archi-bg-3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/archi-bg-3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\archi-bg-3.png",
+      "bytes": 17513,
+      "status": "downloaded"
+    },
+    {
+      "id": 8893,
+      "title": "title-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/title-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\title-bg3.jpg",
+      "bytes": 72659,
+      "status": "downloaded"
+    },
+    {
+      "id": 8897,
+      "title": "com-bg-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/com-bg-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\com-bg-2.png",
+      "bytes": 18488,
+      "status": "downloaded"
+    },
+    {
+      "id": 8899,
+      "title": "com-bg-3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/com-bg-3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\com-bg-3.png",
+      "bytes": 18124,
+      "status": "downloaded"
+    },
+    {
+      "id": 8902,
+      "title": "cons-bg-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/cons-bg-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\cons-bg-1.png",
+      "bytes": 16825,
+      "status": "downloaded"
+    },
+    {
+      "id": 8904,
+      "title": "cons2-bg-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/cons2-bg-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\cons2-bg-1.png",
+      "bytes": 16497,
+      "status": "downloaded"
+    },
+    {
+      "id": 8906,
+      "title": "cons2-bg-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/cons2-bg-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\cons2-bg-2.png",
+      "bytes": 18241,
+      "status": "downloaded"
+    },
+    {
+      "id": 8914,
+      "title": "cons2-bg-3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/cons2-bg-3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\cons2-bg-3.png",
+      "bytes": 13318,
+      "status": "downloaded"
+    },
+    {
+      "id": 8916,
+      "title": "cons2-bg-4",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/cons2-bg-4.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\cons2-bg-4.png",
+      "bytes": 17179,
+      "status": "downloaded"
+    },
+    {
+      "id": 8918,
+      "title": "cons2-bg-5",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/cons2-bg-5.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\cons2-bg-5.png",
+      "bytes": 16594,
+      "status": "downloaded"
+    },
+    {
+      "id": 8920,
+      "title": "fac-bg-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/fac-bg-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\fac-bg-1.png",
+      "bytes": 19188,
+      "status": "downloaded"
+    },
+    {
+      "id": 8922,
+      "title": "fac-bg-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/fac-bg-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\fac-bg-2.png",
+      "bytes": 15365,
+      "status": "downloaded"
+    },
+    {
+      "id": 8924,
+      "title": "fac-bg-3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/fac-bg-3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\fac-bg-3.png",
+      "bytes": 16071,
+      "status": "downloaded"
+    },
+    {
+      "id": 8926,
+      "title": "handy-bg-1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/handy-bg-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\handy-bg-1.jpg",
+      "bytes": 49385,
+      "status": "downloaded"
+    },
+    {
+      "id": 8927,
+      "title": "handy-bg-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/handy-bg-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\handy-bg-2.png",
+      "bytes": 17119,
+      "status": "downloaded"
+    },
+    {
+      "id": 8929,
+      "title": "handy-bg-3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/handy-bg-3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\handy-bg-3.png",
+      "bytes": 15558,
+      "status": "downloaded"
+    },
+    {
+      "id": 8932,
+      "title": "handy-bg-4",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/handy-bg-4.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\handy-bg-4.png",
+      "bytes": 18029,
+      "status": "downloaded"
+    },
+    {
+      "id": 8935,
+      "title": "inter-bg-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/inter-bg-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\inter-bg-1.png",
+      "bytes": 17136,
+      "status": "downloaded"
+    },
+    {
+      "id": 8937,
+      "title": "about-inter",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/about-inter.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\about-inter.png",
+      "bytes": 335398,
+      "status": "downloaded"
+    },
+    {
+      "id": 8942,
+      "title": "inter-bg-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/inter-bg-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\inter-bg-2.png",
+      "bytes": 17621,
+      "status": "downloaded"
+    },
+    {
+      "id": 8948,
+      "title": "section-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg3-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg3-1.jpg",
+      "bytes": 58889,
+      "status": "downloaded"
+    },
+    {
+      "id": 8963,
+      "title": "title-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/title-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\title-bg2.jpg",
+      "bytes": 68866,
+      "status": "downloaded"
+    },
+    {
+      "id": 8966,
+      "title": "img1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/img1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\img1.png",
+      "bytes": 433262,
+      "status": "downloaded"
+    },
+    {
+      "id": 8969,
+      "title": "section-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg3-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg3-2.jpg",
+      "bytes": 82670,
+      "status": "downloaded"
+    },
+    {
+      "id": 8970,
+      "title": "section-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/section-bg2-4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\section-bg2-4.jpg",
+      "bytes": 66233,
+      "status": "downloaded"
+    },
+    {
+      "id": 8990,
+      "title": "title-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/title-bg4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\title-bg4.jpg",
+      "bytes": 93596,
+      "status": "downloaded"
+    },
+    {
+      "id": 8992,
+      "title": "alt-project1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/alt-project1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\alt-project1.jpg",
+      "bytes": 83533,
+      "status": "downloaded"
+    },
+    {
+      "id": 9009,
+      "title": "alt-project2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/alt-project2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\alt-project2.jpg",
+      "bytes": 50891,
+      "status": "downloaded"
+    },
+    {
+      "id": 9010,
+      "title": "alt-project3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/alt-project3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\alt-project3.jpg",
+      "bytes": 42229,
+      "status": "downloaded"
+    },
+    {
+      "id": 9011,
+      "title": "alt-project4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/alt-project4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\alt-project4.jpg",
+      "bytes": 54845,
+      "status": "downloaded"
+    },
+    {
+      "id": 9012,
+      "title": "alt-project5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/alt-project5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\alt-project5.jpg",
+      "bytes": 72821,
+      "status": "downloaded"
+    },
+    {
+      "id": 9013,
+      "title": "alt-project6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/alt-project6.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\alt-project6.jpg",
+      "bytes": 47748,
+      "status": "downloaded"
+    },
+    {
+      "id": 9023,
+      "title": "blog16",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog16.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog16.jpg",
+      "bytes": 51333,
+      "status": "downloaded"
+    },
+    {
+      "id": 9024,
+      "title": "blog17",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog17.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog17.jpg",
+      "bytes": 54062,
+      "status": "downloaded"
+    },
+    {
+      "id": 9025,
+      "title": "blog18",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog18.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog18.jpg",
+      "bytes": 26856,
+      "status": "downloaded"
+    },
+    {
+      "id": 9026,
+      "title": "blog1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog1-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog1-3.jpg",
+      "bytes": 32646,
+      "status": "downloaded"
+    },
+    {
+      "id": 9027,
+      "title": "blog2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog2-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog2-2.jpg",
+      "bytes": 40552,
+      "status": "downloaded"
+    },
+    {
+      "id": 9028,
+      "title": "blog3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/blog3-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\blog3-2.jpg",
+      "bytes": 41681,
+      "status": "downloaded"
+    },
+    {
+      "id": 9036,
+      "title": "handy-bg-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/handy-bg-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\05\\handy-bg-1.png",
+      "bytes": 25347,
+      "status": "downloaded"
+    },
+    {
+      "id": 9078,
+      "title": "title-bg7",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/title-bg7.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\title-bg7.jpg",
+      "bytes": 109827,
+      "status": "downloaded"
+    },
+    {
+      "id": 9082,
+      "title": "favicon",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/favicon.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\favicon.png",
+      "bytes": 20352,
+      "status": "downloaded"
+    },
+    {
+      "id": 9095,
+      "title": "slider-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-bg2.jpg",
+      "bytes": 122875,
+      "status": "downloaded"
+    },
+    {
+      "id": 9096,
+      "title": "slider-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-bg3.jpg",
+      "bytes": 97268,
+      "status": "downloaded"
+    },
+    {
+      "id": 9097,
+      "title": "slider-construct-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-construct-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-construct-bg3.jpg",
+      "bytes": 244843,
+      "status": "downloaded"
+    },
+    {
+      "id": 9098,
+      "title": "slider-construct-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-construct-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-construct-bg2.jpg",
+      "bytes": 161908,
+      "status": "downloaded"
+    },
+    {
+      "id": 9099,
+      "title": "slider-factory-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-factory-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-factory-bg2.jpg",
+      "bytes": 138480,
+      "status": "downloaded"
+    },
+    {
+      "id": 9100,
+      "title": "slider-factory-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-factory-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-factory-bg3.jpg",
+      "bytes": 77845,
+      "status": "downloaded"
+    },
+    {
+      "id": 9103,
+      "title": "slider-handy-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-handy-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-handy-bg2.jpg",
+      "bytes": 189092,
+      "status": "downloaded"
+    },
+    {
+      "id": 9104,
+      "title": "slider-handy-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-handy-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-handy-bg3.jpg",
+      "bytes": 159188,
+      "status": "downloaded"
+    },
+    {
+      "id": 9106,
+      "title": "slider-interior-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-interior-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-interior-bg3.jpg",
+      "bytes": 112762,
+      "status": "downloaded"
+    },
+    {
+      "id": 9107,
+      "title": "slider-interior-bg2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-interior-bg2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-interior-bg2.jpg",
+      "bytes": 146187,
+      "status": "downloaded"
+    },
+    {
+      "id": 9115,
+      "title": "slider-bg.jpg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/slider-bg.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\slider-bg.jpg",
+      "bytes": 126664,
+      "status": "downloaded"
+    },
+    {
+      "id": 9116,
+      "title": "demo1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo1.jpg",
+      "bytes": 104659,
+      "status": "downloaded"
+    },
+    {
+      "id": 9117,
+      "title": "demo2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo2.jpg",
+      "bytes": 106794,
+      "status": "downloaded"
+    },
+    {
+      "id": 9118,
+      "title": "demo3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo3.jpg",
+      "bytes": 108415,
+      "status": "downloaded"
+    },
+    {
+      "id": 9119,
+      "title": "demo4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo4.jpg",
+      "bytes": 103435,
+      "status": "downloaded"
+    },
+    {
+      "id": 9120,
+      "title": "demo5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo5.jpg",
+      "bytes": 94134,
+      "status": "downloaded"
+    },
+    {
+      "id": 9121,
+      "title": "demo6",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo6.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo6.jpg",
+      "bytes": 88412,
+      "status": "downloaded"
+    },
+    {
+      "id": 9122,
+      "title": "demo7",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo7.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo7.jpg",
+      "bytes": 91513,
+      "status": "downloaded"
+    },
+    {
+      "id": 9123,
+      "title": "demo8",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo8.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo8.jpg",
+      "bytes": 98747,
+      "status": "downloaded"
+    },
+    {
+      "id": 9124,
+      "title": "demo9",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/demo9.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\demo9.jpg",
+      "bytes": 89327,
+      "status": "downloaded"
+    },
+    {
+      "id": 9131,
+      "title": "section-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/section-bg4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\section-bg4.jpg",
+      "bytes": 44111,
+      "status": "downloaded"
+    },
+    {
+      "id": 9142,
+      "title": "land-bg1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/land-bg1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\land-bg1.jpg",
+      "bytes": 54911,
+      "status": "downloaded"
+    },
+    {
+      "id": 9190,
+      "title": "elite",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/06/elite.png",
+      "local_path": ".\\site-source-archive\\uploads\\2019\\06\\elite.png",
+      "bytes": 25293,
+      "status": "downloaded"
+    },
+    {
+      "id": 9247,
+      "title": "logo-dark@2x",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/logo-dark@2x.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\logo-dark@2x.png",
+      "bytes": 5467,
+      "status": "downloaded"
+    },
+    {
+      "id": 9248,
+      "title": "logo-white@2x",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/logo-white@2x.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\logo-white@2x.png",
+      "bytes": 5476,
+      "status": "downloaded"
+    },
+    {
+      "id": 9249,
+      "title": "title-bg5",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/title-bg5.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\title-bg5.jpg",
+      "bytes": 154914,
+      "status": "downloaded"
+    },
+    {
+      "id": 9250,
+      "title": "logo-white@2x-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/logo-white@2x-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\logo-white@2x-1.png",
+      "bytes": 5476,
+      "status": "downloaded"
+    },
+    {
+      "id": 9251,
+      "title": "logo-dark@2x-1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/logo-dark@2x-1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\logo-dark@2x-1.png",
+      "bytes": 5467,
+      "status": "downloaded"
+    },
+    {
+      "id": 9252,
+      "title": "logo-dark@2x-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/logo-dark@2x-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\logo-dark@2x-2.png",
+      "bytes": 5467,
+      "status": "downloaded"
+    },
+    {
+      "id": 9253,
+      "title": "logo-white@2x-2",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/logo-white@2x-2.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\logo-white@2x-2.png",
+      "bytes": 5476,
+      "status": "downloaded"
+    },
+    {
+      "id": 9254,
+      "title": "section-bg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/section-bg.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\section-bg.jpg",
+      "bytes": 89261,
+      "status": "downloaded"
+    },
+    {
+      "id": 9255,
+      "title": "logo-white@2x-3",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/logo-white@2x-3.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\logo-white@2x-3.png",
+      "bytes": 5476,
+      "status": "downloaded"
+    },
+    {
+      "id": 9256,
+      "title": "title-bg7",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/title-bg7.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\title-bg7.jpg",
+      "bytes": 109827,
+      "status": "downloaded"
+    },
+    {
+      "id": 9257,
+      "title": "favicon",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/favicon.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\favicon.png",
+      "bytes": 20352,
+      "status": "downloaded"
+    },
+    {
+      "id": 9260,
+      "title": "slide-1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/slide-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\slide-1.jpg",
+      "bytes": 600100,
+      "status": "downloaded"
+    },
+    {
+      "id": 9261,
+      "title": "slide-2",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/slide-2.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\slide-2.jpg",
+      "bytes": 747951,
+      "status": "downloaded"
+    },
+    {
+      "id": 9262,
+      "title": "slide-3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/slide-3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\slide-3.jpg",
+      "bytes": 381174,
+      "status": "downloaded"
+    },
+    {
+      "id": 9265,
+      "title": "jbcc-logo",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/jbcc-logo.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\jbcc-logo.png",
+      "bytes": 30210,
+      "status": "downloaded"
+    },
+    {
+      "id": 9267,
+      "title": "jbcc-logo1",
+      "mime_type": "image/png",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/jbcc-logo1.png",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\jbcc-logo1.png",
+      "bytes": 13209,
+      "status": "downloaded"
+    },
+    {
+      "id": 9390,
+      "title": "title-bg3",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/title-bg3.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\title-bg3.jpg",
+      "bytes": 40778,
+      "status": "downloaded"
+    },
+    {
+      "id": 9391,
+      "title": "title-bg4",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/title-bg4.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\title-bg4.jpg",
+      "bytes": 34192,
+      "status": "downloaded"
+    },
+    {
+      "id": 9392,
+      "title": "title-bg1s",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/title-bg1s.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\title-bg1s.jpg",
+      "bytes": 46992,
+      "status": "downloaded"
+    },
+    {
+      "id": 9393,
+      "title": "title-bg1s1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/title-bg1s1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\title-bg1s1.jpg",
+      "bytes": 111067,
+      "status": "downloaded"
+    },
+    {
+      "id": 9417,
+      "title": "home-pic",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/home-pic.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\home-pic.jpg",
+      "bytes": 136222,
+      "status": "downloaded"
+    },
+    {
+      "id": 9422,
+      "title": "aboutus-pic11",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/aboutus-pic11.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\aboutus-pic11.jpg",
+      "bytes": 92575,
+      "status": "downloaded"
+    },
+    {
+      "id": 9537,
+      "title": "Full video",
+      "mime_type": "video/mp4",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/Full-video.mp4",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\Full-video.mp4",
+      "bytes": 61183157,
+      "status": "downloaded"
+    },
+    {
+      "id": 9538,
+      "title": "Full-video_1.jpeg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/revslider/video-media/Full-video_1.jpeg",
+      "local_path": ".\\site-source-archive\\uploads\\revslider\\video-media\\Full-video_1.jpeg",
+      "bytes": 154118,
+      "status": "downloaded"
+    },
+    {
+      "id": 9550,
+      "title": "IQSK-New",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/IQSK-New.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\IQSK-New.jpg",
+      "bytes": 34924,
+      "status": "downloaded"
+    },
+    {
+      "id": 9552,
+      "title": "Kenya-Federation-of-Master-Builders",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/Kenya-Federation-of-Master-Builders.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\Kenya-Federation-of-Master-Builders.jpg",
+      "bytes": 35051,
+      "status": "downloaded"
+    },
+    {
+      "id": 9575,
+      "title": "aboutus-slide",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/aboutus-slide.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\aboutus-slide.jpg",
+      "bytes": 332924,
+      "status": "downloaded"
+    },
+    {
+      "id": 9576,
+      "title": "slide2-edit",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/slide2-edit.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\slide2-edit.jpg",
+      "bytes": 210620,
+      "status": "downloaded"
+    },
+    {
+      "id": 9577,
+      "title": "slide2-edit-1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/slide2-edit-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\slide2-edit-1.jpg",
+      "bytes": 212085,
+      "status": "downloaded"
+    },
+    {
+      "id": 9578,
+      "title": "aboutus-slide-1",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/aboutus-slide-1.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\aboutus-slide-1.jpg",
+      "bytes": 315917,
+      "status": "downloaded"
+    },
+    {
+      "id": 9579,
+      "title": "slide-edted",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/slide-edted.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\slide-edted.jpg",
+      "bytes": 218121,
+      "status": "downloaded"
+    },
+    {
+      "id": 9612,
+      "title": "article-backg",
+      "mime_type": "image/jpeg",
+      "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/article-backg.jpg",
+      "local_path": ".\\site-source-archive\\uploads\\2022\\06\\article-backg.jpg",
+      "bytes": 28968,
+      "status": "downloaded"
+    }
+  ],
+  "documents": [
+    {
+      "title": "Physical-Planning-Handbook-Draft-2002.pdf",
+      "package_url": "https://jbcc.or.ke/download/physical-planning-handbook-draft-2002/",
+      "download_url": "https://jbcc.or.ke/download/physical-planning-handbook-draft-2002/?wpdmdl=9345&refresh=6ac76f6491fa51791455076",
+      "local_path": ".\\site-source-archive\\documents\\Physical-Planning-Handbook-Draft-2002.pdf",
+      "bytes": 316941,
+      "status": "downloaded"
+    },
+    {
+      "title": "Price-Index-June-2021.pdf",
+      "package_url": "https://jbcc.or.ke/download/price-index-june-2021/",
+      "download_url": "https://jbcc.or.ke/download/price-index-june-2021/?wpdmdl=9348&refresh=6ac76f6b780891791455083",
+      "local_path": ".\\site-source-archive\\documents\\Price-Index-June-2021.pdf",
+      "bytes": 236640,
+      "status": "downloaded"
+    },
+    {
+      "title": "Building Code 2006 (source entry; file unavailable)",
+      "package_url": "https://jbcc.or.ke/download/building-code-2006/",
+      "download_url": "https://jbcc.or.ke/download/building-code-2006/?wpdmdl=9350&refresh=6ac76f717390c1791455089",
+      "local_path": ".\\site-source-archive\\package-pages\\Building-Code-2006.unavailable.html",
+      "bytes": 2965,
+      "status": "package_page_only",
+      "note": "Public download page returned: No file is attached with this package."
+    },
+    {
+      "title": "JBCC-Price-List-2018.pdf",
+      "package_url": "https://jbcc.or.ke/download/jbcc-price-list-2018/",
+      "download_url": "https://jbcc.or.ke/download/jbcc-price-list-2018/?wpdmdl=9582&refresh=6ac76f76743781791455094",
+      "local_path": ".\\site-source-archive\\documents\\JBCC-Price-List-2018.pdf",
+      "bytes": 222504,
+      "status": "downloaded"
+    },
+    {
+      "title": "JBCC-Price-List-2017.pdf",
+      "package_url": "https://jbcc.or.ke/download/jbcc-price-list-2017/",
+      "download_url": "https://jbcc.or.ke/download/jbcc-price-list-2017/?wpdmdl=9584&refresh=6ac76f7b924f01791455099",
+      "local_path": ".\\site-source-archive\\documents\\JBCC-Price-List-2017.pdf",
+      "bytes": 4251895,
+      "status": "downloaded"
+    },
+    {
+      "title": "JBCC-March-2020.pdf",
+      "package_url": "https://jbcc.or.ke/download/jbcc-march-2020/",
+      "download_url": "https://jbcc.or.ke/download/jbcc-march-2020/?wpdmdl=9586&refresh=6ac76f8b7941a1791455115",
+      "local_path": ".\\site-source-archive\\documents\\JBCC-March-2020.pdf",
+      "bytes": 2626975,
+      "status": "downloaded"
+    },
+    {
+      "title": "Final-JBCC-Price-Index-June-2022.pdf",
+      "package_url": "https://jbcc.or.ke/download/final-jbcc-preindex-june-2022/",
+      "download_url": "https://jbcc.or.ke/download/final-jbcc-preindex-june-2022/?wpdmdl=9650&refresh=6ac76f97ac4421791455127",
+      "local_path": ".\\site-source-archive\\documents\\Final-JBCC-Price-Index-June-2022.pdf",
+      "bytes": 197143,
+      "status": "downloaded"
+    },
+    {
+      "title": "Final-Price-Index-March-2022.pdf",
+      "package_url": "https://jbcc.or.ke/download/final-price-index-march-2022/",
+      "download_url": "https://jbcc.or.ke/download/final-price-index-march-2022/?wpdmdl=9652&refresh=6ac76f9c563df1791455132",
+      "local_path": ".\\site-source-archive\\documents\\Final-Price-Index-March-2022.pdf",
+      "bytes": 199725,
+      "status": "downloaded"
+    },
+    {
+      "title": "JBCC Price Index — September 2022 (source entry; file unavailable)",
+      "package_url": "https://jbcc.or.ke/download/final-price-index-september-2022/",
+      "download_url": "https://jbcc.or.ke/download/final-price-index-september-2022/?wpdmdl=9664&refresh=6ac76fa12b06d1791455137",
+      "local_path": ".\\site-source-archive\\package-pages\\Final-Price-Index-September-2022.unavailable.html",
+      "bytes": 3003,
+      "status": "package_page_only",
+      "note": "Public download page returned: File not found."
+    }
+  ],
+  "failures": [
+    {
+      "id": 9655,
+      "url": "https://jbcc.or.ke/wp-content/uploads/revslider/video-media/Full-video_2.jpeg",
+      "error": "Response status code does not indicate success: 404 (Not Found)."
+    }
+  ],
+  "downloaded_media": 275,
+  "valid_pdf_documents": 7,
+  "captured_bytes": 89769169,
+  "archive_notes": [
+    "The public WordPress media endpoint reports 359 records, but unauthenticated pagination exposed 276; 275 files downloaded and media ID 9655 returned 404.",
+    "The nine public WPDM entries yielded seven PDF files. Two entries returned HTML pages stating that the Building Code 2006 package has no attached file and the September 2022 price index file was not found.",
+    "The WordPress REST API post inventory includes large volumes of unrelated betting/casino SEO spam and demo/commerce content. These were not treated as JBCC institutional source copy.",
+    "On 9 October 2026, 17 original-size files referenced by live institutional pages were added from page HTML: eight board portraits and nine constituent-body logos. They are among the media records hidden from the anonymous API. The remaining hidden records are not referenced by the institutional pages checked."
+  ],
+  "supplementary_media": {
+    "retrieved_at": "2026-10-09T00:00:00+03:00",
+    "method": "Original-size files referenced in live institutional page HTML (home, About, constituent-body, member and partner pages) but not exposed by the anonymous media API.",
+    "items": [
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/03/aak_logo.png",
+        "local_path": ".\\site-source-archive\\uploads\\2019\\03\\aak_logo.png",
+        "bytes": 9508,
+        "found_on": "https://jbcc.or.ke/ (partner or homepage HTML)",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/Architect-Muchiri-chairman.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2019\\05\\Architect-Muchiri-chairman.jpg",
+        "bytes": 25336,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/Contractor-Ramesh-Kurji.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2019\\05\\Contractor-Ramesh-Kurji.jpg",
+        "bytes": 15617,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/Dr.Engineer-Siphila-Wanjiku.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2019\\05\\Dr.Engineer-Siphila-Wanjiku.jpg",
+        "bytes": 20975,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/Engineer-Nathaniel-Matalanga.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2019\\05\\Engineer-Nathaniel-Matalanga.jpg",
+        "bytes": 16805,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/Qs-josephat-munyoki.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2019\\05\\Qs-josephat-munyoki.jpg",
+        "bytes": 23426,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2019/05/chartered-surveyor-Keneth-Luusa1.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2019\\05\\chartered-surveyor-Keneth-Luusa1.jpg",
+        "bytes": 22863,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/ACEK-logo1.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\ACEK-logo1.jpg",
+        "bytes": 7379,
+        "found_on": "https://jbcc.or.ke/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/CIArb-logo.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\CIArb-logo.jpg",
+        "bytes": 7417,
+        "found_on": "https://jbcc.or.ke/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/IEK-logo.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\IEK-logo.jpg",
+        "bytes": 4558,
+        "found_on": "https://jbcc.or.ke/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/IQSK-LOGO.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\IQSK-LOGO.jpg",
+        "bytes": 11340,
+        "found_on": "https://jbcc.or.ke/ (partner or homepage HTML)",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/KABCEC-logo.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\KABCEC-logo.jpg",
+        "bytes": 12875,
+        "found_on": "https://jbcc.or.ke/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/KFMB-LOGO.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\KFMB-LOGO.jpg",
+        "bytes": 6733,
+        "found_on": "https://jbcc.or.ke/partner/kfmb/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/KPDA-logo.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\KPDA-logo.jpg",
+        "bytes": 6694,
+        "found_on": "https://jbcc.or.ke/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/Qs-kithinji-Boore.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\Qs-kithinji-Boore.jpg",
+        "bytes": 27007,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/aak_logo1.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\aak_logo1.jpg",
+        "bytes": 8061,
+        "found_on": "https://jbcc.or.ke/",
+        "status": "downloaded"
+      },
+      {
+        "source_url": "https://jbcc.or.ke/wp-content/uploads/2022/06/kariuki.jpg",
+        "local_path": ".\\site-source-archive\\uploads\\2022\\06\\kariuki.jpg",
+        "bytes": 55032,
+        "found_on": "https://jbcc.or.ke/about-us/",
+        "status": "downloaded"
+      }
+    ]
+  }
+}

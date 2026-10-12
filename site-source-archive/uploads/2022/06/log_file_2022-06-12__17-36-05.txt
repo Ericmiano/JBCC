@@ -1,0 +1,75 @@
+
+---Downloaded files---
+The import files for: Demo Import were successfully downloaded!
+Initial max execution time = 30
+Files info:
+Site URL = http://jbcc.jamirogroup.com
+Data file = /home/jamirogr/jbcc.jamirogroup.com/wp-content/uploads/2022/06/demo-content-import-file_2022-06-12__17-36-05.xml
+Widget file = /home/jamirogr/jbcc.jamirogroup.com/wp-content/uploads/2022/06/demo-widgets-import-file_2022-06-12__17-36-05.json
+Customizer file = /home/jamirogr/jbcc.jamirogroup.com/wp-content/uploads/2022/06/demo-customizer-import-file_2022-06-12__17-36-05.dat
+Redux files:
+not defined!
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Sidebar Blog : 
+
+Search - Search - Imported
+Categories - No Title - Imported
+Recent Posts Advanced - Recent Posts - Imported
+Tag Cloud - No Title - Imported
+Text - No Title - Imported
+Mailchimp Sign-Up Form - Newsletter - Imported
+Lastest Tweets - Latest Tweets - Imported
+
+Sidebar Footer 1 : 
+
+Text - No Title - Imported
+Socials - No Title - Imported
+
+Sidebar Footer 2 : 
+
+Links - Useful Links - Imported
+
+Sidebar Footer 3 : 
+
+Information - Contact - Imported
+
+Sidebar Footer 4 : 
+
+Mailchimp Sign-Up Form - Newsletter - Imported
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---ocdi/after_import---
+

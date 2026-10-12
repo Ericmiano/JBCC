@@ -4,6 +4,43 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Self-hosted Poppins (SIL Open Font License, see /fonts/OFL.txt): no third-party font requests. */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/poppins-latin-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/poppins-latin-500.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/poppins-latin-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/poppins-latin-700.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /*
  * Design system definition.
  *
@@ -209,14 +246,6 @@ header :where(a, button):focus-visible {
 .editorial-reveal[data-reveal-delay="2"] { --reveal-delay: 160ms; }
 .editorial-reveal[data-reveal-delay="3"] { --reveal-delay: 240ms; }
 
-.architectural-lines path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 0.16;
-  vector-effect: non-scaling-stroke;
-}
-
-.architectural-lines,
 .image-reveal-trigger {
   contain: layout paint style;
 }
@@ -243,21 +272,6 @@ header :where(a, button):focus-visible {
     transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay), transform 620ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
   }
 
-  .architectural-lines[data-line-drawing="waiting"] path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    will-change: stroke-dashoffset;
-  }
-
-  .architectural-lines[data-line-drawing="visible"] path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 0;
-    transition: stroke-dashoffset 900ms cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .architectural-lines[data-line-drawing="visible"] path:nth-child(2) { transition-delay: 90ms; }
-  .architectural-lines[data-line-drawing="visible"] path:nth-child(3) { transition-delay: 180ms; }
-
   .image-reveal[data-image-reveal="waiting"] {
     clip-path: inset(0 100% 0 0);
     will-change: clip-path;
@@ -276,6 +290,24 @@ header :where(a, button):focus-visible {
   }
 }
 
+/* Long-form policy pages. */
+.legal-prose ul { list-style: disc; padding-left: 1.25rem; }
+.legal-prose li + li { margin-top: 0.5rem; }
+.legal-prose p a, .legal-prose li a { color: var(--color-foreground); text-decoration: underline; text-underline-offset: 4px; }
+.legal-prose strong { color: var(--color-foreground); font-weight: 600; }
+
+/* Homepage hero: crossfading media from the live JBCC slider and a slide timer bar. */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: opacity 900ms ease;
+}
+.hero-progress-running { width: 0; animation-name: hero-progress; animation-timing-function: linear; animation-fill-mode: forwards; }
+@keyframes hero-progress { from { width: 0; } to { width: 100%; } }
+
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -285,7 +317,6 @@ html { scroll-behavior: smooth; }
     scroll-behavior: auto !important;
   }
   .editorial-reveal { opacity: 1 !important; transform: none !important; will-change: auto !important; }
-  .architectural-lines path { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; will-change: auto !important; }
   .image-reveal { clip-path: none !important; transform: none !important; will-change: auto !important; }
   .image-reveal > img { transform: none !important; will-change: auto !important; }
 }
@@ -293,12 +324,10 @@ html { scroll-behavior: smooth; }
 /* Small red labels on navy surfaces use a lighter red so they meet WCAG AA (4.5:1). */
 :where(html) .bg-navy .text-signal, :where(html) .bg-navy.text-signal { color: oklch(0.72 0.17 24) !important; }
 
-/* Windows high contrast: keep control boundaries, active state, and drafting lines visible with system colours. */
+/* Windows high contrast: keep control boundaries and active state visible with system colours. */
 @media (forced-colors: active) {
   button, input, textarea, select, [role="button"] { border: 1px solid ButtonText !important; }
   [aria-pressed="true"], [data-status="active"] { outline: 2px solid Highlight !important; outline-offset: -2px !important; }
-  .architectural-lines path { stroke: CanvasText !important; }
-  .architectural-lines { opacity: 0.6 !important; forced-color-adjust: none; }
   .bg-navy, .bg-muted { border: 1px solid CanvasText; }
   [aria-invalid="true"] { border: 2px solid Mark !important; }
   .resource-icon { border-color: ButtonText; }

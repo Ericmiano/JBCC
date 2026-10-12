@@ -1,20 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { SectionHeading } from "@/components/section-heading";
-import { board, partners } from "@/lib/jbcc-data";
-import muchiri from "@/assets/muchiri-waititu.jpg.asset.json";
-import peter from "@/assets/peter-kariuki.jpg.asset.json";
-import kenneth from "@/assets/kenneth-luusa.jpg.asset.json";
-import nathaniel from "@/assets/nathaniel-matalanga.jpg.asset.json";
-import ramesh from "@/assets/ramesh-vishram.jpg.asset.json";
-import josephat from "@/assets/josephat-munyoki.jpg.asset.json";
-import siphila from "@/assets/siphila-wanjiku.jpg.asset.json";
-import nyagah from "@/assets/nyagah-boore.jpg.asset.json";
-import titleShareImage from "@/assets/jbcc-title-share.jpg.asset.json";
+import { mission, partners, vision } from "@/lib/jbcc-data";
+import { EditorialReveal } from "@/components/editorial-reveal";
 import { getRequestOrigin } from "@/lib/origin.functions";
 import { ImageReveal } from "@/components/image-reveal";
-
-const photos = [muchiri, peter, kenneth, nathaniel, ramesh, josephat, siphila, nyagah];
 
 export const Route = createFileRoute("/about")({
   loader: () => getRequestOrigin(),
@@ -22,33 +12,36 @@ export const Route = createFileRoute("/about")({
     { title: "About JBCC — History, Governance & Constituent Bodies" },
     { name: "description", content: "Founded in 1980, the Joint Building & Construction Council brings together Kenya’s built-environment professional bodies." },
     { property: "og:title", content: "About the Joint Building & Construction Council" },
-    { property: "og:description", content: "History since 1980, board governance and the eight constituent bodies of JBCC." },
+    { property: "og:description", content: "JBCC’s history, sector representation and eight constituent bodies." },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "/about" },
-    { property: "og:image", content: `${loaderData}${titleShareImage.url}` },
+    { property: "og:url", content: `${loaderData}/about` },
+    { property: "og:image", content: `${loaderData}/media/jbcc-hero-group.jpg` },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: "About the Joint Building & Construction Council" },
-    { name: "twitter:description", content: "History since 1980, board governance and the eight constituent bodies of JBCC." },
-    { name: "twitter:image", content: `${loaderData}${titleShareImage.url}` },
-  ], links: [{ rel: "canonical", href: "/about" }] }),
+    { name: "twitter:description", content: "JBCC’s history, sector representation and eight constituent bodies." },
+    { name: "twitter:image", content: `${loaderData}/media/jbcc-hero-group.jpg` },
+  ], links: [{ rel: "canonical", href: `${loaderData}/about` }] }),
   component: AboutPage,
 });
 
 function AboutPage() {
   return <main>
-    <PageIntro index="01" eyebrow="About" title="A joint council since 1980." description="JBCC was founded by the Architectural Association of Kenya and the Kenya Association of Building and Civil Engineering Contractors to monitor industry development and publish shared contract documentation." />
+    <PageIntro index="01" eyebrow="About" title="A joint council since 1980." description="JBCC was founded by the Architectural Association of Kenya and the Kenya Association of Building and Civil Engineering Contractors to monitor industry development and publish shared contract documentation." image={{ src: "/media/jbcc-group.jpg", alt: "JBCC members and industry stakeholders gathered for a group photograph", width: 1920, height: 900 }} recordLabel="Constituent bodies" recordValue="8" recordNote="Founded by AAK and KABCEC in 1980. Eight professional bodies now sit on the Council." />
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
-      <SectionHeading number="02" label="History" title="From two founders to eight constituent bodies." intro="Over four decades, the Council has grown to represent architects, engineers, quantity surveyors, contractors, arbitrators, developers and master builders — providing a neutral forum for the whole industry." />
-    </div></section>
-    <section className="bg-navy px-5 py-16 text-navy-foreground md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
-      <SectionHeading number="03" label="Governance" title="The Board" light />
-      <div className="mt-10 grid gap-x-px gap-y-10 bg-navy-foreground/15 sm:mt-14 sm:grid-cols-2 lg:grid-cols-4">
-        {board.map((m, i) => <figure key={m.name} className="bg-navy"><ImageReveal delay={(i % 4) as 0 | 1 | 2 | 3}><img src={photos[i]?.url} alt={m.name} width="400" height="400" loading="lazy" decoding="async" className="aspect-[4/5] w-full object-cover grayscale motion-safe:transition motion-reduce:transition-none hover:grayscale-0" /></ImageReveal><figcaption className="grid grid-cols-[36px_1fr] border-t border-navy-foreground/20 pt-4"><p className="technical-label text-signal">{String(i + 1).padStart(2, "0")}</p><div><p className="font-medium">{m.name}</p><p className="technical-label mt-1 text-navy-muted">{m.role}</p></div></figcaption></figure>)}
+      <SectionHeading number="02" label="History" title="From two founders to eight constituent bodies." intro="The Council began in 1980 with the Architectural Association of Kenya and the Kenya Association of Building and Civil Engineering Contractors. JBCC describes its documents as products of constituent consensus, intended to standardize good practice, distribute contractual risk equitably and support use in Kenya, Africa and beyond." />
+      <div className="mt-10 grid border-y border-border sm:mt-14 md:grid-cols-[1fr_2fr]">
+        <EditorialReveal className="border-b border-border py-7 md:border-b-0 md:border-r md:pr-8"><p className="technical-label text-signal">Vision</p><p className="mt-4 text-xl font-semibold leading-snug sm:text-2xl">{vision}</p></EditorialReveal>
+        <EditorialReveal delay={1} className="py-7 md:pl-8"><p className="technical-label text-signal">Mission</p><ol className="mt-4 space-y-4">{mission.map((item, i) => <li key={item} className="grid grid-cols-[40px_minmax(0,1fr)] text-base leading-7 text-muted-foreground sm:text-lg"><span className="technical-label pt-1.5 text-foreground">{String(i + 1).padStart(2, "0")}</span><span>{item}</span></li>)}</ol></EditorialReveal>
       </div>
     </div></section>
+    <section className="bg-navy px-5 py-16 text-navy-foreground md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
+      <SectionHeading number="03" label="Representation" title="One table for different parts of the industry." intro="JBCC describes its committee as representing building owners and developers, professional consultants, and general and specialist contractors." light />
+      <div className="mt-10 border-t border-navy-foreground/20 sm:mt-14"><article className="grid gap-4 border-b border-navy-foreground/20 py-7 md:grid-cols-[1fr_2fr]"><p className="technical-label text-signal">Governance</p><p className="max-w-3xl text-lg leading-8 text-navy-muted">A current, dated JBCC board roster was not present in the source material reviewed for this redesign. This page describes the representation model and member bodies rather than presenting an unverified list of office holders.</p></article></div>
+    </div></section>
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
-      <SectionHeading number="04" label="Membership" title="Constituent bodies" />
-      <div className="mt-10 border-t border-border sm:mt-14">{partners.map(([abbr, name], i) => <div key={abbr} className="grid grid-cols-[40px_minmax(0,1fr)] gap-x-3 gap-y-1 border-b border-border py-5 sm:grid-cols-[48px_140px_1fr] sm:items-center"><span className="technical-label row-span-2 text-muted-foreground sm:row-span-1">{String(i + 1).padStart(2, "0")}</span><span className="font-semibold text-signal">{abbr}</span><span className="text-sm leading-6 sm:text-base">{name}</span></div>)}</div>
+      <SectionHeading number="04" label="Membership" title="Constituent bodies" intro="Descriptions are taken from each body’s page on the JBCC source site, last updated in June 2022." />
+      <div className="mt-10 border-t border-border sm:mt-14">{partners.map((body, i) => <article key={body.abbr} className="grid grid-cols-[40px_minmax(0,1fr)] gap-x-3 gap-y-3 border-b border-border py-7 sm:grid-cols-[48px_minmax(0,1fr)] md:grid-cols-[48px_minmax(0,1fr)_minmax(0,1.6fr)] md:gap-x-8"><span className="technical-label pt-1 text-muted-foreground">{String(i + 1).padStart(2, "0")}</span><div><h3 className="font-semibold text-signal">{body.abbr}</h3><p className="mt-1 text-base leading-6">{body.name}</p>{body.founded ? <p className="technical-label mt-2 text-muted-foreground">Established {body.founded}</p> : null}</div><div className="col-start-2 md:col-start-3"><p className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{body.text}</p><a href={body.url} target="_blank" rel="noreferrer" className="mt-2 inline-flex min-h-11 items-center border-b border-signal text-xs font-semibold uppercase hover:text-signal">Visit {body.abbr} website<span className="sr-only"> (opens in a new tab)</span> →</a></div></article>)}</div>
+      <figure className="mt-12 border-t border-border pt-8 sm:mt-16"><ImageReveal delay={3}><img src="/media/jbcc-hero-launch.jpg" alt="Confetti and sparklers at a JBCC launch event, with the JBCC emblem on stage" width="1280" height="600" loading="lazy" decoding="async" className="aspect-[16/7] w-full object-cover" /></ImageReveal><figcaption className="mt-4 grid gap-2 text-xs leading-5 text-muted-foreground sm:grid-cols-[1fr_2fr]"><span className="technical-label text-signal">Photo from the JBCC website</span><span>A JBCC launch event. The source website does not identify the occasion, date or photographer. Confirm attribution and reuse rights before publication.</span></figcaption></figure>
     </div></section>
   </main>;
 }

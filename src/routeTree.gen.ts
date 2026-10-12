@@ -11,9 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
+import { Route as AskRouteImport } from './routes/ask'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as EventsRouteImport } from './routes/events'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WhatWeDoRouteImport } from './routes/what-we-do'
 
 const IndexRoute = IndexRouteImport.update({
@@ -26,9 +31,24 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AskRoute = AskRouteImport.update({
+  id: '/ask',
+  path: '/ask',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsRoute = EventsRouteImport.update({
@@ -36,9 +56,19 @@ const EventsRoute = EventsRouteImport.update({
   path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WhatWeDoRoute = WhatWeDoRouteImport.update({
@@ -50,50 +80,96 @@ const WhatWeDoRoute = WhatWeDoRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/ask': typeof AskRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/events': typeof EventsRoute
+  '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
+  '/terms': typeof TermsRoute
   '/what-we-do': typeof WhatWeDoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/ask': typeof AskRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/events': typeof EventsRoute
+  '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
+  '/terms': typeof TermsRoute
   '/what-we-do': typeof WhatWeDoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/ask': typeof AskRoute
   '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
   '/events': typeof EventsRoute
+  '/privacy': typeof PrivacyRoute
   '/resources': typeof ResourcesRoute
+  '/terms': typeof TermsRoute
   '/what-we-do': typeof WhatWeDoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/contact' | '/events' | '/resources' | '/what-we-do'
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/ask'
+    | '/contact'
+    | '/cookies'
+    | '/events'
+    | '/privacy'
+    | '/resources'
+    | '/terms'
+    | '/what-we-do'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/events' | '/resources' | '/what-we-do'
+  to:
+    | '/'
+    | '/about'
+    | '/accessibility'
+    | '/ask'
+    | '/contact'
+    | '/cookies'
+    | '/events'
+    | '/privacy'
+    | '/resources'
+    | '/terms'
+    | '/what-we-do'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/accessibility'
+    | '/ask'
     | '/contact'
+    | '/cookies'
     | '/events'
+    | '/privacy'
     | '/resources'
+    | '/terms'
     | '/what-we-do'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
+  AskRoute: typeof AskRoute
   ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
   EventsRoute: typeof EventsRoute
+  PrivacyRoute: typeof PrivacyRoute
   ResourcesRoute: typeof ResourcesRoute
+  TermsRoute: typeof TermsRoute
   WhatWeDoRoute: typeof WhatWeDoRoute
 }
 
@@ -113,11 +189,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ask': {
+      id: '/ask'
+      path: '/ask'
+      fullPath: '/ask'
+      preLoaderRoute: typeof AskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events': {
@@ -127,11 +224,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources': {
       id: '/resources'
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/what-we-do': {
@@ -147,9 +258,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
+  AskRoute: AskRoute,
   ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
   EventsRoute: EventsRoute,
+  PrivacyRoute: PrivacyRoute,
   ResourcesRoute: ResourcesRoute,
+  TermsRoute: TermsRoute,
   WhatWeDoRoute: WhatWeDoRoute,
 }
 export const routeTree = rootRouteImport

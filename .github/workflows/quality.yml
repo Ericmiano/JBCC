@@ -9,6 +9,7 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bunx playwright install --with-deps chromium
       - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
+      # Full end-to-end suite in Chromium; the accessibility workflow covers Firefox and WebKit.
       - run: bun run test:e2e
       # Baseline thresholds: accessibility >= 94, mobile performance >= 30 (raise as scores improve)
       - run: bun run test:lighthouse

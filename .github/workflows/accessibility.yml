@@ -1,20 +1,32 @@
 name: Accessibility regression
 on:
   pull_request:
+
+concurrency:
+  group: a11y-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   a11y:
+    name: a11y (${{ matrix.browser }})
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      # Report every engine's result even when one fails.
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
-      - run: bunx playwright install --with-deps chromium
+      - run: bunx playwright install --with-deps ${{ matrix.browser }}
       - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
       # "github" reporter annotates each failing test on the pull request.
-      - run: bunx playwright test --reporter=github,html
+      - run: bunx playwright test tests/e2e/accessibility.spec.ts --project=${{ matrix.browser }} --reporter=github,html
       - if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.browser }}
           path: playwright-report/
           retention-days: 14
