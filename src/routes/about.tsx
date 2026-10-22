@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { SectionHeading } from "@/components/section-heading";
-import { mission, partners, vision } from "@/lib/jbcc-data";
+import { board2018, mission, partners, vision } from "@/lib/jbcc-data";
 import { EditorialReveal } from "@/components/editorial-reveal";
 import { getRequestOrigin } from "@/lib/origin.functions";
 import { ImageReveal } from "@/components/image-reveal";
@@ -36,7 +36,11 @@ function AboutPage() {
     </div></section>
     <section className="bg-navy px-5 py-16 text-navy-foreground md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
       <SectionHeading number="03" label="Representation" title="One table for different parts of the industry." intro="JBCC describes its committee as representing building owners and developers, professional consultants, and general and specialist contractors." light />
-      <div className="mt-10 border-t border-navy-foreground/20 sm:mt-14"><article className="grid gap-4 border-b border-navy-foreground/20 py-7 md:grid-cols-[1fr_2fr]"><p className="technical-label text-signal">Governance</p><p className="max-w-3xl text-lg leading-8 text-navy-muted">A current, dated JBCC board roster was not present in the source material reviewed for this redesign. This page describes the representation model and member bodies rather than presenting an unverified list of office holders.</p></article></div>
+      <div className="mt-10 border-t border-navy-foreground/20 sm:mt-14"><article className="grid gap-4 border-b border-navy-foreground/20 py-7 md:grid-cols-[1fr_2fr]"><p className="technical-label text-signal">Governance</p><p className="max-w-3xl text-lg leading-8 text-navy-muted">A current, dated JBCC board roster was not present in the source material reviewed for this redesign. This page describes the representation model and member bodies rather than presenting an unverified list of office holders.</p></article>
+        <article aria-labelledby="board-2018-title" className="grid gap-4 border-b border-navy-foreground/20 py-7 md:grid-cols-[1fr_2fr]">
+          <div><h3 id="board-2018-title" className="technical-label text-signal">Board listed in 2018</h3><p className="mt-3 max-w-xs text-sm leading-6 text-navy-muted">Historical record from JBCC’s previous website, archived on {board2018.capturedOn}. It is not the current board.</p><a href={board2018.source} target="_blank" rel="noreferrer" className="mt-2 inline-flex min-h-11 items-center text-xs font-semibold uppercase text-navy-foreground underline underline-offset-4 hover:text-signal">Archived page<span className="sr-only"> on the Wayback Machine (opens in a new tab)</span></a></div>
+          <ul className="grid gap-x-8 sm:grid-cols-2">{board2018.members.map((member) => <li key={member.name} className="border-b border-navy-foreground/10 py-3"><span className="block font-medium">{member.name}</span>{member.role || member.body ? <span className="block text-sm text-navy-muted">{[member.role, member.body].filter(Boolean).join(", ")}</span> : null}</li>)}</ul>
+        </article></div>
     </div></section>
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
       <SectionHeading number="04" label="Membership" title="Constituent bodies" intro="Descriptions are taken from each body’s page on the JBCC source site, last updated in June 2022." />

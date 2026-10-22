@@ -46,3 +46,36 @@ those pages link to and the images and files they use.
 - `media/` mirrors the original site paths.
 - `manifest.json` lists, per snapshot, the page and media captures used,
   with capture timestamps, HTTP status and SHA-1 hashes.
+
+## Full-history search (`history/`)
+
+`scripts/wayback_discover.py` lists every URL the Wayback Machine holds for
+`jbcc.or.ke` and its subdomains (429 successful captures), drops SEO-spam posts
+and theme or plugin files, and saves every distinct version of each remaining
+page plus one copy of each image and document. Run on 22 October 2026, it also
+found the WordPress build host `jbcc.jamirogroup.com` (March–April 2023), whose
+15 page captures match the live pages apart from the Advisory Notes file sizes.
+
+What it found that the March 2023 to February 2025 snapshots did not:
+
+- **The 2018 site** (`www.jbcc.or.ke/index.php?view=…`, also served from
+  `old.jbcc.or.ke` until 2023): About, Activities, Downloads, Media Center and
+  Contact pages. The About page lists a 13-member Board of Directors; the
+  Activities page records the 2018 review of the Agreement and Conditions of
+  Contract for Building Works; the Downloads page offers the November 2017
+  price list.
+- **The November 2017 price list as a text PDF.** The 2018 site's
+  `docs/jbccPriceList.pdf` is a saved Google Drive viewer page, not a PDF. The
+  Drive file it points to was still public and is saved in
+  `history/assets/drive.google.com/`. It is a searchable 6-page PDF of the same
+  edition (ref 11/2017) that the live site only offers as a 4.1 MB scan.
+- **Images.** The 2018–2022 logo matches the current one. A 1000×534 stock
+  construction banner (`JBCC-slidebanner.png`) and a placeholder profile image
+  were not used on the new site.
+- **Not usable.** Homepage captures from June and August 2024 are truncated
+  mid-page, and the Media Center page and the 2023 Seminars calendar were
+  empty.
+
+Added to the website from this search: the text PDF (Resources), the 2018 board
+as a dated historical record (About), the 2018 contract review (Events, Past
+activities), and KABCEC's role in revising the contract conditions (About).

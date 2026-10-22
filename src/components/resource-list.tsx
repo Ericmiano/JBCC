@@ -15,6 +15,7 @@ export function ResourceList({ items = resources }: { items?: readonly (typeof r
               <p className="technical-label text-muted-foreground">{item.year} · PDF · {item.size}</p>
               <span className="technical-label border-l border-signal pl-3 text-signal">{item.status}</span>
               <a href={item.sourceUrl} target="_blank" rel="noreferrer" className="technical-label inline-flex min-h-11 items-center text-muted-foreground underline underline-offset-4 hover:text-signal">Legacy source page<span className="sr-only"> for {item.title} on the former jbcc.or.ke site (opens in a new tab)</span></a>
+              {"alternate" in item ? <a href={item.alternate.url} target="_blank" rel="noreferrer" className="technical-label inline-flex min-h-11 items-center text-muted-foreground underline underline-offset-4 hover:text-signal">{item.alternate.label} · PDF · {item.alternate.size}<span className="sr-only"> of {item.title} (opens in a new tab)</span></a> : null}
             </div>
           </div>
           <div className="col-start-3 row-start-1 flex shrink-0 flex-col gap-2 self-center sm:flex-row md:justify-end">

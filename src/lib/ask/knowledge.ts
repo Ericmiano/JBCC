@@ -1,10 +1,12 @@
 import {
+  board2018,
   faqs,
   mission,
   newestPriceIndex,
   objectives,
   officeHours,
   partners,
+  pastActivities,
   resources,
   seminarTopics,
   socialLinks,
@@ -93,6 +95,21 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
       "No upcoming seminar dates are published on this website. Ask the Secretariat at mail@jbcc.co.ke for the next schedule, fees and registration.",
     ].join("\n"),
   },
+  ...pastActivities.map((activity): KnowledgeSource => ({
+    url: "/events",
+    title: `Past activity (${activity.year}): ${activity.title}`,
+    kind: "Seminars",
+    text: `${activity.text} This activity was published on JBCC's previous website in ${activity.year}; its current status is not published, so ask the Secretariat.`,
+  })),
+  {
+    url: "/about",
+    title: "Board of Directors listed in 2018 (historical)",
+    kind: "Page",
+    text: [
+      `JBCC's previous website, archived on ${board2018.capturedOn}, listed this Board of Directors. It is a historical record, not the current board, which has not been published on this website.`,
+      board2018.members.map((m) => [m.name, m.role, m.body].filter(Boolean).join(", ")).join("; ") + ".",
+    ].join("\n"),
+  },
   ...partners.map((p): KnowledgeSource => ({
     url: "/about",
     title: `${p.name} (${p.abbr})`,
@@ -142,7 +159,7 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
     url: "/accessibility",
     title: "Accessibility statement",
     kind: "Site policy",
-    text: "The website aims to meet WCAG 2.2 AA. Known limitations: the forum video has no captions yet, two archived price lists are scanned images, and older PDFs lack accessibility tagging. The Secretariat can provide information in another format on request.",
+    text: "The website aims to meet WCAG 2.2 AA. Known limitations: the forum video has no captions yet, the March 2020 price list is a scanned image (the November 2017 list is a text PDF), and older PDFs lack accessibility tagging. The Secretariat can provide information in another format on request.",
   },
 ];
 

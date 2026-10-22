@@ -24,7 +24,7 @@ const sections: LegalSection[] = [
   { id: "limitations", title: "Known limitations", body: <>
     <ul>
       <li>The Status of the Built Environment forum video has no captions or transcript yet.</li>
-      <li>Two archived price lists, November 2017 and March 2020, are scanned images, so screen readers cannot read their text.</li>
+      <li>The archived March 2020 price list is a scanned image, so screen readers cannot read its text. The November 2017 list is available as a text PDF, with the scan kept as an alternative.</li>
       <li>Older PDFs from the archive were not created with accessibility tagging.</li>
     </ul>
     <p>We are working to fix these. Until then, the Secretariat can provide the information in another format on request.</p>

@@ -14,11 +14,45 @@ export const resources = [
   { title: "JBCC Price Index — June 2021", type: "Price Indices", year: "2021", size: "231 KB", status: "Historical", issuer: "JBCC", edition: "Fluctuations clause price list · Nairobi zone · Ref 06/2021", url: "/documents/Price-Index-June-2021.pdf", sourceUrl: "https://jbcc.or.ke/download/price-index-june-2021/" },
   { title: "JBCC Price Index — March 2020", type: "Price Indices", year: "2020", size: "2.5 MB", status: "Historical", issuer: "JBCC", edition: "Fluctuations clause price list · Nairobi zone · Ref 03/2020 · scanned", url: "/documents/JBCC-March-2020.pdf", sourceUrl: "https://jbcc.or.ke/download/jbcc-march-2020/" },
   { title: "JBCC Price List — Q1 2018", type: "Price Indices", year: "2018", size: "217 KB", status: "Historical", issuer: "JBCC", edition: "Prices as at 31 March 2018 · Nairobi zone · Ref Q1/2018", url: "/documents/JBCC-Price-List-2018.pdf", sourceUrl: "https://jbcc.or.ke/download/jbcc-price-list-2018/" },
-  { title: "JBCC Price List — November 2017", type: "Price Indices", year: "2017", size: "4.1 MB", status: "Historical", issuer: "JBCC", edition: "Prices as at 30 November 2017 · Nairobi zone · Ref 11/2017 · scanned", url: "/documents/JBCC-Price-List-2017.pdf", sourceUrl: "https://jbcc.or.ke/download/jbcc-price-list-2017/" },
+  { title: "JBCC Price List — November 2017", type: "Price Indices", year: "2017", size: "206 KB", status: "Historical", issuer: "JBCC", edition: "Prices as at 30 November 2017 · Nairobi zone · Ref 11/2017", url: "/documents/JBCC-Price-List-November-2017.pdf", sourceUrl: "https://jbcc.or.ke/download/jbcc-price-list-2017/", alternate: { label: "Scanned original", size: "4.1 MB", url: "/documents/JBCC-Price-List-2017.pdf" } },
   { title: "Physical Planning Handbook — Draft 2002", type: "Guidelines", year: "2002", size: "310 KB", status: "Draft", issuer: "Ministry of Lands and Settlement, Department of Physical Planning", edition: "Draft dated February 2002 · hosted in JBCC’s public catalogue", url: "/documents/Physical-Planning-Handbook-Draft-2002.pdf", sourceUrl: "https://jbcc.or.ke/download/physical-planning-handbook-draft-2002/" },
 ] as const;
 
 export const newestPriceIndex = resources.find((resource) => resource.title.startsWith("JBCC Price Index —"));
+
+/**
+ * Board of Directors as listed on JBCC's previous website (index.php?view=about), archived by the
+ * Wayback Machine on 15 September 2018. Historical record only; not the current board.
+ */
+export const board2018 = {
+  capturedOn: "15 September 2018",
+  source: "https://web.archive.org/web/20180915102519/http://www.jbcc.or.ke/index.php?view=about",
+  members: [
+    { name: "Kairu Bachia", role: "Quantity Surveyor, Chairman", body: "AAK" },
+    { name: "Kanti Sanghani", role: "", body: "" },
+    { name: "David Maina Nguyo", role: "Quantity Surveyor", body: "AAK" },
+    { name: "Paul Ambatsa", role: "Quantity Surveyor", body: "AAK" },
+    { name: "Aaron Gitonga", role: "Quantity Surveyor", body: "AAK" },
+    { name: "Muchiri Waititu", role: "Architect", body: "AAK" },
+    { name: "Evans Goro", role: "Engineer", body: "AAK" },
+    { name: "Neelesh Hirani", role: "Secretary, Quantity Surveyor", body: "KABCEC" },
+    { name: "Wilson Mugambi", role: "Architect", body: "AAK" },
+    { name: "Dhanji Raghwani", role: "", body: "KABCEC" },
+    { name: "Bobby Jandu", role: "", body: "KABCEC" },
+    { name: "Hirji Seyani", role: "", body: "KABCEC" },
+    { name: "Wilson Oluoch", role: "", body: "KABCEC" },
+  ],
+} as const;
+
+/** Activities JBCC published on earlier versions of its website. */
+export const pastActivities = [
+  {
+    year: "2018",
+    title: "Review of the Agreement and Conditions of Contract for Building Works",
+    text: "JBCC began reviewing its Agreement and Conditions of Contract for Building Works to reflect recent developments in the construction industry, and invited practitioners to send views on any part of the contract they wanted deliberated or revised.",
+    source: "https://web.archive.org/web/20180915102523/http://www.jbcc.or.ke/index.php?view=activities",
+  },
+] as const;
 
 export const seminarTopics = [
   "Principal Building Agreement",
@@ -60,7 +94,7 @@ export const vision = "To be the leading provider of contract administration and
 /** Descriptions and websites from the constituent-body pages on jbcc.or.ke (last modified June 2022). */
 export const partners = [
   { abbr: "AAK", name: "Architectural Association of Kenya", founded: "1967", url: "https://aak.or.ke/", text: "Kenya’s professional society for architects, quantity surveyors, town planners, engineers, landscape architects, environmental design consultants and construction project managers. It links professionals in government, the private sector and academia with policy makers, manufacturers, developers and financial institutions." },
-  { abbr: "KABCEC", name: "Kenya Association of Building & Civil Engineering Contractors", founded: "1949", url: "https://kabcec.co.ke/", text: "Brings together building and civil engineering contractors in Kenya. JBCC’s source page describes a membership of more than 400 employer organisations." },
+  { abbr: "KABCEC", name: "Kenya Association of Building & Civil Engineering Contractors", founded: "1949", url: "https://kabcec.co.ke/", text: "Brings together building and civil engineering contractors in Kenya. JBCC’s source page describes a membership of more than 400 employer organisations. JBCC’s 2018 website noted that KABCEC takes part in formulating, revising and amending the conditions of contract for building works." },
   { abbr: "IEK", name: "Institution of Engineers of Kenya", founded: undefined, url: "https://www.iekenya.org/", text: "The learned society of the engineering profession, cooperating with national and international institutions to develop and apply engineering for the benefit of humanity." },
   { abbr: "IQSK", name: "Institute of Quantity Surveyors of Kenya", founded: undefined, url: "https://www.iqskenya.org/", text: "Promotes and safeguards the interests of Kenyan quantity surveyors, with the primary objective of advancing quantity surveying practice in Kenya." },
   { abbr: "ACEK", name: "Association of Consulting Engineers of Kenya", founded: "1968", url: "https://www.acek.co.ke/", text: "Advocates for the business and professional interests of consulting engineers and gives government, public institutions and industry a forum to engage consulting engineers as a group." },
@@ -91,6 +125,8 @@ export const searchItems = [
   ...siteLinks.map((item) => ({ title: item.label, type: "Page", to: item.to })),
   ...resources.map((item) => ({ title: item.title, type: item.type, url: item.url })),
   ...partners.map((item) => ({ title: `${item.name} (${item.abbr})`, type: "Constituent body", to: "/about" as const })),
+  { title: "Board of Directors listed in 2018", type: "History", to: "/about" as const },
+  ...pastActivities.map((item) => ({ title: `${item.title} (${item.year})`, type: "Past activity", to: "/events" as const })),
   { title: "Terms of use", type: "Site policy", to: "/terms" as const },
   { title: "Privacy policy", type: "Site policy", to: "/privacy" as const },
   { title: "Cookie policy", type: "Site policy", to: "/cookies" as const },
