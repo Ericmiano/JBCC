@@ -2361,8 +2361,7 @@
       "status": 200,
       "bytes": 217350,
       "file": "assets/jbcc.or.ke/docs/jbccPriceList.pdf.saved-drive-page.html",
-      "sha1": "267380222aba4ddc0413cd9319c37342115447ff",
-      "note": "Served as application/pdf but is a saved Google Drive viewer page (HTML), not a PDF. It points to Drive file 1sKWdLV2EXcEIhbpTaPyoTs-SOwxhuhaU, downloaded 22 Oct 2026 as assets/drive.google.com/1sKWdLV2EXcEIhbpTaPyoTs-SOwxhuhaU-Final_The-Joint-Building-Council-Price-List.pdf (text-based November 2017 price list, ref 11/2017)."
+      "note": "Served as application/pdf but is a saved Google Drive viewer page (HTML), not a PDF. It points to Drive file 1sKWdLV2EXcEIhbpTaPyoTs-SOwxhuhaU, downloaded 22 Oct 2026 as assets/drive.google.com/1sKWdLV2EXcEIhbpTaPyoTs-SOwxhuhaU-Final_The-Joint-Building-Council-Price-List.pdf (text-based November 2017 price list, ref 11/2017). Google's public Drive-viewer API keys in the page were replaced with REDACTED-GOOGLE-API-KEY on 22 Oct 2026."
     },
     {
       "url": "http://jbcc.or.ke/img/JBCC-slidebanner.png",

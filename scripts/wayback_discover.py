@@ -19,6 +19,17 @@ SPAM = re.compile(r"casino|[^a-z]bet|1win|1xbet|mostbet|pin-?up|aviator|kazino|v
 NOISE = re.compile(r"/wp-(includes|admin|json|login)|/wp-content/(plugins|themes)/|/\.well-known/|/(ads|app-ads)\.txt|/xmlrpc|/feed/?$|/comments/|favicon\.ico|/fontawesome/|/css/|/js/|\.(css|js|ttf|woff2?|eot)(\?|$)|[?&](replytocom|share|p)=", re.I)
 DOC = re.compile(r"\.(pdf|docx?|xlsx?|pptx?)(\?|$)|wpdmdl=", re.I)
 
+# Archived third-party pages (e.g. saved Google Drive viewers) embed public client API keys.
+# Redact them so the archive never trips secret scanning or republishes someone else's key.
+SECRET_PATTERNS = [re.compile(r"AIza[0-9A-Za-z_-]{35}")]
+
+
+def redact(text):
+    for pattern in SECRET_PATTERNS:
+        text = pattern.sub("REDACTED-GOOGLE-API-KEY", text)
+    return text
+
+
 
 def get(url, tries=5):
     for attempt in range(tries):
@@ -95,7 +106,7 @@ for key in sorted(pages):
         if status == 200 and body:
             name = f"pages/{slug(r['original'])}@{r['timestamp']}"
             os.makedirs(os.path.join(OUT, "pages"), exist_ok=True)
-            html = body.decode("utf-8", errors="replace")
+            html = redact(body.decode("utf-8", errors="replace"))
             open(os.path.join(OUT, name + ".html"), "w", encoding="utf-8", newline="\n").write(html)
             t = Text(); t.feed(html)
             text = "\n".join(x for x in (re.sub(r"\s+", " ", y).strip() for y in "".join(t.out).split("\n")) if x)

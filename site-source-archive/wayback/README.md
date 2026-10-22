@@ -79,3 +79,11 @@ What it found that the March 2023 to February 2025 snapshots did not:
 Added to the website from this search: the text PDF (Resources), the 2018 board
 as a dated historical record (About), the 2018 contract review (Events, Past
 activities), and KABCEC's role in revising the contract conditions (About).
+
+## Redaction
+
+Saved pages are scanned for Google API keys (`AIza…`) and the keys are replaced
+with `REDACTED-GOOGLE-API-KEY`. The 2018 `jbccPriceList.pdf.saved-drive-page.html`
+contained Google's own client keys for the Drive viewer; they are not JBCC
+credentials, but they triggered GitHub secret scanning, so they were redacted.
+Both scrape scripts now redact such keys automatically.

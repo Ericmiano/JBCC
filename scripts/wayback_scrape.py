@@ -19,6 +19,17 @@ HOSTS = {"jbcc.or.ke", "www.jbcc.or.ke"}
 MEDIA_RE = re.compile(r"\.(jpe?g|png|gif|webp|svg|mp4|pdf|docx?|xlsx?|pptx?)$", re.I)
 SKIP_PATH = re.compile(r"^/(wp-json|wp-admin|wp-login|feed|comments|xmlrpc|cart|checkout|my-account|shop)|/feed/?$|^/\?|^/(category|tag|author)/", re.I)
 
+# Archived third-party pages (e.g. saved Google Drive viewers) embed public client API keys.
+# Redact them so the archive never trips secret scanning or republishes someone else's key.
+SECRET_PATTERNS = [re.compile(r"AIza[0-9A-Za-z_-]{35}")]
+
+
+def redact(text):
+    for pattern in SECRET_PATTERNS:
+        text = pattern.sub("REDACTED-GOOGLE-API-KEY", text)
+    return text
+
+
 
 def fetch(url, tries=4):
     for attempt in range(tries):
@@ -99,7 +110,7 @@ def get_page(url, ts):
     rec = {"url": url, "captured": cap, "status": status, "content_type": ctype.split(";")[0], "bytes": len(body)}
     parser = None
     if status == 200 and body and "html" in ctype.lower():
-        html = body.decode("utf-8", errors="replace")
+        html = redact(body.decode("utf-8", errors="replace"))
         name = f"{slug(url)}@{cap}"
         open(os.path.join(pages_dir, name + ".html"), "w", encoding="utf-8").write(html)
         parser = Links(); parser.feed(html)
