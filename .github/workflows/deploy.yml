@@ -1,0 +1,70 @@
+name: Deploy
+# Staging deploys automatically once "Quality checks" passes on main.
+# The live site deploys only when run by hand: Actions → Deploy → Run workflow → production.
+on:
+  workflow_run:
+    workflows: ["Quality checks"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Where to deploy
+        type: choice
+        options: [staging, production]
+        default: staging
+
+concurrency:
+  group: deploy-${{ inputs.target || 'staging' }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # GitHub environment: holds DEPLOY_APP_DIR and, for production, any required approvals.
+    environment: ${{ inputs.target || 'staging' }}
+    steps:
+      - name: Check deployment settings
+        id: settings
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_APP_DIR: ${{ vars.DEPLOY_APP_DIR }}
+        run: |
+          if [ -z "$DEPLOY_HOST" ] || [ -z "$DEPLOY_APP_DIR" ]; then
+            echo "::notice::Deployment skipped: add the DEPLOY_* secrets and the DEPLOY_APP_DIR variable (see README, Deploying)."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.settings.outputs.ready == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - if: steps.settings.outputs.ready == 'true'
+        uses: oven-sh/setup-bun@v2
+      - if: steps.settings.outputs.ready == 'true'
+        run: bun install --frozen-lockfile
+      - if: steps.settings.outputs.ready == 'true'
+        run: bun run build
+      - name: Configure SSH
+        if: steps.settings.outputs.ready == 'true'
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+      - name: Deploy to ${{ inputs.target || 'staging' }}
+        if: steps.settings.outputs.ready == 'true'
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ secrets.DEPLOY_PORT }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_APP_DIR: ${{ vars.DEPLOY_APP_DIR }}
+        run: DEPLOY_SSH_KEY_FILE="$HOME/.ssh/deploy_key" bash scripts/deploy.sh
+      - if: always()
+        run: rm -f ~/.ssh/deploy_key

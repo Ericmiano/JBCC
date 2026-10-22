@@ -9,7 +9,8 @@ export default defineConfig({
   plugins: [
     tsconfigPaths(),
     tanstackStart({ server: { entry: "server" } }),
-    nitro({ preset: "cloudflare_module" }),
+    // DirectAdmin runs the site as a Node.js app (Passenger); deploy/app.js wraps this handler.
+    nitro({ preset: "node-middleware", serveStatic: true }),
     viteReact(),
     tailwindcss(),
   ],

@@ -2,24 +2,17 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createServerFn } from "@tanstack/react-start";
 import { getRequestHeader } from "@tanstack/react-start/server";
 import { z } from "zod";
+import { readEnv } from "@/lib/server-env";
 import { ASK_MODEL, QUESTION_MAX_LENGTH, SYSTEM_PROMPT, buildUserContent, parseAnswer, relatedSources, type AskResult } from "@/lib/ask/answer";
 
 /**
- * Server configuration (Cloudflare Worker secrets/vars, or the shell in local dev):
+ * Server configuration (DirectAdmin Node.js app environment variables, or the shell in local dev):
  *   AI_GATEWAY_URL         Full Anthropic endpoint, e.g. https://gateway.ai.cloudflare.com/v1/<account>/<gateway>/anthropic
  *   or CLOUDFLARE_ACCOUNT_ID + AI_GATEWAY_ID to build it.
  *   CF_AIG_TOKEN           Gateway token, required when the gateway is authenticated.
  *   ANTHROPIC_API_KEY      Optional when the key is stored in the gateway (BYOK).
  * Without a gateway, the feature reports itself unavailable and points visitors to related pages.
  */
-function readEnv(name: string): string | undefined {
-  const bindings = (globalThis as { __env__?: Record<string, unknown> }).__env__;
-  const bound = bindings?.[name];
-  if (typeof bound === "string" && bound.trim()) return bound.trim();
-  const fromProcess = typeof process === "undefined" ? undefined : process.env[name];
-  return fromProcess?.trim() || undefined;
-}
-
 function gatewayBaseUrl() {
   const explicit = readEnv("AI_GATEWAY_URL");
   if (explicit) return explicit.replace(/\/+$/, "");

@@ -34,3 +34,6 @@ dist-ssr
 # Playwright output
 test-results/
 playwright-report/
+
+# Deploy bundle staging folder
+.deploy/
