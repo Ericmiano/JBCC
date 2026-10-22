@@ -6,6 +6,10 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  // CI, Playwright and Lighthouse all expect the dev server on 8080. strictPort fails fast
+  // instead of silently moving to another port that nothing is waiting on.
+  server: { port: 8080, strictPort: true },
+  preview: { port: 8080, strictPort: true },
   plugins: [
     tsconfigPaths(),
     tanstackStart({ server: { entry: "server" } }),

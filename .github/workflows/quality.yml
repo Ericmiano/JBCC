@@ -3,14 +3,22 @@ on: [push, pull_request]
 jobs:
   checks:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
       - run: bunx playwright install --with-deps chromium
+      # vite.config.ts pins the dev server to port 8080.
       - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
       # Full end-to-end suite in Chromium; the accessibility workflow covers Firefox and WebKit.
       - run: bun run test:e2e
-      # Baseline thresholds: accessibility >= 94, mobile performance >= 30 (raise as scores improve)
+      # Lighthouse measures the production build, served through deploy/app.js as on DirectAdmin.
+      - run: bun run build
+      - run: |
+          cp deploy/app.js deploy/package.json .output/
+          PORT=4173 node .output/app.js &
+          npx wait-on -t 60000 http://localhost:4173
+      # Thresholds: accessibility >= 94, mobile performance >= 50 (production scores 64–70 locally).
       - run: bun run test:lighthouse
-        env: { LH_MIN_A11Y: "0.94", LH_MIN_PERF: "0.3" }
+        env: { LH_BASE_URL: "http://localhost:4173", LH_MIN_A11Y: "0.94", LH_MIN_PERF: "0.5" }

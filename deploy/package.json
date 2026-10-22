@@ -1,0 +1,6 @@
+{
+  "name": "jbcc-site",
+  "private": true,
+  "description": "DirectAdmin Node.js app root. Marks app.js as CommonJS; the built server in server/ declares its own module type.",
+  "type": "commonjs"
+}

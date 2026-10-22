@@ -8,7 +8,7 @@
 # account's home directory, exactly as entered in "Setup Node.js App").
 # Optional: DEPLOY_PORT (default 22), DEPLOY_SSH_KEY_FILE (private key; default ssh config).
 #
-# Only app.js, server/, public/ and nitro.json are replaced. The previous release is kept
+# Only app.js, package.json, server/, public/ and nitro.json are replaced. The previous release is kept
 # in .previous/ for rollback, and tmp/restart.txt is touched so Passenger restarts the app.
 set -euo pipefail
 
@@ -32,7 +32,7 @@ bundle="$root/.deploy"
 rm -rf "$bundle"
 mkdir -p "$bundle"
 cp -R "$root/.output/server" "$root/.output/public" "$root/.output/nitro.json" "$bundle/"
-cp "$root/deploy/app.js" "$bundle/app.js"
+cp "$root/deploy/app.js" "$root/deploy/package.json" "$bundle/"
 
 ssh_args=(-p "$DEPLOY_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes)
 if [ -n "${DEPLOY_SSH_KEY_FILE:-}" ]; then ssh_args+=(-i "$DEPLOY_SSH_KEY_FILE" -o IdentitiesOnly=yes); fi
@@ -49,7 +49,7 @@ mkdir .incoming
 tar -xzf - -C .incoming
 rm -rf .previous
 mkdir .previous
-for item in app.js server public nitro.json; do
+for item in app.js package.json server public nitro.json; do
   if [ -e "$item" ]; then mv "$item" .previous/; fi
   mv ".incoming/$item" .
 done

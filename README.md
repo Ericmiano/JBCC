@@ -52,8 +52,18 @@ minutes applies per server process only.
 
 The site runs on DirectAdmin as a Node.js app (Passenger). `bun run build`
 produces a self-contained server in `.output/`; `deploy/app.js` is the startup
-file that wraps it; `scripts/deploy.sh` copies both to the server over SSH,
-keeps the previous release in `.previous/`, and restarts the app.
+file that wraps it, and `deploy/package.json` marks it as CommonJS so a
+`"type": "module"` file higher up can't break it; `scripts/deploy.sh` copies
+them to the server over SSH, keeps the previous release in `.previous/`, and
+restarts the app.
+
+To run the production build locally, as CI does for Lighthouse:
+
+```sh
+bun run build
+cp deploy/app.js deploy/package.json .output/
+PORT=4173 node .output/app.js
+```
 
 ### One-time server setup
 
