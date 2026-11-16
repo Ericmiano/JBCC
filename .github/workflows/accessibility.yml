@@ -9,7 +9,8 @@ concurrency:
 jobs:
   a11y:
     name: a11y (${{ matrix.browser }})
-    runs-on: ubuntu-latest
+    # Playwright 1.56 cannot install browser system packages on Ubuntu 26, which ubuntu-latest now uses.
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     strategy:
       # Report every engine's result even when one fails.
