@@ -6,8 +6,10 @@
 - Run `bun run test:a11y` after changes that affect focus, contrast, motion, or page structure; pull requests run that suite in Chromium, Firefox, and WebKit.
 - When published page content, documents, seminars, or policies change, update `src/lib/ask/knowledge.ts` so Ask JBCC answers from the current site. Ask JBCC must call Claude only through Cloudflare AI Gateway and cite only knowledge-base links.
 - The site deploys to DirectAdmin as a Node.js app. Keep the Nitro `node-middleware` preset with `serveStatic: true`, and keep `deploy/app.js` as the startup file. Staging must stay password-protected and no-index; deploy the live site only through the manual production run.
+- Security headers, request limits and the visitor address (`x-jbcc-client-ip`) live in `deploy/app.js`; the Ask JBCC rate limit must use that header, never `x-forwarded-for` or `cf-connecting-ip` directly. Adding a third-party script, font, image or embed means widening the CSP there. Run `node --test tests/deploy/` against the production build after changing it.
 - Use the shared editorial reveal wrapper for scroll-based text motion so accessibility and reduced-motion behavior stay consistent.
 - Use the shared image-reveal wrapper for photo motion so reduced-motion bypass stays consistent. Do not add grid-line, line-drawing or navy-tinted overlay backgrounds; show JBCC photographs at full colour beside text on solid panels.
+- The live jbcc.or.ke decides what visitors see. Keep content found only in archives (the 2018 board, past activities, Wayback-only notes) in `site-source-archive/`, off pages, search and Ask JBCC, and keep internal review notes off public pages.
 - Use `mail@jbcc.co.ke` and `https://jbcc.co.ke` for the Council. `jbcc.or.ke` is the former WordPress site and is linked only as document provenance.
 - Build JBCC page compositions from shared editorial ledger primitives and asymmetric measured columns, avoiding repetitive card grids so the institutional design remains cohesive.
 - Keep reduced-motion overrides and dual-contrast keyboard focus centralized in global CSS; shared reveal wrappers settle on live preference changes so content never re-hides.

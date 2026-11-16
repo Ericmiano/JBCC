@@ -112,8 +112,8 @@ test("the full forum video opens on request in a labelled dialog", async ({ page
   await expect(dialog).toBeHidden();
 });
 
-test("the cookie notice explains the site's cookie use and stays dismissed", async ({ browser }) => {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, baseURL: "http://localhost:8080" });
+test("the cookie notice explains the site's cookie use and stays dismissed", async ({ browser, baseURL }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, baseURL });
   const page = await context.newPage();
   await openHydratedPage(page, "/");
   const notice = page.getByRole("region", { name: "Cookie notice" });

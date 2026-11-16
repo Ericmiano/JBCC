@@ -1,12 +1,10 @@
 import {
-  board2018,
   faqs,
   mission,
   newestPriceIndex,
   objectives,
   officeHours,
   partners,
-  pastActivities,
   resources,
   seminarTopics,
   socialLinks,
@@ -93,21 +91,6 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
       `JBCC lists these seminar subjects: ${seminarTopics.join("; ")}.`,
       "An attendance certificate is issued for each seminar attended.",
       "No upcoming seminar dates are published on this website. Ask the Secretariat at mail@jbcc.co.ke for the next schedule, fees and registration.",
-    ].join("\n"),
-  },
-  ...pastActivities.map((activity): KnowledgeSource => ({
-    url: "/events",
-    title: `Past activity (${activity.year}): ${activity.title}`,
-    kind: "Seminars",
-    text: `${activity.text} This activity was published on JBCC's previous website in ${activity.year}; its current status is not published, so ask the Secretariat.`,
-  })),
-  {
-    url: "/about",
-    title: "Board of Directors listed in 2018 (historical)",
-    kind: "Page",
-    text: [
-      `JBCC's previous website, archived on ${board2018.capturedOn}, listed this Board of Directors. It is a historical record, not the current board, which has not been published on this website.`,
-      board2018.members.map((m) => [m.name, m.role, m.body].filter(Boolean).join(", ")).join("; ") + ".",
     ].join("\n"),
   },
   ...partners.map((p): KnowledgeSource => ({

@@ -24,6 +24,12 @@ bun run dev
 - `bun run test:lighthouse` — run the mobile Lighthouse checks against the
   local preview server.
 - `bun run lint` — check source formatting and lint rules.
+- `node --test tests/deploy/` — check the production server's security headers,
+  request limits, sitemap and 404s. Needs the production build running (see
+  Deploying).
+- `node scripts/stress.mjs <url> <visitors> <seconds>` — load test. Fails on any
+  5xx response or a p95 latency over one second. Set `STRESS_AUTH=user:password`
+  for the staging site.
 
 ## Ask JBCC
 
@@ -56,6 +62,11 @@ file that wraps it, and `deploy/package.json` marks it as CommonJS so a
 `"type": "module"` file higher up can't break it; `scripts/deploy.sh` copies
 them to the server over SSH, keeps the previous release in `.previous/`, and
 restarts the app.
+
+`deploy/app.js` also sets the security headers (a same-origin Content Security
+Policy, HSTS, no framing, nosniff), refuses methods other than GET, HEAD and
+POST, caps request bodies at 64 KB, and works out each visitor's address for
+the Ask JBCC rate limit from the proxy, not from headers the visitor sends.
 
 To run the production build locally, as CI does for Lighthouse:
 
@@ -121,6 +132,19 @@ reviewers to `production` so a live deploy needs approval.
 
 - To roll back, swap `.previous/` back into the application root over SSH
   and touch `tmp/restart.txt`.
+
+### Going live
+
+1. Point the `jbcc.co.ke` DNS A record at the DirectAdmin server and wait for
+   it to resolve; Let's Encrypt can't issue a certificate before that.
+2. Create the Live app (table above) with `SITE_URL=https://jbcc.co.ke` and no
+   password, then turn on SSL and **Force SSL redirect** for the domain.
+3. Run **Actions → Deploy → Run workflow → production**.
+4. Check `https://jbcc.co.ke/`, `/robots.txt` (it should allow crawling) and
+   `/sitemap.xml`, then run `node scripts/stress.mjs https://jbcc.co.ke 20 20`.
+5. Decide what happens to `jbcc.or.ke`. Redirecting it to `https://jbcc.co.ke`
+   keeps old bookmarks working but also sends the resource centre's
+   provenance links (`jbcc.or.ke/download/…`) to the new home page.
 
 ## Content and source files
 

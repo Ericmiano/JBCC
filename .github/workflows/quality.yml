@@ -8,6 +8,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
+      # Fails on high or critical advisories in packages the live server ships with.
+      - run: bun audit --prod --audit-level=high
       - run: bunx playwright install --with-deps chromium
       # vite.config.ts pins the dev server to port 8080.
       - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
@@ -19,6 +21,10 @@ jobs:
           cp deploy/app.js deploy/package.json .output/
           PORT=4173 node .output/app.js &
           npx wait-on -t 60000 http://localhost:4173
+      # Security headers, method and body limits, sitemap and 404s from deploy/app.js.
+      - run: node --test tests/deploy/
+      # 50 concurrent visitors for 20 seconds; fails on any 5xx or a p95 over one second.
+      - run: node scripts/stress.mjs http://localhost:4173 50 20
       # Thresholds: accessibility >= 94, mobile performance >= 50 (production scores 64–70 locally).
       - run: bun run test:lighthouse
         env: { LH_BASE_URL: "http://localhost:4173", LH_MIN_A11Y: "0.94", LH_MIN_PERF: "0.5" }

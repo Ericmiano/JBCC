@@ -45,19 +45,24 @@ function getClient(): Anthropic | undefined {
   return cachedClient.client;
 }
 
-// Best-effort per-visitor limit inside one Worker isolate. Configure AI Gateway rate limiting for a global cap.
+// Per-process limits: six questions per visitor and 60 in total every five minutes, which caps model spend
+// even when many addresses ask at once. Configure AI Gateway rate limiting for a cross-process cap.
 const WINDOW_MS = 5 * 60_000;
 const MAX_QUESTIONS = 6;
+const MAX_TOTAL_QUESTIONS = 60;
 const recent = new Map<string, number[]>();
+let allRecent: number[] = [];
 
 function allowQuestion(visitor: string) {
   const now = Date.now();
+  allRecent = allRecent.filter((time) => now - time < WINDOW_MS);
   const times = (recent.get(visitor) ?? []).filter((time) => now - time < WINDOW_MS);
-  if (times.length >= MAX_QUESTIONS) {
+  if (times.length >= MAX_QUESTIONS || allRecent.length >= MAX_TOTAL_QUESTIONS) {
     recent.set(visitor, times);
     return false;
   }
   times.push(now);
+  allRecent.push(now);
   recent.set(visitor, times);
   if (recent.size > 5_000) recent.clear();
   return true;
@@ -77,7 +82,8 @@ export const askJbcc = createServerFn({ method: "POST" })
       return { status: "unavailable", message: `AI answers are not switched on for this website yet. These pages may help. ${CONTACT}`, related };
     }
 
-    const visitor = getRequestHeader("cf-connecting-ip") ?? getRequestHeader("x-forwarded-for")?.split(",")[0]?.trim() ?? "anonymous";
+    // Set by deploy/app.js from the socket or the proxy's own X-Forwarded-For entry; visitors can't choose it.
+    const visitor = getRequestHeader("x-jbcc-client-ip") ?? "anonymous";
     if (!allowQuestion(visitor)) {
       return { status: "limited", message: `You have asked several questions in a short time. Please wait a few minutes and try again. ${CONTACT}`, related };
     }
