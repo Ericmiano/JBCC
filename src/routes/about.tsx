@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { SectionHeading } from "@/components/section-heading";
-import { mission, partners, vision } from "@/lib/jbcc-data";
+import { board, mission, partners, vision } from "@/lib/jbcc-data";
 import { EditorialReveal } from "@/components/editorial-reveal";
 import { getRequestOrigin } from "@/lib/origin.functions";
 import { ImageReveal } from "@/components/image-reveal";
@@ -36,8 +36,16 @@ function AboutPage() {
     </div></section>
     <section className="bg-navy px-5 py-16 text-navy-foreground md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
       <SectionHeading number="03" label="Representation" title="One table for different parts of the industry." intro="JBCC describes its committee as representing building owners and developers, professional consultants, and general and specialist contractors." light />
-      <div className="mt-10 border-t border-navy-foreground/20 sm:mt-14"><article className="grid gap-4 border-b border-navy-foreground/20 py-7 md:grid-cols-[1fr_2fr]"><p className="technical-label text-signal">Governance</p><p className="max-w-3xl text-lg leading-8 text-navy-muted">For the current Board of Directors and office holders, contact the Secretariat at mail@jbcc.co.ke.</p></article>
-        </div>
+      <div className="mt-10 border-t border-navy-foreground/20 sm:mt-14">
+        <h3 id="board-title" className="technical-label pt-7 text-signal">Board of Directors</h3>
+        <ul aria-labelledby="board-title" className="mt-2 grid md:grid-cols-2 md:gap-x-10">{board.map((member) => {
+          const body = partners.find((partner) => partner.abbr === member.body);
+          return <li key={member.name} className="grid grid-cols-[72px_minmax(0,1fr)] items-center gap-5 border-b border-navy-foreground/20 py-5">
+            <img src={member.photo} alt="" width="400" height="400" loading="lazy" decoding="async" className="aspect-square w-[72px] object-cover" />
+            <div><p className="text-lg font-semibold leading-snug">{member.name}</p><p className="mt-1 text-sm leading-6 text-navy-muted">{member.role ? `${member.role} · ` : ""}Representing {body?.name ?? member.body}</p></div>
+          </li>;
+        })}</ul>
+      </div>
     </div></section>
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto max-w-7xl">
       <SectionHeading number="04" label="Membership" title="Constituent bodies" intro="Descriptions last updated in June 2022." />

@@ -309,3 +309,13 @@ test("keyboard focus stays distinct on links, filters, fields, and menus across 
     await expect(trigger).toBeFocused();
   }
 });
+
+test("the About page lists the Board of Directors from jbcc.or.ke with their portraits", async ({ page }) => {
+  await openHydratedPage(page, "/about");
+  const board = page.getByRole("list", { name: "Board of Directors" });
+  await expect(board.getByRole("listitem")).toHaveCount(8);
+  await expect(board.getByRole("listitem").first()).toContainText("Arch. Muchiri L. Waititu");
+  await expect(board.getByRole("listitem").first()).toContainText("Chairperson · Representing Architectural Association of Kenya");
+  await board.scrollIntoViewIfNeeded();
+  await expect.poll(() => board.locator("img").evaluateAll((images) => images.filter((image) => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0).length)).toBe(8);
+});

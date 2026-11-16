@@ -1,4 +1,5 @@
 import {
+  board,
   faqs,
   mission,
   newestPriceIndex,
@@ -40,7 +41,6 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
       `Vision: ${vision}`,
       `Mission: ${mission.join(" ")}`,
       `Eight constituent bodies now sit on the Council: ${partners.map((p) => `${p.name} (${p.abbr})`).join(", ")}.`,
-      "A current, dated board roster has not been published on this website. Contact the Secretariat for current office holders.",
     ].join("\n"),
   },
   {
@@ -91,6 +91,18 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
       `JBCC lists these seminar subjects: ${seminarTopics.join("; ")}.`,
       "An attendance certificate is issued for each seminar attended.",
       "No upcoming seminar dates are published on this website. Ask the Secretariat at mail@jbcc.co.ke for the next schedule, fees and registration.",
+    ].join("\n"),
+  },
+  {
+    url: "/about",
+    title: "Board of Directors",
+    kind: "Page",
+    text: [
+      "JBCC's Board of Directors, with the constituent body each member represents:",
+      ...board.map((m) => {
+        const body = partners.find((p) => p.abbr === m.body);
+        return `${m.name}${m.role ? `, ${m.role}` : ""}, representing ${body ? `${body.name} (${body.abbr})` : m.body}.`;
+      }),
     ].join("\n"),
   },
   ...partners.map((p): KnowledgeSource => ({

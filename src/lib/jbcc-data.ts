@@ -20,6 +20,18 @@ export const resources = [
 
 export const newestPriceIndex = resources.find((resource) => resource.title.startsWith("JBCC Price Index —"));
 
+/** Board of Directors as listed on the About page of jbcc.or.ke; portraits from the same page. */
+export const board = [
+  { name: "Arch. Muchiri L. Waititu", role: "Chairperson", body: "AAK", photo: "/media/board/muchiri-waititu.jpg" },
+  { name: "QS Peter Kariuki", role: "Vice-Chairperson", body: "IQSK", photo: "/media/board/peter-kariuki.jpg" },
+  { name: "Kenneth Luusa", role: "Secretary", body: "KPDA", photo: "/media/board/kenneth-luusa.jpg" },
+  { name: "Engineer Nathaniel Matalanga", role: "", body: "IEK", photo: "/media/board/nathaniel-matalanga.jpg" },
+  { name: "Ramesh Kurji Vishram", role: "", body: "KABCEC", photo: "/media/board/ramesh-kurji-vishram.jpg" },
+  { name: "QS Josephat Munyoki", role: "", body: "KFMB", photo: "/media/board/josephat-munyoki.jpg" },
+  { name: "Dr. Engineer Siphila Wanjiku", role: "", body: "ACEK", photo: "/media/board/siphila-wanjiku.jpg" },
+  { name: "QS Nyagah Kithinji Boore", role: "", body: "CIArb (K)", photo: "/media/board/kithinji-boore.jpg" },
+] as const;
+
 export const seminarTopics = [
   "Principal Building Agreement",
   "Nominated / Selected Subcontract Agreement",
@@ -90,6 +102,7 @@ export const socialLinks = [
 export const searchItems = [
   ...siteLinks.map((item) => ({ title: item.label, type: "Page", to: item.to })),
   ...resources.map((item) => ({ title: item.title, type: item.type, url: item.url })),
+  { title: "Board of Directors", type: "Council", to: "/about" as const },
   ...partners.map((item) => ({ title: `${item.name} (${item.abbr})`, type: "Constituent body", to: "/about" as const })),
   { title: "Terms of use", type: "Site policy", to: "/terms" as const },
   { title: "Privacy policy", type: "Site policy", to: "/privacy" as const },

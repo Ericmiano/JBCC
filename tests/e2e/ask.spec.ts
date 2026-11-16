@@ -48,6 +48,7 @@ test.describe("answer grounding", () => {
     expect(findRelevantSources("seminar registration certificate")[0]?.url).toBe("/events");
     expect(findRelevantSources("Where is the Secretariat office?").map((source) => source.url)).toContain("/contact");
     expect(findRelevantSources("")).toEqual([]);
+    expect(findRelevantSources("Who chairs the board of directors?")[0]?.title).toBe("Board of Directors");
   });
 });
 
