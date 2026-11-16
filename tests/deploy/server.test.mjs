@@ -1,6 +1,6 @@
 // Checks deploy/app.js against a running production build:
 //   bun run build && cp deploy/app.js deploy/package.json .output/ && PORT=4173 node .output/app.js
-//   node --test tests/deploy/
+//   node --test tests/deploy/server.test.mjs
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import http from "node:http";
@@ -46,5 +46,6 @@ test("unsupported methods are refused", async () => {
 
 test("request bodies must be small and declare their length", async () => {
   assert.equal((await send("POST", "/", { headers: { "content-length": String(1024 * 1024) } })).statusCode, 413);
-  assert.equal((await send("POST", "/", { headers: { "transfer-encoding": "chunked" }, body: "x" })).statusCode, 411);
+  // No body: the server answers without reading it, and on Linux closing over unread data resets the connection.
+  assert.equal((await send("POST", "/", { headers: { "transfer-encoding": "chunked" } })).statusCode, 411);
 });

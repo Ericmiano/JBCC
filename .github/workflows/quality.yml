@@ -23,7 +23,11 @@ jobs:
           PORT=4173 node .output/app.js &
           npx wait-on -t 60000 http://localhost:4173
       # Security headers, method and body limits, sitemap and 404s from deploy/app.js.
-      - run: node --test tests/deploy/
+      # Failures are repeated as annotations so they show on the run page without opening the log.
+      - run: |
+          node --test tests/deploy/server.test.mjs 2>&1 | tee deploy-tests.log; status=${PIPESTATUS[0]}
+          [ "$status" = 0 ] || grep -E "not ok|Error|expected|actual" deploy-tests.log | head -8 | sed 's/^/::error title=Server checks::/'
+          exit "$status"
       # 50 concurrent visitors for 20 seconds; fails on any 5xx or a p95 over one second.
       - run: node scripts/stress.mjs http://localhost:4173 50 20
       # Thresholds: accessibility >= 94, mobile performance >= 50 (production scores 64–70 locally).

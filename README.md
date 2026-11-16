@@ -24,7 +24,7 @@ bun run dev
 - `bun run test:lighthouse` — run the mobile Lighthouse checks against the
   local preview server.
 - `bun run lint` — check source formatting and lint rules.
-- `node --test tests/deploy/` — check the production server's security headers,
+- `node --test tests/deploy/server.test.mjs` — check the production server's security headers,
   request limits, sitemap and 404s. Needs the production build running (see
   Deploying).
 - `node scripts/stress.mjs <url> <visitors> <seconds>` — load test. Fails on any
