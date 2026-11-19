@@ -18,7 +18,7 @@ const sections: LegalSection[] = [
     <ul>
       <li><strong>Enquiries.</strong> The contact form does not send data to us. It opens an email in your own email app. If you send it, we receive your name, email address and message. The same applies when you email or call the Secretariat directly.</li>
       <li><strong>Technical data.</strong> Our hosting provider processes your IP address, browser details and the pages you request, so it can deliver the website and protect it from abuse.</li>
-      <li><strong>Ask JBCC questions.</strong> When you use <Link to="/ask">Ask JBCC</Link>, your question is sent through Cloudflare AI Gateway to Anthropic, which generates the answer. We don’t attach your name or contact details. Please don’t include personal or confidential information in a question.</li>
+      <li><strong>Ask JBCC questions.</strong> When you use <Link to="/ask">Ask JBCC</Link>, your question is sent through Cloudflare to Anthropic, the service provider that generates the answer. We don’t attach your name or contact details. Please don’t include personal or confidential information in a question.</li>
       <li><strong>Browser storage.</strong> If you close the cookie notice, your browser stores a note of that on your device. It does not identify you. See the <Link to="/cookies">cookie policy</Link>.</li>
     </ul>
   </> },

@@ -82,7 +82,7 @@ function AskPage() {
       image={{ src: "/media/jbcc-hero-group.jpg", alt: "JBCC members and industry stakeholders gathered for a group photograph", width: 1920, height: 900 }}
       recordLabel="Answers from"
       recordValue="This website"
-      recordNote="AI-written answers can be wrong. Check the linked sources or contact the Secretariat."
+      recordNote="Answers are generated automatically and can be wrong. Check the linked sources or contact the Secretariat."
     />
     <section className="px-5 py-14 md:px-8 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-16">
@@ -151,7 +151,7 @@ function AnswerView({ exchange, headingRef }: { exchange: Exchange; headingRef: 
           {result.sources.map((source, n) => <li key={`${source.url}-${source.title}`}><SourceLink source={source} className="grid min-h-11 grid-cols-[2rem_minmax(0,1fr)] items-center gap-2 border-b border-border py-2 text-sm hover:text-signal"><span className="font-semibold text-[#c4161c]">{n + 1}</span><span><span className="block font-medium">{source.title}</span><span className="block text-xs text-muted-foreground">{source.kind}</span></span></SourceLink></li>)}
         </ol>
       </section> : null}
-      <p className="mt-6 text-xs leading-5 text-muted-foreground">This answer was written by AI from this website’s published content and may contain mistakes. Many documents are historical. Confirm anything you rely on with the <Link to="/contact" className="underline underline-offset-4">Secretariat</Link>.</p>
+      <p className="mt-6 text-xs leading-5 text-muted-foreground">This answer was generated automatically from this website’s published content and may contain mistakes. Many documents are historical. Confirm anything you rely on with the <Link to="/contact" className="underline underline-offset-4">Secretariat</Link>.</p>
     </> : <>
       <p className="mt-4 border-l-2 border-signal bg-muted px-5 py-4 text-sm leading-6">{result.message}</p>
       {result.related.length ? <section aria-labelledby="ask-related-title" className="mt-6">

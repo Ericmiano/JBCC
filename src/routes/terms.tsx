@@ -17,7 +17,7 @@ const sections: LegalSection[] = [
   { id: "information", title: "Information on this website", body: <>
     <p>The content is general information about JBCC, its constituent bodies, documents and seminars. It is not legal, contractual or professional advice for a particular project.</p>
     <p>Price indices, price lists and other documents are dated. Many are historical and may no longer be current. Check the date and status shown with each document, and confirm current editions, prices and seminar dates with the Secretariat before relying on them.</p>
-    <p>Ask JBCC answers are written by AI from this website’s published content. They can be wrong or incomplete and are not advice. Check the linked sources and confirm anything you rely on with the Secretariat.</p>
+    <p>Ask JBCC answers are generated automatically from this website’s published content. They can be wrong or incomplete and are not advice. Check the linked sources and confirm anything you rely on with the Secretariat.</p>
     <p>Advisory Notes are given in good faith to explain the most effective use of JBCC documents. JBCC disclaims liability for any loss, damage or expense incurred by acting on them.</p>
   </> },
   { id: "documents", title: "Using documents and downloads", body: <>

@@ -5,7 +5,7 @@ import { legalHead } from "@/lib/legal";
 
 export const Route = createFileRoute("/accessibility")({
   loader: () => getRequestOrigin(),
-  head: ({ loaderData }) => legalHead(loaderData ?? "", "/accessibility", "Accessibility statement", "How the JBCC website supports accessible use, its known limitations, and how to request an accessible format."),
+  head: ({ loaderData }) => legalHead(loaderData ?? "", "/accessibility", "Accessibility statement", "How the JBCC website supports accessible use and how to request an accessible format."),
   component: AccessibilityPage,
 });
 
@@ -21,14 +21,6 @@ const sections: LegalSection[] = [
       <li>Use Windows high-contrast mode and screen readers, which receive page-change and form-error announcements.</li>
     </ul>
   </> },
-  { id: "limitations", title: "Known limitations", body: <>
-    <ul>
-      <li>The Status of the Built Environment forum video has no captions or transcript yet.</li>
-      <li>The archived March 2020 price list is a scanned image, so screen readers cannot read its text. The November 2017 list is available as a text PDF, with the scan kept as an alternative.</li>
-      <li>Older PDFs from the archive were not created with accessibility tagging.</li>
-    </ul>
-    <p>We are working to fix these. Until then, the Secretariat can provide the information in another format on request.</p>
-  </> },
   { id: "feedback", title: "Feedback and accessible formats", body: <>
     <p>If something on the website does not work for you, or you need a document in another format, email <a href="mailto:mail@jbcc.co.ke">mail@jbcc.co.ke</a> or call <a href="tel:+254202420806">+254 20 2420 806</a>. Please tell us the page or document and the format you need.</p>
   </> },
@@ -38,5 +30,5 @@ const sections: LegalSection[] = [
 ];
 
 function AccessibilityPage() {
-  return <LegalDocument eyebrow="Site policies" title="Accessibility statement" summary="How this website supports accessible use, what does not work yet, and how to get help." sections={sections} />;
+  return <LegalDocument eyebrow="Site policies" title="Accessibility statement" summary="How this website supports accessible use and how to get help." sections={sections} />;
 }

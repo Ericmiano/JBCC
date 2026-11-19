@@ -52,12 +52,12 @@ test.describe("answer grounding", () => {
   });
 });
 
-test("without an AI Gateway the page explains and links to related pages", async ({ page }) => {
+test("without a gateway configured the page explains and links to related pages", async ({ page }) => {
   await openAsk(page);
   await page.getByLabel("Your question").fill("How do I register for a seminar?");
   await page.getByRole("button", { name: "Ask", exact: true }).click();
   await expect(page.getByRole("heading", { name: "We couldn’t answer that here" })).toBeFocused();
-  await expect(page.getByText("AI answers are not switched on")).toBeVisible();
+  await expect(page.getByText("Ask JBCC isn’t answering questions yet")).toBeVisible();
   await expect(page.getByRole("region", { name: "Related pages" }).getByRole("link").first()).toHaveAttribute("href", "/events");
 });
 

@@ -55,17 +55,15 @@ function ResourcesPage() {
   const clearFilters = () => { setType("All"); setYear("All"); setQ(""); };
   const hasFilters = type !== "All" || year !== "All" || q.length > 0;
   return <main>
-    <PageIntro index="03" eyebrow="Resource centre" title="JBCC documents, dated and downloadable." description="Browse JBCC’s archive of agreements, price indices and related documents." image={{ src: "/media/jbcc-publication-launch.jpg", alt: "Four men holding copies of a newly launched built-environment report", width: 800, height: 673, position: "center 30%" }} recordLabel="Local archive" recordValue={String(resources.length).padStart(2, "0")} recordNote="PDFs captured from the public catalogue. Check each record’s date and status before use." />
+    <PageIntro index="03" eyebrow="Resource centre" title="JBCC documents, dated and downloadable." description="Browse JBCC’s archive of agreements, price indices and related documents." image={{ src: "/media/jbcc-publication-launch.jpg", alt: "Four men holding copies of a newly launched built-environment report", width: 800, height: 673, position: "center 30%" }} recordLabel="Documents" recordValue={String(resources.length).padStart(2, "0")} recordNote="Each document shows its date, edition and issuing body." />
     <section className="px-5 py-12 sm:py-16 md:px-8 md:py-24"><div className="mx-auto max-w-7xl">
-      <p className="border-l-2 border-signal bg-muted px-5 py-4 text-sm leading-6 text-muted-foreground">Archive status: the newest downloadable price index is June 2022. Confirm current editions and prices with JBCC before relying on these records.</p>
-      <p className="mt-5 max-w-5xl text-sm leading-6 text-muted-foreground">The JBCC FAQ last modified in June 2022 described price indices as quarterly, documents as issued four times a year, and gave a KSh 3,500–5,000 Green Book price range. These are historical figures; <a href="#faq-title" className="underline underline-offset-4">see the FAQ below</a> and ask the Secretariat for current availability, publication timing, and prices.</p>
 
       <dl className="mt-10 grid border-y border-border sm:grid-cols-2">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-border py-5 sm:grid-cols-1 sm:gap-2 sm:border-b-0 sm:border-r sm:pr-5">
           <dt className="technical-label text-muted-foreground">Downloadable documents</dt><dd className="text-right text-base font-medium sm:text-left">{resources.length} PDFs</dd>
         </div>
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-border py-5 sm:grid-cols-1 sm:gap-2 sm:border-b-0 sm:px-5">
-          <dt className="technical-label text-muted-foreground">Newest price index</dt><dd className="text-right text-base font-medium sm:text-left">{newestPriceIndex?.title.replace("JBCC Price Index — ", "") ?? "Not listed"} · historical</dd>
+          <dt className="technical-label text-muted-foreground">Newest price index</dt><dd className="text-right text-base font-medium sm:text-left">{newestPriceIndex?.title.replace("JBCC Price Index — ", "")}</dd>
         </div>
       </dl>
 

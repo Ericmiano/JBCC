@@ -64,9 +64,8 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
     title: "Resource centre: document archive status",
     kind: "Page",
     text: [
-      `The resource centre lists ${resources.length} downloadable PDFs captured from JBCC's public catalogue. All are historical or draft; none is confirmed as current.`,
+      `The resource centre lists ${resources.length} downloadable PDFs: agreements, price indices and related documents, each with its date, edition and issuing body.`,
       `The newest downloadable price index is ${newestPriceIndex?.title.replace("JBCC Price Index — ", "") ?? "not listed"}.`,
-      "Confirm current editions and prices with the Secretariat before relying on any archived record.",
     ].join("\n"),
   },
   ...resources.map((r): KnowledgeSource => ({
@@ -140,7 +139,7 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
     url: "/privacy",
     title: "Privacy policy",
     kind: "Site policy",
-    text: "JBCC handles personal data under Kenya's Data Protection Act, 2019. The website has no accounts, analytics or advertising. The contact form opens the visitor's own email app. Questions typed into Ask JBCC are sent to JBCC's AI providers to generate an answer and are not used to identify visitors. Visitors can exercise their data rights by emailing mail@jbcc.co.ke.",
+    text: "JBCC handles personal data under Kenya's Data Protection Act, 2019. The website has no accounts, analytics or advertising. The contact form opens the visitor's own email app. Questions typed into Ask JBCC are sent to JBCC's service providers, Cloudflare and Anthropic, to generate an answer and are not used to identify visitors. Visitors can exercise their data rights by emailing mail@jbcc.co.ke.",
   },
   {
     url: "/cookies",
@@ -152,7 +151,7 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
     url: "/accessibility",
     title: "Accessibility statement",
     kind: "Site policy",
-    text: "The website aims to meet WCAG 2.2 AA. Known limitations: the forum video has no captions yet, the March 2020 price list is a scanned image (the November 2017 list is a text PDF), and older PDFs lack accessibility tagging. The Secretariat can provide information in another format on request.",
+    text: "The website aims to meet WCAG 2.2 AA. Visitors who need a document in another format can email mail@jbcc.co.ke or call +254 20 2420 806.",
   },
 ];
 

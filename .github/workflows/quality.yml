@@ -6,7 +6,7 @@ permissions:
 
 jobs:
   checks:
-    # Playwright 1.56 cannot install browser system packages on Ubuntu 26, which ubuntu-latest now uses.
+    # Pinned so a runner OS change (ubuntu-latest moved to Ubuntu 26) cannot break the browser install; move deliberately.
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:

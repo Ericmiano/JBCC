@@ -33,10 +33,14 @@ function getClient(): Anthropic | undefined {
     cachedClient = {
       key,
       client: new Anthropic({
-        // With keys stored in the gateway (BYOK) the SDK still needs a value; the gateway supplies the real key.
-        apiKey: apiKey ?? "stored-in-ai-gateway",
         baseURL,
-        defaultHeaders: gatewayToken ? { "cf-aig-authorization": `Bearer ${gatewayToken}` } : undefined,
+        // SDK 1.x sends keys as Authorization: Bearer. Cloudflare's Anthropic route takes the key in X-Api-Key, and
+        // with keys stored in the gateway (BYOK) it adds the key itself, so the request must carry none of its own.
+        defaultHeaders: {
+          Authorization: null,
+          ...(apiKey ? { "X-Api-Key": apiKey } : {}),
+          ...(gatewayToken ? { "cf-aig-authorization": `Bearer ${gatewayToken}` } : {}),
+        },
         maxRetries: 1,
         timeout: 45_000,
       }),
@@ -79,7 +83,7 @@ export const askJbcc = createServerFn({ method: "POST" })
     const related = relatedSources(question);
     const client = getClient();
     if (!client) {
-      return { status: "unavailable", message: `AI answers are not switched on for this website yet. These pages may help. ${CONTACT}`, related };
+      return { status: "unavailable", message: `Ask JBCC isn’t answering questions yet. These pages may help. ${CONTACT}`, related };
     }
 
     // Set by deploy/app.js from the socket or the proxy's own X-Forwarded-For entry; visitors can't choose it.
@@ -114,7 +118,7 @@ export const askJbcc = createServerFn({ method: "POST" })
       }
       if (error instanceof Anthropic.AuthenticationError || error instanceof Anthropic.PermissionDeniedError || error instanceof Anthropic.NotFoundError) {
         console.error(`Ask JBCC gateway configuration error (${error.status})`);
-        return { status: "unavailable", message: `AI answers are temporarily unavailable. These pages may help. ${CONTACT}`, related };
+        return { status: "unavailable", message: `Ask JBCC is temporarily unavailable. These pages may help. ${CONTACT}`, related };
       }
       if (error instanceof Anthropic.APIConnectionError) {
         console.error("Ask JBCC could not reach AI Gateway", error.message);
