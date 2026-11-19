@@ -39,6 +39,16 @@ test("unknown pages return 404", async () => {
   assert.equal((await send("GET", "/no-such-page")).statusCode, 404);
 });
 
+// CI runs this server without AI Gateway settings, so Ask JBCC must leave no trace.
+test("without a gateway Ask JBCC is hidden everywhere", async () => {
+  assert.equal((await send("GET", "/ask")).statusCode, 404);
+  for (const path of ["/", "/about", "/privacy", "/terms"]) {
+    const html = await (await fetch(new URL(path, base))).text();
+    assert.doesNotMatch(html, /href="\/ask|Ask JBCC|Anthropic/, path);
+  }
+  assert.doesNotMatch(await (await fetch(new URL("/sitemap.xml", base))).text(), /\/ask</);
+});
+
 test("unsupported methods are refused", async () => {
   assert.equal((await send("PUT", "/")).statusCode, 405);
   assert.equal((await send("DELETE", "/")).statusCode, 405);

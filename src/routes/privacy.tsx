@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { getRequestOrigin } from "@/lib/origin.functions";
 import { LegalDocument, type LegalSection } from "@/components/legal-document";
 import { legalHead } from "@/lib/legal";
+import { AskOnly } from "@/lib/ask/availability";
 
 export const Route = createFileRoute("/privacy")({
   loader: () => getRequestOrigin(),
@@ -18,7 +19,7 @@ const sections: LegalSection[] = [
     <ul>
       <li><strong>Enquiries.</strong> The contact form does not send data to us. It opens an email in your own email app. If you send it, we receive your name, email address and message. The same applies when you email or call the Secretariat directly.</li>
       <li><strong>Technical data.</strong> Our hosting provider processes your IP address, browser details and the pages you request, so it can deliver the website and protect it from abuse.</li>
-      <li><strong>Ask JBCC questions.</strong> When you use <Link to="/ask">Ask JBCC</Link>, your question is sent through Cloudflare to Anthropic, the service provider that generates the answer. We don’t attach your name or contact details. Please don’t include personal or confidential information in a question.</li>
+      <AskOnly><li><strong>Ask JBCC questions.</strong> When you use <Link to="/ask">Ask JBCC</Link>, your question is sent through Cloudflare to Anthropic, the service provider that generates the answer. We don’t attach your name or contact details. Please don’t include personal or confidential information in a question.</li></AskOnly>
       <li><strong>Browser storage.</strong> If you close the cookie notice, your browser stores a note of that on your device. It does not identify you. See the <Link to="/cookies">cookie policy</Link>.</li>
     </ul>
   </> },
@@ -31,7 +32,7 @@ const sections: LegalSection[] = [
     <p>We rely on your consent when you contact us, and on our legitimate interest in running the Secretariat and the website. We do not use your data for automated decision-making or marketing without your consent.</p>
   </> },
   { id: "share", title: "Sharing your data", body: <>
-    <p>We do not sell personal data. We share it only with service providers that host the website or our email, and, for Ask JBCC questions, Cloudflare and Anthropic, under appropriate safeguards, or where the law requires us to.</p>
+    <p>We do not sell personal data. We share it only with service providers that host the website or our email<AskOnly>, and, for Ask JBCC questions, Cloudflare and Anthropic</AskOnly>, under appropriate safeguards, or where the law requires us to.</p>
     <p>Some of these providers may process data outside Kenya. Where they do, we rely on safeguards permitted by the Data Protection Act, 2019.</p>
   </> },
   { id: "retention", title: "How long we keep it", body: <>

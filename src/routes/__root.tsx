@@ -13,6 +13,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site-header";
+import { getAskAvailable } from "@/lib/ask/ask.functions";
 import { SiteFooter } from "@/components/site-footer";
 import { CookieNotice } from "@/components/cookie-notice";
 
@@ -74,6 +75,9 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  // Server configuration, read once per visit: whether Ask JBCC is shown (see src/lib/ask/availability.tsx).
+  loader: () => getAskAvailable(),
+  staleTime: Infinity,
   head: () => ({
     meta: [
       { charSet: "utf-8" },

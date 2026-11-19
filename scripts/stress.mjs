@@ -11,7 +11,7 @@ const home = await fetch(base, { headers }).then((res) => res.text());
 const assets = [...new Set(home.match(/\/assets\/[\w.-]+\.(?:js|css)/g) ?? [])];
 // Weighted like real traffic: mostly pages, then assets, then the odd document, image or missing page.
 const paths = [
-  ...["/", "/", "/", "/about", "/what-we-do", "/resources", "/resources", "/events", "/contact", "/ask", "/privacy"],
+  ...["/", "/", "/", "/about", "/what-we-do", "/resources", "/resources", "/events", "/contact", "/privacy"],
   ...assets,
   "/media/jbcc-hero-group.jpg",
   "/documents/JBCC-Price-List-November-2017.pdf",

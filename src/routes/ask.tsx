@@ -1,17 +1,20 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode, type RefObject } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowRight, Loader2, Sparkles } from "lucide-react";
 import { z } from "zod";
 import { PageIntro } from "@/components/page-intro";
 import { Button } from "@/components/ui/button";
 import { getRequestOrigin } from "@/lib/origin.functions";
-import { askJbcc } from "@/lib/ask/ask.functions";
+import { askJbcc, getAskAvailable } from "@/lib/ask/ask.functions";
 import { QUESTION_MAX_LENGTH, type AskResult, type AskSource } from "@/lib/ask/answer";
 
 const searchSchema = z.object({ q: z.string().max(QUESTION_MAX_LENGTH).optional().catch(undefined) });
 
 export const Route = createFileRoute("/ask")({
   validateSearch: searchSchema,
+  beforeLoad: async () => {
+    if (!(await getAskAvailable())) throw notFound();
+  },
   loader: () => getRequestOrigin(),
   head: ({ loaderData }) => ({
     meta: [

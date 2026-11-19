@@ -15,9 +15,11 @@ jobs:
       - run: bun install --frozen-lockfile
       # Fails on high or critical advisories in packages the live server ships with.
       - run: bun audit --prod --audit-level=high
-      - run: bunx playwright install --with-deps chromium
+      # Ubuntu mirrors sometimes answer 503; refresh the package lists and retry instead of failing the run.
+      - run: for attempt in 1 2 3; do sudo apt-get update -q && bunx playwright install --with-deps chromium && exit 0; echo "Browser install failed (attempt $attempt), retrying"; sleep 30; done; exit 1
       # vite.config.ts pins the dev server to port 8080.
-      - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
+      # Ask JBCC is shown only with a gateway configured; the stub gateway switches it on with fixed answers.
+      - run: node tests/support/stub-gateway.mjs & AI_GATEWAY_URL=http://localhost:9911/anthropic bun run dev & npx wait-on -t 120000 http://localhost:8080
       # Full end-to-end suite in Chromium; the accessibility workflow covers Firefox and WebKit.
       - run: bun run test:e2e
       # Lighthouse measures the production build, served through deploy/app.js as on DirectAdmin.

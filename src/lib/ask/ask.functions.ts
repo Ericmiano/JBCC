@@ -21,6 +21,9 @@ function gatewayBaseUrl() {
   return account && gateway ? `https://gateway.ai.cloudflare.com/v1/${account}/${gateway}/anthropic` : undefined;
 }
 
+/** Without a gateway, Ask JBCC is hidden everywhere: links, search, policy text, and /ask returns 404. */
+export const getAskAvailable = createServerFn({ method: "GET" }).handler(() => Boolean(gatewayBaseUrl()));
+
 let cachedClient: { key: string; client: Anthropic } | undefined;
 
 function getClient(): Anthropic | undefined {

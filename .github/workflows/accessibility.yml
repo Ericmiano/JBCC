@@ -25,8 +25,10 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
       - run: bun install --frozen-lockfile
-      - run: bunx playwright install --with-deps ${{ matrix.browser }}
-      - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
+      # Ubuntu mirrors sometimes answer 503; refresh the package lists and retry instead of failing the run.
+      - run: for attempt in 1 2 3; do sudo apt-get update -q && bunx playwright install --with-deps ${{ matrix.browser }} && exit 0; echo "Browser install failed (attempt $attempt), retrying"; sleep 30; done; exit 1
+      # Ask JBCC is shown only with a gateway configured; the stub gateway switches it on with fixed answers.
+      - run: node tests/support/stub-gateway.mjs & AI_GATEWAY_URL=http://localhost:9911/anthropic bun run dev & npx wait-on -t 120000 http://localhost:8080
       # "github" reporter annotates each failing test on the pull request.
       - run: bunx playwright test tests/e2e/accessibility.spec.ts --project=${{ matrix.browser }} --reporter=github,html
       - if: failure()

@@ -16,7 +16,10 @@ bun run dev
 ## Project commands
 
 - `bun run build` — create a production build.
-- `bun run test:e2e` — run the Playwright end-to-end suite in Chromium.
+- `bun run test:e2e` — run the Playwright end-to-end suite in Chromium. The
+  suite expects Ask JBCC switched on, so start the dev server against the test
+  gateway: `node tests/support/stub-gateway.mjs &` then
+  `AI_GATEWAY_URL=http://localhost:9911/anthropic bun run dev`. CI does the same.
 - `bun run test:a11y` — run the accessibility regression suite in Chromium,
   Firefox, and WebKit. Install the engines first with
   `bunx playwright install chromium firefox webkit`. Pull requests run this
@@ -49,8 +52,10 @@ screen, or in your shell for local development:
 | `CF_AIG_TOKEN` | If the gateway is authenticated | Sent as `cf-aig-authorization` |
 | `ANTHROPIC_API_KEY` | Unless the key is stored in the gateway | Anthropic API key |
 
-Without a gateway the page stays usable: it says AI answers are off and lists
-related pages found by keyword. Configure rate limiting and caching on the
+Without a gateway, Ask JBCC is hidden: it leaves the navigation, search and the
+privacy and terms pages, and `/ask` returns 404. It appears once
+`AI_GATEWAY_URL` (or the account and gateway IDs) is set and the app restarts;
+add `/ask` back to `public/sitemap.xml` then. Configure rate limiting and caching on the
 gateway; the site's own limit of six questions per visitor every five
 minutes applies per server process only.
 

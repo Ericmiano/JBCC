@@ -52,13 +52,19 @@ test.describe("answer grounding", () => {
   });
 });
 
-test("without a gateway configured the page explains and links to related pages", async ({ page }) => {
+// The suite runs against tests/support/stub-gateway.mjs (see README), so Ask JBCC is switched on and answers predictably.
+// tests/deploy/server.test.mjs covers the production server without a gateway, where Ask JBCC is hidden.
+test("an answer from the gateway is shown with the automatic-answer notice", async ({ page }) => {
   await openAsk(page);
   await page.getByLabel("Your question").fill("How do I register for a seminar?");
   await page.getByRole("button", { name: "Ask", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "We couldn’t answer that here" })).toBeFocused();
-  await expect(page.getByText("Ask JBCC isn’t answering questions yet")).toBeVisible();
-  await expect(page.getByRole("region", { name: "Related pages" }).getByRole("link").first()).toHaveAttribute("href", "/events");
+  await expect(page.getByText("Stub answer from the test gateway.")).toBeVisible();
+  await expect(page.getByText(/This answer was generated automatically/)).toBeVisible();
+});
+
+test("Ask JBCC is linked from the navigation while it is switched on", async ({ page }) => {
+  await openAsk(page, "/");
+  await expect(page.getByRole("navigation").first().getByRole("link", { name: "Ask JBCC" })).toHaveAttribute("href", "/ask");
 });
 
 test("an empty question is caught before anything is sent", async ({ page }) => {
