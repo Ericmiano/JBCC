@@ -26,12 +26,12 @@ export const Route = createFileRoute("/events")({
 
 function EventsPage() {
   return <main>
-    <PageIntro index="04" eyebrow="Seminars" title="Seminars on JBCC agreements." description="The live Council site describes these seminar subjects and says a certificate is issued for each seminar attended." image={{ src: "/media/jbcc-seminar-room.jpg", alt: "Delegates in a seminar room facing a presentation screen", width: 570, height: 658 }} recordLabel="Published subjects" recordValue={String(seminarTopics.length).padStart(2, "0")} recordNote="No upcoming dates were published in the source schedule we reviewed." />
+    <PageIntro index="04" eyebrow="Seminars" title="Seminars on JBCC agreements." description="JBCC runs seminars on its agreements and contract procedures for practitioners across the industry." image={{ src: "/media/jbcc-seminar-room.jpg", alt: "Delegates in a seminar room facing a presentation screen", width: 570, height: 658 }} recordLabel="Published subjects" recordValue={String(seminarTopics.length).padStart(2, "0")} recordNote="A certificate is issued for each seminar attended." />
     <section className="px-5 py-16 md:px-8 md:py-28"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
       <aside className="self-start border-t border-border pt-5 lg:sticky lg:top-28">
         <p className="technical-label text-signal">Next seminar dates</p>
         <h2 className="mt-6 max-w-sm text-2xl font-semibold leading-tight sm:text-3xl">Ask for current dates and registration details.</h2>
-        <p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">No upcoming dates are published yet; ask the Secretariat for the next schedule. JBCC says a certificate is issued for each seminar attended.</p>
+        <p className="mt-4 max-w-md text-sm leading-6 text-muted-foreground">The Secretariat sends the next schedule, fees and registration details on request.</p>
         <a href="mailto:mail@jbcc.co.ke?subject=JBCC%20seminar%20schedule%20enquiry&body=Hello%20JBCC%20Secretariat%2C%0A%0APlease%20send%20me%20the%20next%20seminar%20schedule%20and%20registration%20details.%0A%0AThank%20you." className="mt-6 inline-flex min-h-11 items-center gap-3 border-b border-signal text-sm font-semibold uppercase hover:text-signal">Request the next schedule <ArrowRight className="size-4" /></a>
       </aside>
       <div className="border-t border-border">

@@ -9,7 +9,6 @@ import {
   resources,
   seminarTopics,
   socialLinks,
-  unavailableResources,
   vision,
 } from "@/lib/jbcc-data";
 
@@ -67,7 +66,6 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
     text: [
       `The resource centre lists ${resources.length} downloadable PDFs captured from JBCC's public catalogue. All are historical or draft; none is confirmed as current.`,
       `The newest downloadable price index is ${newestPriceIndex?.title.replace("JBCC Price Index — ", "") ?? "not listed"}.`,
-      `Catalogue entries without a downloadable file: ${unavailableResources.map((r) => `${r.title} (${r.year})`).join("; ")}. Their source pages returned "no file attached" or "file not found".`,
       "Confirm current editions and prices with the Secretariat before relying on any archived record.",
     ].join("\n"),
   },
@@ -90,7 +88,7 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
     text: [
       `JBCC lists these seminar subjects: ${seminarTopics.join("; ")}.`,
       "An attendance certificate is issued for each seminar attended.",
-      "No upcoming seminar dates are published on this website. Ask the Secretariat at mail@jbcc.co.ke for the next schedule, fees and registration.",
+      "The Secretariat at mail@jbcc.co.ke sends the next seminar schedule, fees and registration details on request.",
     ].join("\n"),
   },
   {

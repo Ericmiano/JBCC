@@ -39,11 +39,6 @@ export const seminarTopics = [
   "Contract administration methods",
 ] as const;
 
-export const unavailableResources = [
-  { title: "Building Code 2006", type: "Guidelines", year: "2006", sourceUrl: "https://jbcc.or.ke/download/building-code-2006/" },
-  { title: "JBCC Price Index — September 2022", type: "Price Indices", year: "2022", sourceUrl: "https://jbcc.or.ke/download/final-price-index-september-2022/" },
-] as const;
-
 export const workAreas = [
   { no: "01", title: "Discuss industry questions", text: "Provide a shared forum to discuss questions affecting Kenya’s building and construction industry." },
   { no: "02", title: "Develop shared contract procedures", text: "Promote equitable contract forms, cooperation and stability through contract and subcontract procedures and model forms." },
@@ -108,5 +103,4 @@ export const searchItems = [
   { title: "Privacy policy", type: "Site policy", to: "/privacy" as const },
   { title: "Cookie policy", type: "Site policy", to: "/cookies" as const },
   { title: "Accessibility statement", type: "Site policy", to: "/accessibility" as const },
-  ...unavailableResources.map((item) => ({ title: item.title, type: "Source entry unavailable", url: item.sourceUrl })),
 ] as const;
