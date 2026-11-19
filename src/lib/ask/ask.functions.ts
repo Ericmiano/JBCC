@@ -7,17 +7,17 @@ import { ASK_MODEL, QUESTION_MAX_LENGTH, SYSTEM_PROMPT, buildUserContent, parseA
 
 /**
  * Server configuration (DirectAdmin Node.js app environment variables, or the shell in local dev):
- *   AI_GATEWAY_URL         Full Anthropic endpoint, e.g. https://gateway.ai.cloudflare.com/v1/<account>/<gateway>/anthropic
- *   or CLOUDFLARE_ACCOUNT_ID + AI_GATEWAY_ID to build it.
- *   CF_AIG_TOKEN           Gateway token, required when the gateway is authenticated.
- *   ANTHROPIC_API_KEY      Optional when the key is stored in the gateway (BYOK).
+ *   ASK_GATEWAY_URL        Full gateway endpoint, e.g. https://gateway.ai.cloudflare.com/v1/<account>/<gateway>/anthropic
+ *   or CLOUDFLARE_ACCOUNT_ID + ASK_GATEWAY_ID to build it.
+ *   ASK_GATEWAY_TOKEN      Gateway token, required when the gateway is authenticated.
+ *   ASK_API_KEY            Optional when the key is stored in the gateway (BYOK).
  * Without a gateway, the feature reports itself unavailable and points visitors to related pages.
  */
 function gatewayBaseUrl() {
-  const explicit = readEnv("AI_GATEWAY_URL");
+  const explicit = readEnv("ASK_GATEWAY_URL");
   if (explicit) return explicit.replace(/\/+$/, "");
   const account = readEnv("CLOUDFLARE_ACCOUNT_ID");
-  const gateway = readEnv("AI_GATEWAY_ID");
+  const gateway = readEnv("ASK_GATEWAY_ID");
   return account && gateway ? `https://gateway.ai.cloudflare.com/v1/${account}/${gateway}/anthropic` : undefined;
 }
 
@@ -29,8 +29,8 @@ let cachedClient: { key: string; client: Anthropic } | undefined;
 function getClient(): Anthropic | undefined {
   const baseURL = gatewayBaseUrl();
   if (!baseURL) return undefined;
-  const apiKey = readEnv("ANTHROPIC_API_KEY");
-  const gatewayToken = readEnv("CF_AIG_TOKEN");
+  const apiKey = readEnv("ASK_API_KEY");
+  const gatewayToken = readEnv("ASK_GATEWAY_TOKEN");
   const key = [baseURL, apiKey, gatewayToken].join("|");
   if (cachedClient?.key !== key) {
     cachedClient = {
@@ -52,8 +52,8 @@ function getClient(): Anthropic | undefined {
   return cachedClient.client;
 }
 
-// Per-process limits: six questions per visitor and 60 in total every five minutes, which caps model spend
-// even when many addresses ask at once. Configure AI Gateway rate limiting for a cross-process cap.
+// Per-process limits: six questions per visitor and 60 in total every five minutes, which caps answer costs
+// even when many addresses ask at once. Configure gateway rate limiting for a cross-process cap.
 const WINDOW_MS = 5 * 60_000;
 const MAX_QUESTIONS = 6;
 const MAX_TOTAL_QUESTIONS = 60;
@@ -100,7 +100,7 @@ export const askJbcc = createServerFn({ method: "POST" })
         model: ASK_MODEL,
         max_tokens: 8000,
         output_config: { effort: "low" },
-        // Server-side fallback: if the model declines, the API retries on a suitable model in the same call.
+        // Server-side fallback: a declined request is retried on a suitable fallback in the same call.
         betas: ["server-side-fallback-2026-07-01"],
         fallbacks: "default",
         system: SYSTEM_PROMPT,
@@ -124,7 +124,7 @@ export const askJbcc = createServerFn({ method: "POST" })
         return { status: "unavailable", message: `Ask JBCC is temporarily unavailable. These pages may help. ${CONTACT}`, related };
       }
       if (error instanceof Anthropic.APIConnectionError) {
-        console.error("Ask JBCC could not reach AI Gateway", error.message);
+        console.error("Ask JBCC could not reach the gateway", error.message);
       } else if (error instanceof Anthropic.APIError) {
         console.error(`Ask JBCC API error ${error.status}`, error.message);
       } else {

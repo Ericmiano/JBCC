@@ -39,7 +39,7 @@ test("unknown pages return 404", async () => {
   assert.equal((await send("GET", "/no-such-page")).statusCode, 404);
 });
 
-// CI runs this server without AI Gateway settings, so Ask JBCC must leave no trace.
+// CI runs this server without gateway settings, so Ask JBCC must leave no trace.
 test("without a gateway Ask JBCC is hidden everywhere", async () => {
   assert.equal((await send("GET", "/ask")).statusCode, 404);
   for (const path of ["/", "/about", "/privacy", "/terms"]) {

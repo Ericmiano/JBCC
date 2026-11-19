@@ -19,7 +19,7 @@ bun run dev
 - `bun run test:e2e` — run the Playwright end-to-end suite in Chromium. The
   suite expects Ask JBCC switched on, so start the dev server against the test
   gateway: `node tests/support/stub-gateway.mjs &` then
-  `AI_GATEWAY_URL=http://localhost:9911/anthropic bun run dev`. CI does the same.
+  `ASK_GATEWAY_URL=http://localhost:9911/anthropic bun run dev`. CI does the same.
 - `bun run test:a11y` — run the accessibility regression suite in Chromium,
   Firefox, and WebKit. Install the engines first with
   `bunx playwright install chromium firefox webkit`. Pull requests run this
@@ -38,8 +38,8 @@ bun run dev
 
 `/ask` lets visitors ask about the site's published documents, pages,
 seminars, and policies. The server sends the question, together with every
-entry in `src/lib/ask/knowledge.ts` as citable search results, to Claude
-through Cloudflare AI Gateway. Answers list only citations that point at known
+entry in `src/lib/ask/knowledge.ts` as citable search results, to the answer
+service through a Cloudflare gateway. Answers list only citations that point at known
 site links. Keep `knowledge.ts` in step with page content when pages change.
 
 Set these as environment variables in DirectAdmin's "Setup Node.js App"
@@ -47,14 +47,14 @@ screen, or in your shell for local development:
 
 | Name | Required | Purpose |
 |---|---|---|
-| `AI_GATEWAY_URL` | One of these | Full endpoint, `https://gateway.ai.cloudflare.com/v1/<account>/<gateway>/anthropic` |
-| `CLOUDFLARE_ACCOUNT_ID` and `AI_GATEWAY_ID` | One of these | Used to build the endpoint when `AI_GATEWAY_URL` is unset |
-| `CF_AIG_TOKEN` | If the gateway is authenticated | Sent as `cf-aig-authorization` |
-| `ANTHROPIC_API_KEY` | Unless the key is stored in the gateway | Anthropic API key |
+| `ASK_GATEWAY_URL` | One of these | Full endpoint, `https://gateway.ai.cloudflare.com/v1/<account>/<gateway>/anthropic` |
+| `CLOUDFLARE_ACCOUNT_ID` and `ASK_GATEWAY_ID` | One of these | Used to build the endpoint when `ASK_GATEWAY_URL` is unset |
+| `ASK_GATEWAY_TOKEN` | If the gateway is authenticated | Sent as `cf-aig-authorization` |
+| `ASK_API_KEY` | Unless the key is stored in the gateway | API key for the answer service (Anthropic) |
 
 Without a gateway, Ask JBCC is hidden: it leaves the navigation, search and the
 privacy and terms pages, and `/ask` returns 404. It appears once
-`AI_GATEWAY_URL` (or the account and gateway IDs) is set and the app restarts;
+`ASK_GATEWAY_URL` (or the account and gateway IDs) is set and the app restarts;
 add `/ask` back to `public/sitemap.xml` then. Configure rate limiting and caching on the
 gateway; the site's own limit of six questions per visitor every five
 minutes applies per server process only.

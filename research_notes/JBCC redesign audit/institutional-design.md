@@ -1,6 +1,6 @@
 # Institutional Design and Motion Research
 
-## What distinguishes a specific editorial institution from a generic AI landing page?
+## What distinguishes a specific editorial institution from a generic template landing page?
 
 ### Takeaway
 

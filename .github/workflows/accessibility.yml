@@ -28,7 +28,7 @@ jobs:
       # Ubuntu mirrors sometimes answer 503; refresh the package lists and retry instead of failing the run.
       - run: for attempt in 1 2 3; do sudo apt-get update -q && bunx playwright install --with-deps ${{ matrix.browser }} && exit 0; echo "Browser install failed (attempt $attempt), retrying"; sleep 30; done; exit 1
       # Ask JBCC is shown only with a gateway configured; the stub gateway switches it on with fixed answers.
-      - run: node tests/support/stub-gateway.mjs & AI_GATEWAY_URL=http://localhost:9911/anthropic bun run dev & npx wait-on -t 120000 http://localhost:8080
+      - run: node tests/support/stub-gateway.mjs & ASK_GATEWAY_URL=http://localhost:9911/anthropic bun run dev & npx wait-on -t 120000 http://localhost:8080
       # "github" reporter annotates each failing test on the pull request.
       - run: bunx playwright test tests/e2e/accessibility.spec.ts --project=${{ matrix.browser }} --reporter=github,html
       - if: failure()

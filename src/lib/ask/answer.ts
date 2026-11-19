@@ -49,7 +49,7 @@ export function relatedSources(question: string): AskSource[] {
 }
 
 /**
- * Turns the model's text blocks into answer segments with numbered sources.
+ * Turns the response's text blocks into answer segments with numbered sources.
  * Only citations that point at a known site link survive, so a visitor never
  * sees a link the knowledge base did not supply.
  */

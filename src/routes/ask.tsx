@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode, type RefObject } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowRight, Loader2, Sparkles } from "lucide-react";
+import { ArrowRight, Loader2, MessageCircleQuestionMark } from "lucide-react";
 import { z } from "zod";
 import { PageIntro } from "@/components/page-intro";
 import { Button } from "@/components/ui/button";
@@ -108,7 +108,7 @@ function AskPage() {
             />
             <div className="mt-1 flex justify-between gap-4 text-xs text-muted-foreground"><span id="ask-error" className="font-medium text-signal">{error}</span><span aria-hidden="true">{question.length}/{QUESTION_MAX_LENGTH}</span></div>
             <Button type="submit" disabled={pending} className="mt-5 min-h-12 rounded-none bg-navy px-8 text-sm uppercase text-navy-foreground hover:bg-signal">
-              {pending ? <Loader2 className="animate-spin" aria-hidden="true" /> : <Sparkles aria-hidden="true" />} {pending ? "Answering" : "Ask"}
+              {pending ? <Loader2 className="animate-spin" aria-hidden="true" /> : <MessageCircleQuestionMark aria-hidden="true" />} {pending ? "Answering" : "Ask"}
             </Button>
           </form>
           <div className="mt-10 border-t border-border pt-5">

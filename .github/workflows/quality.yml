@@ -19,7 +19,7 @@ jobs:
       - run: for attempt in 1 2 3; do sudo apt-get update -q && bunx playwright install --with-deps chromium && exit 0; echo "Browser install failed (attempt $attempt), retrying"; sleep 30; done; exit 1
       # vite.config.ts pins the dev server to port 8080.
       # Ask JBCC is shown only with a gateway configured; the stub gateway switches it on with fixed answers.
-      - run: node tests/support/stub-gateway.mjs & AI_GATEWAY_URL=http://localhost:9911/anthropic bun run dev & npx wait-on -t 120000 http://localhost:8080
+      - run: node tests/support/stub-gateway.mjs & ASK_GATEWAY_URL=http://localhost:9911/anthropic bun run dev & npx wait-on -t 120000 http://localhost:8080
       # Full end-to-end suite in Chromium; the accessibility workflow covers Firefox and WebKit.
       - run: bun run test:e2e
       # Lighthouse measures the production build, served through deploy/app.js as on DirectAdmin.

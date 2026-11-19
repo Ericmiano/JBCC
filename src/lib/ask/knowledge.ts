@@ -14,7 +14,7 @@ import {
 
 /**
  * Everything "Ask JBCC" may answer from. Each entry is one citable source: the
- * model only sees this text, and every citation it returns points back to an
+ * answer service only sees this text, and every citation it returns points back to an
  * entry's `url`. Built from the same data the pages render, so answers stay in
  * step with what the site publishes. Order is stable so the prompt prefix caches.
  */
@@ -155,7 +155,7 @@ export const knowledgeSources: readonly KnowledgeSource[] = [
   },
 ];
 
-/** Links the model may cite. Anything else in a citation is dropped before it reaches the page. */
+/** Links an answer may cite. Anything else in a citation is dropped before it reaches the page. */
 export const knowledgeUrls: ReadonlySet<string> = new Set(knowledgeSources.map((source) => source.url));
 
 const STOP_WORDS = new Set("a an and are as at be by can do does for from how i in is it jbcc me my of on or the to what when where which who why with you your".split(" "));
@@ -165,7 +165,7 @@ function terms(value: string) {
 }
 
 /**
- * Keyword ranking used when no model answer is available, so visitors still get
+ * Keyword ranking used when no generated answer is available, so visitors still get
  * pointers to the right pages. Titles weigh more than body text.
  */
 export function findRelevantSources(question: string, limit = 4): KnowledgeSource[] {

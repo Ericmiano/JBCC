@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { FileText, Search, Sparkles } from "lucide-react";
+import { FileText, MessageCircleQuestionMark, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { searchItems } from "@/lib/jbcc-data";
@@ -24,7 +24,7 @@ export function SearchOverlay({ open, onOpenChange }: { open: boolean; onOpenCha
         <div id="search-results" className="mt-8" aria-live="polite">
           {askAvailable && query.trim().length >= 3 ? (
             <Link to="/ask" search={{ q: query.trim() }} onClick={() => onOpenChange(false)} className="grid min-h-14 grid-cols-[minmax(0,1fr)_auto] items-center gap-3 border-b border-navy-foreground/15 py-4 hover:text-signal">
-              <span className="flex min-w-0 items-start gap-3 text-base sm:text-lg"><Sparkles className="mt-1 size-4 shrink-0" aria-hidden="true" /><span>Ask JBCC: “{query.trim()}”</span></span><span className="technical-label text-navy-muted">Ask JBCC</span>
+              <span className="flex min-w-0 items-start gap-3 text-base sm:text-lg"><MessageCircleQuestionMark className="mt-1 size-4 shrink-0" aria-hidden="true" /><span>Ask JBCC: “{query.trim()}”</span></span><span className="technical-label text-navy-muted">Ask JBCC</span>
             </Link>
           ) : null}
           {results.map((item) => "to" in item ? (
