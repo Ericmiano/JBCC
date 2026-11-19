@@ -137,10 +137,12 @@ function RootComponent() {
 /** Announces the new page title to screen readers and moves focus to the main content after client-side navigation. */
 function RouteAnnouncer() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const first = useRef(true);
+  // Compare with the last announced path, not a "first run" flag: React runs effects twice in development.
+  const announced = useRef(pathname);
   const [message, setMessage] = useState("");
   useEffect(() => {
-    if (first.current) { first.current = false; return; }
+    if (announced.current === pathname) return;
+    announced.current = pathname;
     const id = window.setTimeout(() => {
       setMessage(`${document.title} page loaded`);
       document.getElementById("main-content")?.focus({ preventScroll: true });
