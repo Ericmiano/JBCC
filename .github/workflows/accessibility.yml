@@ -6,6 +6,10 @@ concurrency:
   group: a11y-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
+# Least privilege: no workflow writes to the repository.
+permissions:
+  contents: read
+
 jobs:
   a11y:
     name: a11y (${{ matrix.browser }})
@@ -18,15 +22,15 @@ jobs:
       matrix:
         browser: [chromium, firefox, webkit]
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
       - run: bun install --frozen-lockfile
       - run: bunx playwright install --with-deps ${{ matrix.browser }}
       - run: bun run dev & npx wait-on -t 120000 http://localhost:8080
       # "github" reporter annotates each failing test on the pull request.
       - run: bunx playwright test tests/e2e/accessibility.spec.ts --project=${{ matrix.browser }} --reporter=github,html
       - if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: playwright-report-${{ matrix.browser }}
           path: playwright-report/
