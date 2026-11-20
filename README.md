@@ -104,8 +104,16 @@ PORT=4173 node .output/app.js
    A password also sends a no-index header and a blocking `robots.txt`, so
    the preview stays out of search engines. `SITE_NOINDEX=true` does the same
    without a password.
-4. Turn on Let's Encrypt SSL for both domains.
-5. Add the deploy key's public half under **SSH Keys** in DirectAdmin.
+   Check the variable names have no trailing space; the panel saves them as typed.
+4. Delete the placeholder `index.html` that DirectAdmin puts in the domain's
+   `public_html`; while it exists the web server shows it instead of the app.
+5. Turn on Let's Encrypt SSL for both domains (the host's `*.jbcc.co.ke`
+   wildcard certificate already covers them).
+6. Add the deploy key's public half under **SSH Keys** in DirectAdmin. The
+   host's firewall may block SSH until your address is whitelisted; without
+   SSH, upload the same files (`app.js`, `package.json`, `nitro.json`,
+   `server/`, `public/`) into the application root over FTPS and re-upload
+   `tmp/restart.txt` to restart.
 
 ### GitHub settings
 
