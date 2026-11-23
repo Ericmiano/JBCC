@@ -208,6 +208,7 @@ test("active narrow viewport reveals remain stable through resizing", async ({ p
 });
 
 test("every page exposes complete sharing metadata", async ({ page }) => {
+  test.slow(); // Visits every page; the dev server compiles each one on first load.
   for (const route of routes) {
     await openHydratedPage(page, route);
     for (const selector of [
@@ -242,6 +243,7 @@ test("contact success state gives clear next steps", async ({ page }) => {
 });
 
 test("every page preserves still editorial compositions under reduced motion", async ({ page }) => {
+  test.slow(); // Visits every page; the dev server compiles each one on first load.
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.setViewportSize({ width: 390, height: 844 });
   for (const route of routes) {
