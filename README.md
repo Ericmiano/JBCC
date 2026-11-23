@@ -90,7 +90,7 @@ PORT=4173 node .output/app.js
    | App | Application root | Application URL |
    |---|---|---|
    | Staging | `jbcc-staging` | `staging.jbcc.co.ke` |
-   | Live | `jbcc-app` | `jbcc.co.ke` (create when ready to launch) |
+   | Live | `domains/jbcc.co.ke/jbcc-app` | `jbcc.co.ke` |
 
 3. Add environment variables to each app, then restart it:
 
@@ -128,7 +128,7 @@ Repository secrets, shared by both environments:
 | `DEPLOY_KNOWN_HOSTS` | Output of `ssh-keyscan -p <port> <host>` |
 
 Create GitHub environments named `staging` and `production`, each with a
-variable `DEPLOY_APP_DIR` (`jbcc-staging` and `jbcc-app`). Add required
+variable `DEPLOY_APP_DIR` (`jbcc-staging` and `domains/jbcc.co.ke/jbcc-app`). Add required
 reviewers to `production` so a live deploy needs approval.
 
 ### How deploys run
