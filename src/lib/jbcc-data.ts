@@ -94,13 +94,29 @@ export const socialLinks = [
   { label: "Instagram", handle: "jbcckenya", url: "https://www.instagram.com/jbcckenya/" },
 ] as const;
 
+/** Extra words each page is found by; every word here appears on that page. */
+const pageKeywords: Record<string, string> = {
+  "/": "Joint Building Construction Council Kenya",
+  "/about": "mission vision board directors constituent bodies members associations",
+  "/what-we-do": "objectives services contracts agreements fluctuations arbitration conciliation disputes",
+  "/resources": "documents downloads PDF price index price list guidelines FAQ Green Book",
+  "/events": "seminars certificate registration",
+  "/contact": "Secretariat office address email phone",
+};
+
+const partnerName = (abbr: string) => partners.find((item) => item.abbr === abbr)?.name ?? "";
+
 export const searchItems = [
-  ...siteLinks.map((item) => ({ title: item.label, type: "Page", to: item.to })),
-  ...resources.map((item) => ({ title: item.title, type: item.type, url: item.url })),
-  { title: "Board of Directors", type: "Council", to: "/about" as const },
-  ...partners.map((item) => ({ title: `${item.name} (${item.abbr})`, type: "Constituent body", to: "/about" as const })),
-  { title: "Terms of use", type: "Site policy", to: "/terms" as const },
-  { title: "Privacy policy", type: "Site policy", to: "/privacy" as const },
-  { title: "Cookie policy", type: "Site policy", to: "/cookies" as const },
-  { title: "Accessibility statement", type: "Site policy", to: "/accessibility" as const },
+  ...siteLinks.map((item) => ({ title: item.label, type: "Page", to: item.to, keywords: pageKeywords[item.to] ?? "" })),
+  ...resources.map((item) => ({ title: item.title, type: item.type, url: item.url, keywords: `${item.year} ${item.issuer} ${item.edition}` })),
+  { title: "Board of Directors", type: "Council", to: "/about" as const, keywords: board.map((member) => member.name).join(" ") },
+  ...board.map((member) => ({ title: member.name, type: "Board of Directors", to: "/about" as const, keywords: `${member.role} ${member.body} ${partnerName(member.body)}` })),
+  ...partners.map((item) => ({ title: `${item.name} (${item.abbr})`, type: "Constituent body", to: "/about" as const, keywords: item.text })),
+  ...seminarTopics.map((topic) => ({ title: topic, type: "Seminar", to: "/events" as const, keywords: "seminar training certificate" })),
+  ...faqs.map((item) => ({ title: item.q, type: "FAQ", to: "/resources" as const, keywords: item.a })),
+  { title: "Secretariat office and contact details", type: "Contact", to: "/contact" as const, keywords: `Suite 605 Blue Violets Plaza Kamburu Drive Ngong Road Nairobi P.O. Box 44258 mail@jbcc.co.ke telephone +254 20 2420 806 582 office hours ${officeHours}` },
+  { title: "Terms of use", type: "Site policy", to: "/terms" as const, keywords: "liability" },
+  { title: "Privacy policy", type: "Site policy", to: "/privacy" as const, keywords: "personal data protection" },
+  { title: "Cookie policy", type: "Site policy", to: "/cookies" as const, keywords: "local storage" },
+  { title: "Accessibility statement", type: "Site policy", to: "/accessibility" as const, keywords: "screen reader keyboard" },
 ] as const;

@@ -1,6 +1,6 @@
 // Startup file for DirectAdmin's "Setup Node.js App" (Passenger). CommonJS on purpose:
 // Passenger loads the startup file with require(). The built site sits beside it in
-// server/ and public/, copied from .output/ by scripts/deploy.sh.
+// server/ and public/, copied from .output/ by scripts/deploy-ftp.sh.
 //
 // Environment variables (set in the Node.js app screen):
 //   SITE_ACCESS_PASSWORD  When set, every request needs this password (staging only).

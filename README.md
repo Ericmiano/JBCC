@@ -64,9 +64,10 @@ minutes applies per server process only.
 The site runs on DirectAdmin as a Node.js app (Passenger). `bun run build`
 produces a self-contained server in `.output/`; `deploy/app.js` is the startup
 file that wraps it, and `deploy/package.json` marks it as CommonJS so a
-`"type": "module"` file higher up can't break it; `scripts/deploy.sh` copies
-them to the server over SSH, keeps the previous release in `.previous/`, and
-restarts the app.
+`"type": "module"` file higher up can't break it; `scripts/deploy-ftp.sh` uploads
+them over FTPS (HostAfrica's shared hosting allows no SSH from outside) and
+restarts the app. It keeps a fingerprint list (`.deploy-manifest`) in the
+application root and uploads only files that changed since the last deploy.
 
 `deploy/app.js` also sets the security headers (a same-origin Content Security
 Policy, HSTS, no framing, nosniff), refuses methods other than GET, HEAD and
@@ -89,7 +90,7 @@ PORT=4173 node .output/app.js
 
    | App | Application root | Application URL |
    |---|---|---|
-   | Staging | `jbcc-staging` | `staging.jbcc.co.ke` |
+   | Staging | `domains/jbcc.co.ke/jbcc-staging` | `staging.jbcc.co.ke` |
    | Live | `domains/jbcc.co.ke/jbcc-app` | `jbcc.co.ke` |
 
 3. Add environment variables to each app, then restart it:
@@ -109,11 +110,10 @@ PORT=4173 node .output/app.js
    `public_html`; while it exists the web server shows it instead of the app.
 5. Turn on Let's Encrypt SSL for both domains (the host's `*.jbcc.co.ke`
    wildcard certificate already covers them).
-6. Add the deploy key's public half under **SSH Keys** in DirectAdmin. The
-   host's firewall may block SSH until your address is whitelisted; without
-   SSH, upload the same files (`app.js`, `package.json`, `nitro.json`,
-   `server/`, `public/`) into the application root over FTPS and re-upload
-   `tmp/restart.txt` to restart.
+6. Under **FTP Management**, create a deploy account (`deploy@jbcc.co.ke`)
+   whose path is `domains/jbcc.co.ke`. Both application roots sit inside it,
+   outside `public_html`, so the account can reach them but the web server
+   never serves their files directly.
 
 ### GitHub settings
 
@@ -121,14 +121,13 @@ Repository secrets, shared by both environments:
 
 | Secret | Value |
 |---|---|
-| `DEPLOY_HOST` | SSH host name |
-| `DEPLOY_PORT` | SSH port, if not 22 |
-| `DEPLOY_USER` | DirectAdmin user name |
-| `DEPLOY_SSH_KEY` | Private half of the deploy key |
-| `DEPLOY_KNOWN_HOSTS` | Output of `ssh-keyscan -p <port> <host>` |
+| `FTP_USER` | `deploy@jbcc.co.ke` |
+| `FTP_PASSWORD` | That account's password |
+| `FTP_HOST` | Optional, default `jbcc.co.ke` |
 
 Create GitHub environments named `staging` and `production`, each with a
-variable `DEPLOY_APP_DIR` (`jbcc-staging` and `domains/jbcc.co.ke/jbcc-app`). Add required
+variable `DEPLOY_APP_DIR`, relative to the deploy account's folder
+(`jbcc-staging` and `jbcc-app`). Add required
 reviewers to `production` so a live deploy needs approval.
 
 ### How deploys run
@@ -140,11 +139,14 @@ reviewers to `production` so a live deploy needs approval.
 
   ```sh
   bun run build
-  DEPLOY_HOST=<host> DEPLOY_USER=<user> DEPLOY_APP_DIR=jbcc-staging scripts/deploy.sh
+  FTP_USER=deploy@jbcc.co.ke FTP_PASSWORD=<password> DEPLOY_APP_DIR=jbcc-staging scripts/deploy-ftp.sh
   ```
 
-- To roll back, swap `.previous/` back into the application root over SSH
-  and touch `tmp/restart.txt`.
+- The first deploy to an empty folder uploads every file and can take half an
+  hour, because the server often refuses an upload and it is retried; later
+  deploys send only what changed.
+- To roll back, check out the earlier commit, build, and deploy it the same
+  way; only the files that differ are sent back.
 
 ### Going live
 
