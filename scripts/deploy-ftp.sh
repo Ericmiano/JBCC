@@ -52,11 +52,14 @@ comm -13 <(sort "$work/previous") <(sort "$work/manifest") | sed 's/^[0-9a-f]*  
   | awk '{ print (/^public\// ? 1 : /^server\// ? 2 : 3) "\t" $0 }' | sort -s -k1,1n | cut -f2- > "$work/changed"
 echo "Deploying to $host:$DEPLOY_APP_DIR — $(wc -l < "$work/changed") of $(wc -l < "$work/manifest") files changed"
 
+# Paths inside a curl config file are not translated by Git Bash, so give Windows curl a Windows path.
+bundle_path="$bundle"
+if command -v cygpath >/dev/null; then bundle_path="$(cygpath -m "$bundle")"; fi
 cp "$work/changed" "$work/pending"
 for round in 1 2 3 4 5; do
   [ -s "$work/pending" ] || break
   : > "$work/config"
-  while IFS= read -r file; do printf 'upload-file = "%s"\nurl = "%s/%s"\n' "$bundle/$file" "$base" "$file" >> "$work/config"; done < "$work/pending"
+  while IFS= read -r file; do printf 'upload-file = "%s"\nurl = "%s/%s"\n' "$bundle_path/$file" "$base" "$file" >> "$work/config"; done < "$work/pending"
   # Carry on past failed files; each is retried in the next round.
   ftp -K "$work/config" -w '%{http_code} %{url}\n' > "$work/log" 2>/dev/null || true
   grep '^226 ' "$work/log" | sed "s|^226 $base/||" | sort > "$work/done" || true
